@@ -24,5 +24,13 @@ else:
 # Either way we can now query the index
     
 query_engine = index.as_query_engine(streaming=True, similarity_top_k=3) # change this parameter to add context
-response = query_engine.query("What is critical for optimal performance?") 
-print(response)
+chat_engine = index.as_chat_engine(chat_mode="best", verbose=True, similarity_top_k=3)
+#response = query_engine.query("What is critical for optimal performance?") 
+#print(response)t
+print('Ask a question')
+userInput = input()
+while (userInput != 'quit'):
+    response = chat_engine.chat(userInput)
+    #response = query_engine.query(userInput)
+    print(response)
+    userInput = input()
