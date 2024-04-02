@@ -1,0 +1,509 @@
+1. AAMC Journals. 
+
+URL: https://www.aamc.org/ 
+Description: The Reporter is the association's flagship news publication covering major programs and initiatives at the Assn. of American Medical Colleges and member institutions, as well as the broader issues affecting the academic medical community. 
+
+2. AATA online: abstracts of international conservation literature.
+
+URL: http://aata.getty.edu/
+Description: Online abstracts of international literature on the management and conservation of material cultural heritage -- (art, cultural objects, museum collections, archives, library materials, architecture, historic sites & archaeology. 
+
+3. Academic Journals (Open Access Publisher). 
+
+URL: http://www.academicjournals.org/about.htm 
+Description: International in scope - covering the sciences (biological, social, medical), art, education, and legal journals. 
+
+4. AERA SIG Communication of Research. 
+
+URL: http://www.aera.net/Default.aspx?id=274 
+Description: Scholarly, peer-reviewed, full text, open access journals in the field of education. 
+
+5. AgEcon. 
+
+URL: http://agecon.lib.umn.edu/ 
+Description: Full-text scholarly literature in agricultural and applied economics, including Working papers, Conference papers, Journal articles. 
+
+6. AgZines : a harvest of free agricultural journals / USAIN. 
+
+URL: http://usain.org/agzines.html 
+Description: AgZines is a compilation of agricultural journals that are available free on the web. Formerly known as Tomato Juice, this list collects web journals related to agricultural, food, and environmental sciences. 
+
+7. American Association for Artificial Intelligence publications. 
+
+URL: http://www.aaai.org/Magazine/magazine.php 
+Description: The Association for the Advancement of Artificial Intelligence and The MIT Press established the AAAI Press in 1989 as a publishing imprint founded to serve the information needs of the international AI community as well as to stay abreast of significant new research and literature across the entire field of artificial intelligence. 
+
+8. American Digital Archive of the Jewish Experience. 
+
+URL: http://www.ajhs.org/reference/adaje.cfm
+Description: ADAJE: American Digital Archive of the Jewish Experience is an electronic repository of digitized American Jewish periodicals. Founded in 1892, The American Jewish Historical Society (AJHS) is the oldest national ethnic historical organization in the nation. 
+
+9. American Museum of Natural History Research Library. 
+
+URL: http://digitallibrary.amnh.org/dspace/ 
+Description: AMNH scientific publications disseminate the results of laboratory investigations and fieldwork conducted by museum scientists and their colleagues in the areas of zoological systematics, paleontology, geology, evolution, and anthropology. 
+
+10. American Physical Society Publications. 
+
+URL: http://www.aps.org/publications/index.cfm
+Description: APS publishes leading international physics research journals; peer-reviewed. 
+
+11. American Phytopathological Society Journals. 
+
+URL: http://apsjournals.apsnet.org/ 
+Description: The American Phytopathological Society (APS) is the premier society dedicated to high-quality, innovative plant pathology research. 
+
+12. American Society of Limnology and Oceanography Publications. 
+
+URL: http://aslo.org/index.html 
+Description: ASLO is a leading professional organization for researchers and educators in the field of aquatic science. 
+
+13. Animal Agriculture.org. 
+
+URL: http://www.animalagriculture.org/Information/Publications.html 
+Description: NIAA publications provide a communications link between producers, veterinarians, researchers, academicians, government veterinarians and regulatory personnel. 
+
+14. Archive of African Journals. 
+
+URL: http://digital.lib.msu.edu/projects/africanjournals/ 
+Description: The African e-Journals Project has digitized full text of articles of 13 social science and humanities journals published in Africa. A project of the Michigan State University African Studies Center, MSU Libraries, and MATRIX. 
+
+15. arXiv.org. 
+
+URL: http://arxiv.org/ 
+Description: An e-print service which presents papers in physics, mathematics, nonlinear science, computer science, quantitative biology, and statistics. arXiv.org is a fully automated electronic archive and distribution server for research papers which functions as a means of communicating ongoing research information in these subject areas. 
+
+16. Asian Development Bank Publications. 
+
+URL: http://www.adb.org/Publications/title.asp
+Description: ADB is an international development finance institution whose mission is to help its developing member countries reduce poverty and improve the quality of life of their people. 
+
+17. Australasian Legal Information Institute (AustLII) Journals. 
+
+URL: http://www.austlii.edu.au/au/journals/ 
+Description: Academic law journals from Australia and New Zealand. 
+
+18. Australian Periodical Publications 1840-1845. 
+
+URL: http://www.nla.gov.au/ferg/ 
+
+Description: The Australian Periodical Publications 1840-1845 component of the Australian Cooperative Digitisation Project (ACDP) provides web access to digital copies of Australian serials first published between 1840 and 1845. The digitized copies were produced from microfilm. 
+
+19. Bangladesh Journals Online. 
+
+URL: http://www.banglajol.info/ 
+Description: Bangladesh Journals OnLine (BanglaJOL) is a service to provide access to Bangladesh published research, and increase worldwide knowledge of indigenous scholarship. 
+
+20. Bentham Open. 
+
+URL: http://www.bentham.org/open/index.htm 
+Description: ENTHAM Open publishes a number of peer-reviewed, open access journals. These free-to-view online journals cover all major disciplines of science, medicine, technology, and social sciences. BENTHAM Open provides researchers a platform to rapidly publish their research in a good-quality peer-reviewed journal. All peer-reviewed accepted submissions meeting high research and ethical standards are published with free access to all.
+
+21. Biodiversity Heritage Library. 
+
+URL: http://biodiversitylibrary.org/ 
+Description: The Biodiversity Heritage Library (BHL), ( the digitization component of the Encyclopedia of Life), is a consortium of 12 major natural history museum libraries, botanical libraries, and research institutions organized to digitize, serve, and preserve the legacy literature of biodiversity. 
+
+22. Bioline International. 
+
+URL: http://www.bioline.org.br/journals 
+Description: Bioscience journals including peer-reviewed journals published in developing countries. These journals contain timely research on public health, international development, tropical medicine, food and nutritional security and biodiversity that would not otherwise be readily available to researchers in the developed world, or even within the country of publication. Bioline is not a publisher, but an aggregator that provides a free platform for journals who wish to participate in the global open access movement. Bioline International was launched in 1993 as a partnership between the Tropical Database in Brazil (now the Reference Center on Environmental Information, or CRIA) and the Electronic Publishing Trust for Development (EPT) in the U.K. In early-2000, the University of Toronto Libraries assumed the role previously performed by the EPT. 
+
+23. BioMedCentral Open Access. 
+
+URL: http://www.biomedcentral.com/search/ 
+Description: BioMed Central is a STM (Science, Technology, and Medicine) publisher of open access peer-reviewed journals. BioOne Open Access Titles. http://www.bioone.org/bioone/?request=get-journals-list. Bioscience research journals. Most of BioOne's titles are published by small societies and non-commercial publishers. 
+
+24. Cell Press Free Archives. 
+
+URL: http://www.cellpress.com/ 
+Description: Cell Press, an imprint of Elsevier, is committed to improving scientific communication through the publication of exciting research and reviews for biological and life sciences. 
+
+25. Centers for Disease Control and Prevention. 
+
+URL: http://www.cdc.gov/ 
+Description: CDC provides credible and reliable health and safety-related information for the community. 
+
+26. Chronicling America: Historic American Newspapers. 
+
+URL: http://www.loc.gov/chroniclingamerica/search_directory_advanced.html 
+Description: Chronicling America is a Website providing access to information about historic newspapers and select digitized newspaper pages, and is produced by the National Digital Newspaper Program (NDNP). NDNP, a partnership between the National Endowment for the Humanities (NEH) and the Library of Congress (LC), is a long-term effort to develop an Internet-based, searchable database of U.S. newspapers with descriptive information and select digitization of historic pages. 
+
+27. CiNii: Open Access Journals. 
+
+URL: http://ci.nii.ac.jp/ 
+Description: CiNii (Scholarly and Academic Information Navigator, pronounced like "sighknee") is a database service that enables searching of information on academic articles published in academic society journals or university research bulletins, or articles included in the National Diet Library's Japanese Periodicals Index Database. 
+
+28. Civil Rights Digital Library. 
+
+URL: http://crdl.usg.edu
+Description: The initiative receives support from a National Leadership Grant for Libraries awarded to the University of Georgia by the Institute of Museum and Library Services. 
+
+29. Copernicus Publications. 
+
+URL: http://publications.copernicus.org/open_access_journals/index.html
+Description: Copernicus Publications is a publisher of high-quality literature in science since 1994 and an Open Access publisher since 2001. It specializes in serving scientific associations in publishing and distributing their journals. 
+
+30. Core Historical Literature of Agriculture.
+
+URL: http://chla.library.cornell.edu/c/chla/ 
+Description: Core electronic collection of agricultural texts published between the early nineteenth century and the middle to late twentieth century. Full-text materials cover agricultural economics, agricultural engineering, animal science, crops and their protection, food science, forestry, human nutrition, rural sociology, and soil science. Scholars have selected the titles in this collection for their historical importance. Their evaluations and 4,500 core titles are detailed in the seven volume series The Literature of the Agricultural Sciences, Wallace C. Olsen, series editor. 
+
+31. Council for the Development of Social Science Research in Africa (CODESRIA). 
+
+URL: http://www.codesria.org/spip.php??=en&lang=en 
+Description: CODESRIA, the Council for the Development of Social Science Research in Africa is headquartered in Dakar Senegal. It was established in 1973 as an independent Pan-African research organization with a primary focus on the social sciences, broadly defined. It is recognized not only as the pioneer African social research organization but also as the apex non-governmental center of social knowledge production on the continent. 
+
+32. Digital Innovation South Africa. 
+
+URL: http://www.disa.ukzn.ac.za/ 
+Description: DISA is a freely accessible online scholarly resource focusing on the socio-political history of South Africa, particularly the struggle for freedom during the period from 1950 to the first democratic elections in 1994. 
+
+33. Digital Library of the Commons. 
+
+URL: http://dlc.dlib.indiana.edu/dlc/ 
+Description: Archive of international literature on the commons, common-pool resources, and common property. The commons is a general term for shared resources in which each stakeholder has an equal interest. Studies on the commons include the information commons with issues about public knowledge, the public domain, open science, and the free exchange of ideas -- all issues at the core of a direct democracy. 
+
+34. Directory of Open Access Journals. 
+
+URL: http://www.doaj.org/ 
+Description: Free, full text, quality controlled scientific and scholarly journals, covering all subjects and many languages. At the First Nordic Conference on Scholarly Communication in Lund/Copenhagen (http://www.lub.lu.se/ncsc2002) the idea of creating a comprehensive directory of Open Access Journals was discussed. The conclusion was that it would be a valuable service for the global research and education community. 
+
+35. DOVE Medical Press Journals. 
+
+URL: http://www.dovepress.com/ 
+Description: Founded in 2003, Dove Medical Press Ltd is a privately held company specializing in the publication of Open Access peer-reviewed journals across the broad spectrum of science, technology and especially medicine. 
+
+36. Electronic Journals and Newspapers on Africa. 
+
+URL: http://www.columbia.edu/cu/lweb/indiv/africa/ejournals.html
+Description: Columbia University Libraries presents an A-Z list of free Internet publications on Africa. 
+
+37. Electronic Library of Mathematics. 
+
+URL: http://www.emis.de/ELibEMS.html
+Description: The Electronic Library of Mathematics, an open access repository established in 1996, contains online journals, article collections, monographs, and other electronic resources in the field of mathematics. Offered by FIZ Karlsruhe / Zentralblatt MATH. 
+
+38. eScholarship Repository.
+
+URL: http://repositories.cdlib.org/escholarship/ 
+Description: eScholarship provides a suite of open access, scholarly publishing services, and research tools that enable departments, research units, publishing programs, and individual scholars associated with the University of California. Includes, papers, conference materials, books and journals, preprints. 
+
+39. Europeana. 
+
+URL: http://www.europeana.eu/portal/ 
+Description: Europeana enables people to explore the digital resources of Europe's museums, libraries, archives, and audio-visual collections. It promotes discovery and networking opportunities in a multilingual space where users can engage, share in and be inspired by the rich diversity of Europe's cultural and scientific heritage. 
+
+40. Federal Reserve Bank of Atlanta Publications. 
+
+URL: http://www.frbatlanta.org/ 
+Description: The Federal Reserve Bank of Atlanta is part of the central bank of the United States. The Federal Reserve Systemthe Fed, as it is often called consists of twelve Reserve Banks located around the country and the Board of Governors in Washington, D.C. The Atlanta Fed territory covers the Sixth Federal Reserve District, which includes Alabama, Florida, and Georgia, and portions of Louisiana, Mississippi, and Tennessee. Reserve Banks play an important part in all three of the Fed's functions: monetary policy, bank supervision and regulation, and the operation of a nationwide payment system. 
+
+41. Federal Reserve Bank of Boston Publications. 
+
+URL: http://www.bos.frb.org/genpubs/index.htm
+Description: The Federal Reserve System, the Fed, as it is often called, consists of twelve Reserve Banks located around the country and the Board of Governors in Washington, D.C. Reserve Banks play an important part in all three of the Fed's functions: monetary policy, bank supervision and regulation, and the operation of a nationwide payment system. The Boston Fed offers many free publications related to banking, community development, economics, consumer literacy and financial education, and the Federal Reserve. 
+
+42. Federal Reserve Bank of Chicago Economic Research Publications. 
+
+URL: http://www.chicagofed.org/ 
+
+43. Federal Reserve Bank of Cleveland. 
+
+URL: http://www.clevelandfed.org/Research/ETIndex.cfm 
+
+44. Federal Reserve Bank of Dallas Economic Research Publications. 
+
+URL: http://www.dallasfed.org/research/index.html 
+
+45. Federal Reserve Bank of Minneapolis Economic Research Publications. 
+
+URL: http://woodrow.mpls.frb.fed.us/ 
+
+46. Federal Reserve Bank of New York Research Publications. 
+
+URL: http://www.newyorkfed.org/research/publication_annuals/index.html 
+
+47. Federal Reserve Bank of Philadelphia Publications. 
+
+URL: http://www.phil.frb.org/ 
+
+48. Federal Reserve Bank of Richmond Research Publications. 
+
+URL: http://www.richmondfed.org/publications/ 
+
+49. Federal Reserve Bank of San Francisco Publications. 
+
+URL: http://www.frbsf.org/publications 
+
+50. Federal Reserve Bank of St. Louis Economic Research Publications. 
+
+URL: http://research.stlouisfed.org/publications/ 
+
+51. Fisheries and Oceans Canada Virtual Library. 
+
+URL: http://www.dfo-mpo.gc.ca/libraries-bibliotheques/index-eng.htm 
+
+52. Florida Marine Research Publications. 
+
+URL: http://research.myfwc.com/publications/ 
+
+53. IngentaConnect Backfiles. 
+
+URL: http://eyetoeye.ingenta.com/library/issue16/news-freestuff.htm 
+Description: Ingentaconnect offers one of the most comprehensive collections of academic and professional research articles online. 
+
+54. Free Medical Journals. 
+
+URL: http://www.freemedicaljournals.com/ 
+Description: The Free Medical Journals Site was created to promote the free availability of full-text medical journals on the Internet. From: AMEDEO has been created to serve the needs of healthcare professionals, including physicians, nurses, pharmacists, administrators, other members of the health professions, and patients and their friends. 
+
+55. Hearth: Home Economics Archive. 
+
+URL: http://hearth.library.cornell.edu/ 
+
+56. HighWire Press (Free Journals). 
+
+URL: http://highwire.stanford.edu/lists/freeart.dtl 
+Description: Highwire Press, a division of Stanford University Libraries, is an ePublishing platform and partners with independent scholarly publishers, societies, associations, and university presses to facilitate the digital dissemination of 1465+ journals, reference works, books, and proceedings. 
+
+57. Historical Jewish Press. http://www.jpress.org.il/view-english.asp 
+
+58. Historical Newspapers in Washington. 
+
+URL: http://www.sos.wa.gov/history/newspapers.aspx 
+
+59. Home Economics Journals. 
+
+URL: http://hearth.library.cornell.edu/h/hearth/browse/journals.html 
+
+60. Hong Kong Journals Online. 
+
+URL: http://sunzi1.lib.hku.hk/hkjo/accept.jsp 
+
+61. IBIMA Publishing Journals. 
+
+URL: http://www.ibimapublishing.com/journals/journals
+Description: IBIMA publishing (International Business Information Management Association (IBIMA) is a fast-growing academic publisher of 25+ open access journals in the areas of Business, Management, and Technology and provides unrestricted open access to all of its journals to scholars from around the world. 
+
+62. Inter-Research. 
+
+URL: http://www.int-res.com/home/ 
+
+63. Internet Center for Wildlife Damage Management. 
+
+URL: http://digitalcommons.unl.edu/icwdm/ 
+
+64. Internet Library of Early British Journals. 
+
+URL: http://www.bodley.ox.ac.uk/ilej/ 
+
+65. Japan Science & Technology Information Database (J-STAGE). 
+
+URL: http://www.jstage.jst.go.jp/browse/_journallist/-char/en 
+
+66. Journals of Himalayan Studies. 
+
+URL: http://www.digitalhimalaya.com/collections/journals/ 
+
+67. Landes Bioscience (Open Access). 
+
+URL: http://www.landesbioscience.com/ 
+
+68. Open Access Peer Reviewed Medical and Scientific Journals. Library Publishing Media Open Access Journals. 
+
+URL: http://libpubmedia.co.uk/index.htm 
+
+69. Making of America Journals (Cornell). 
+
+URL: http://cdl.library.cornell.edu/moa/moa_browse.html 
+
+70. Making of America Journals (Michigan). 
+
+URL: http://www.hti.umich.edu/m/moagrp/ 
+
+71. Manchester University Press Journals - Open Access. 
+
+URL: http://www.manchesteruniversitypress.co.uk/ 
+
+72. Marquette Journals. 
+
+URL: http://www.marquettejournals.org/home.html 
+
+73. MDPI Open Access Journals. 
+
+URL: http://www.mdpi.com/about/mdpi 
+Description: Molecular Diversity Preservation International (MDPI) publishes peer-reviewed journals covering sciences. It is an organization for deposit and exchange of molecular and biomolecular samples. Founded and registered in 1996, its headquarters are located in Basel, Switzerland. 
+
+74. medIND: Biomedical Journals from India. 
+
+URL: http://medind.nic.in/ 
+
+75. Missouri Botanical Garden Botanicus Collection. 
+
+URL: http://www.botanicus.org/ 
+
+76. NASA Astrophysics Data System Journals. 
+
+URL: http://www.adsabs.harvard.edu/ 
+
+77. National Forum Journals (Free Journals). 
+
+URL: http://www.nationalforum.com/ 
+
+78. National Library of Australia Historic Australian Newspapers, 1803-1954. 
+
+URL: http://newspapers.nla.gov.au/ndp/del/titles
+Description: The Australian Newspapers Digitisation Program will be digitizing just over 4 million pages over 4 years, starting in July 2007. These pages will cover a range of titles from every state and territory, from the earliest newspaper published in Australia in 1803 through to the mid-1950's. A million pages from the Sydney Morning Herald 1831-1954 will be digitized as part of the 4 million. 
+
+79. Nature Open Access. 
+
+URL: http://www.nature.com/siteindex/index.html 
+Description: Nature Publishing Group (NPG) is a publisher of high impact scientific and medical information in print and online. NPG publishes journals, online databases, and services across the life, physical, chemical and applied sciences and clinical medicine. 
+
+80. Nepal Journals Online. 
+
+URL: http://www.nepjol.info/index.php 
+Description: Nepal Journals OnLine (NepJOL) is a service to provide access to Nepalese published research, and increase worldwide knowledge of indigenous scholarship. Peer-reviewed, scholarly, full range of academic disciplines. 
+
+81. Open Humanities Press Journals. 
+
+URL: http://openhumanitiespress.org/index.html
+
+82. Oxford Open. 
+
+URL: http://www.oxfordjournals.org/oxfordopen/ 
+
+83. Project Euclid. 
+
+URL: http://projecteuclid.org 
+Description: Project Euclid's mission is to advance scholarly communication in the field of theoretical and applied mathematics and statistics. Project Euclid was developed and deployed by the Cornell University Library and is jointly managed by Cornell and the Duke University Press. 
+
+84. Psychonomic Society Publications (HighWire). 
+
+URL: http://www.psychonomic-journals.org/ 
+
+85. Public Library of Science (PLoS). 
+
+URL: http://www.plos.org/journals/ 
+
+86. PubMed Central. 
+
+URL: http://www.pubmedcentral.nih.gov/index.html
+
+87. REDALyC. 
+
+URL: http://www.redalyc.com 
+Description: Science, Social Sciences and Humanities journals from Central and Latin America. 500+ Spanish language journals. 
+
+88. Revues.org. 
+
+URL: http://revues.org
+Description: A portal for French journals focusing on the humanities and social sciences. 
+
+89. Royal Society of Chemistry Free Journals. 
+
+URL: http://www.rsc.org/Publishing/Journals/Index.asp
+Description: RSC, a leading scientific publisher, offers a range of peer-reviewed journals, magazines, books, and databases to the chemical science community. 
+
+90. Royal Society of New Zealand Open Access Journals. 
+
+URL: http://www.royalsociety.org.nz/Site/publish/Journals/Default.aspx
+Description: The Royal Society of New Zealand produces eight quality research journals of regional importance to Australasia, the entire Pacific Basin, and Antarctica, and their southern connections, with relevance to researchers worldwide - refereed knowledge specific to the natural sciences. 
+
+91. SA ePublications Open Access. 
+
+URL: http://www.sabinet.co.za/?page=open-access-journals
+Description: Sabinet's collection currently comprises 46 South African journals on a variety of subjects. 
+
+92. SAGE-Hindawi Access to Research. 
+
+URL: http://www.sage-hindawi.com/journals/ 
+Description: SAGE-Hindawi Access to Research is a partnership between SAGE Publications and Hindawi Publishing Corporation to jointly publish a collection of peer-reviewed, open access journals on a variety of subjects in science, technology, and medicine. 
+
+93. Scientific Research Publishing (SCIRP) Journals. 
+
+URL: http://www.scirp.org/journal/Index.aspx 
+Description: The peer-reviewed/refereed or professional journals covering science, computer science, and the humanities. 
+
+94. Sistema de Bibliotecas de la UNMSM. 
+
+URL: http://sisbib.unmsm.edu.pe/BibVirtual/Publicaciones/titulos.asp
+Description: The digital collection is comprised of UNMSM publications (books, journals, theses and research papers published by the university). 
+
+95. Solid State Technology. 
+
+URL: http://www.solid-state.com/magazines/ 
+Description: Electronics journals from PennWell Press and SPIE for engineers, operators, managers, tool and materials suppliers, and semiconductor researchers. 
+
+96. SORA - Searchable Ornithological Research Archive. 
+
+URL: http://elibrary.unm.edu/sora/ 
+Description: An open access electronic journal archive providing access to an extensive Ornithological literature of international scope, and detailed material documenting the history of Ornithology in North America over the last 120 years. 
+
+97. SPIE Open Access Publications. 
+
+URL: http://spie.org/x904.xml 
+Description: Journals on photonics and optics from SPIE. 
+
+98. Symposium Journals Free. 
+
+URL: http://www.symposium-journals.co.uk/index.html
+Description: Peer-reviewed, scholarly educational journals. The UK based. 
+
+99. Tobacco Control Research Publications. 
+
+URL: http://cancercontrol.cancer.gov/tcrb/monographs/ 
+
+100. TUMS Electronic Journals. 
+
+URL: http://journals.tums.ac.ir/index.aspx?org_id=59&culture_var=en
+Description: Tehran University medical sciences journals. 
+
+101. U of Illinois at Urbana-Champaign Dept of Mathematics. 
+
+URL: http://www.math.uiuc.edu/Publications/ 
+Description: Mathematical journals. 
+
+102. U.S. Government Documents. 
+
+URL: http://www.gpoaccess.gov/ 
+Description: GPO Access is a service of the U.S. Government Printing Office that provides free electronic access to a wealth of important information products produced by the three branches of the Federal Government. 
+
+103. UCLA Chicano Studies Research Center. 
+
+URL: http://aztlanjournal.metapress.com
+Description: the Refereed journal has a focus on scholarly essays in the humanities, social sciences, and arts relevant to or informed by the Chicano experience. 
+
+104. University of Warwick Electronic Law Journals. 
+
+URL: http://www2.warwick.ac.uk/fac/soc/law/elj/ 
+Description: The Electronic Law Journals (ELJ) project was established by the CTI Law Technology Centre at the University of Warwick, in 1995 to promote the development of an electronic legal culture in academic journal reading, writing, and publishing. 
+
+105. Welsh Journals Online. 
+
+URL: http://welshjournals.llgc.org.uk/browse/ 
+Description: A selection of 19th-, 20th- and 21st-century Welsh and Wales-related journals held at The National Library of Wales and partner institutions. 
+
+106. World Digital Library. 
+
+URL: http://purl.access.gpo.gov/GPO/LPS86109 
+Description: The World Digital Library (WDL) makes available on the Internet, free of charge and in multilingual format, significant primary materials from countries and cultures around the world.
+
+
+You can also try this:
+
+
+Listing of Open Access Databases
+URL: http://www.loadb.org/Control.do?_brse
+
+Description: The objective of Listing of Open Access DataBases (LOADB) is to create a web-enabled, linked, classified and categorized collection of Open Access Databases which one can access from a single portal. Although the initial focus is on science and technology subjects, the ultimate aim is to include all subject areas.
+It is a pilot listing and is being subjected to peer review to build a quality controlled collection of Open Access Databases. The listing is open to all publishers who publish databases in Open Access mode. LOADB will rely on crowdsourcing model to update and sustain its services and welcomes submissions and suggestions from all the stakeholders such as database publishers, research institutions, universities, libraries, government, and private agencies, scholars, and students.
+LOADB is a service of CSIR’s Unit for Research and Development of Information Products (URDIP) located at Pune in India and is being developed for the Open Science and Open Innovation Infrastructure Project supported by CSIR at URDIP. More features and services will be added as the project moves forward. CSIR-URDIP will join hands with like-minded partners to further the cause of open access moment.
+
+
+JSTOR.org
+URL: https://www.jstor.org/
+Description: 
+
+JSTOR provides access to more than 12 million academic journal articles, books, and primary sources in 75 disciplines.
