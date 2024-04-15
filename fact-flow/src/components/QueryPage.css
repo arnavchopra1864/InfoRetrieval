@@ -1,0 +1,66 @@
+/* QueryPage.css */
+.query-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  padding-right: 250px; /* Adjust based on sidebar size to prevent content from being hidden */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  width: 75%;
+  transform: translateY(35vh);
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  transition: margin-right 0.5s; 
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.search-box {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: #f4f4f4;
+  transition: width 0.5s;
+  width: 250px; /* Expanded width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sidebar.collapsed {
+  width: 50px; /* Collapsed width */
+}
+
+.toggle-button {
+  cursor: pointer;
+  /* Adjust the button style as needed */
+}
+
+.sidebar-content {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.sidebar.collapsed .sidebar-content {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
