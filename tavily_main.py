@@ -18,27 +18,24 @@ from llama_index.core import ( # type: ignore
 )
 from llama_index.llms.openai import OpenAI # type: ignore
 from typing import List, Optional
-# from llama_index.llms.huggingface import ( # type: ignore
-#     HuggingFaceInferenceAPI,
-#     HuggingFaceLLM,
-# )
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 
 from llama_index.core.response.notebook_utils import display_source_node # type: ignore
 from llama_index.core.query_engine import RetrieverQueryEngine # type: ignore
 from llama_index.core import Settings # type: ignore
 
-user_query = "What are the effects of parental involvement on academic performance?"
-user_query = "How can a father and mother influence a child's performance and grades in school?"
+query = "What are the effects of parental involvement on academic performance?"
+#query = "How can a father and mother influence a child's performance and grades in school?"
 
 class FactFlow:
     def __init__(self, query):
-        self.user_query = query
+        self.query = query
 
     def get_response(self):
         tavily = TavilyClient(api_key=os.getenv('TAVILY_API_KEY'))
 
-        response = tavily.search(query=self.user_query, 
+        response = tavily.search(query=self.query, 
                                 search_depth="advanced", 
                                 include_raw_content=True,
                                 max_results=5)
@@ -55,15 +52,17 @@ class FactFlow:
             f.write(result['raw_content'])
             f.close()
 
+        gpt4 = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
+        Settings.llm = gpt4
 
-        Settings.llm = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
+        Settings.embed_model = HuggingFaceEmbedding(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
 
         documents = SimpleDirectoryReader("tavily_data").load_data()
         index = VectorStoreIndex.from_documents(documents)
 
-        # HF_TOKEN: Optional[str] = os.getenv("HUGGING_FACE_TOKEN")
-        gpt4 = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
-        query = self.user_query
+        query = self.query
 
         base_retriever = index.as_retriever(similarity_top_k=5)
         retrievals = base_retriever.retrieve(query)
@@ -76,7 +75,7 @@ class FactFlow:
                                                        "Score":n.score}
             else:
                 print("REMOVED CHUNK: ", n)
-        query_engine_base = RetrieverQueryEngine.from_args(base_retriever, llm=gpt4)
+        query_engine_base = RetrieverQueryEngine.from_args(base_retriever)
         response = query_engine_base.query(query)
 
         # print(str(response))
