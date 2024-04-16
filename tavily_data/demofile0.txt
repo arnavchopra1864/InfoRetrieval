@@ -1,0 +1,54 @@
+Binary Addition Calculator
+This binary addition calculator sums up the numbers represented with zeros and ones (you can generate them with the binary converter).
+Read this text to learn more about the language of computers and how to add binary numbers without any binary math calculator. Once you get your head around adding binary numbers, you may want to learn how to subtract them with our binary subtraction calculator.
+🔎
+Apart from summing, you can subtract, multiply, and divide these types of numbers using our binary calculator.
+What is the binary system?
+To understand the binary system, let's first look at the more familiar decimal system.
+In the decimal system, we use ten digits (0-9), and, depending on their position, we multiply them by corresponding powers of ten. For example, let's break down the number 1934:
+1934 = 1000 + 900 + 30 + 4
+1934 = 1×1000 + 9×100 + 3×10 + 4×1
+1934 = 1×10³ + 9×10² + 3×10¹ + 4×10⁰
+If we made a formula for a 4-digit number, it could look like this:
+a₃a₂a₁a₀ = a₃ × 10³ + a₂ × 10² + a₁ × 10¹ + a₀ × 10⁰
+The symbol "a" here represents a digit from 0 to 9. The index next to "a" denotes the digit's place (we count from 0, from right to left).
+Now, the binary system works similarly, but we only use two digits and multiply them by powers of two. So the formula would be following:
+a₃a₂a₁a₀ = a₃ × 2³ + a₂ × 2² + a₁ × 2¹ + a₀ × 2⁰
+In this system, we multiply two digits (0 and 1) by 2 to the power corresponding to its place in the number.
+For example, we would write "9" as "1001" because:
+1001 = 1 × 2³ + 0 × 2² + 0 × 2¹ + 1 × 2⁰
+= 8 + 0 + 0 + 1 = 9
+Analogically:
+"2" in binary is "10" because 1 × 2¹ + 0 × 2⁰ = 2
+"3" in binary is "11" because 1 × 2¹ + 1 × 2⁰ = 2 + 1 = 3
+"4" in binary is "100" because 1 × 2² + 0 × 2¹ + 0 × 2⁰ = 4
+How to use the binary addition calculator?
+To make the binary math calculator perform the addition of binary numbers, follow the steps below:
+Input the first number in the first field of the binary addition calculator. Remember to use only zeros and ones. You don't need to enter leading zeros, e.g., for "00001111," you can input just "1111".
+Enter the second binary number in the second row.
+The binary addition calculator will display the result in the third field.
+In advanced mode (at the bottom), you can make the binary addition calculator print the long addition of the binary numbers.
+What are the rules of binary addition?
+There are four basic binary addition rules:
+The above equations work like in the decimal system, only here you need to carry 1 when the sum exceeds 1 (in the decimal system, we do it when it exceeds 9).
+Binary sum: Adding binary numbers
+How to add binary numbers? You could always convert binary numbers to decimals, add them as usual, and restore the result to the binary form.
+The other way is to use the above binary addition rules and perform a long addition. Let's have a look at this binary sum:
+🔎
+Our long addition calculator can help understand the operation above.
+In the first column from the right, 1 + 1 gives us 2, so we need to carry 1 to the second column (1 placed in the second column equals two because
+1 × 2¹ = 2) and write down 0 in the first column. In the second column, 0 + 0 = 0, so we just write the 1 we carried over. In the third column from the right, 0 + 1 = 1. In the fourth column, we have 1 + 1, so again, we write 0 and carry 1. As there's nothing left to add, we write down "1" at the beginning of the result (to the left).
+Binary addition applications are present in many error correction and detection techniques, like the parity bit and the Hamming distance!
+FAQ
+What is binary addition?
+Binary addition is the operation of summing numbers in binary form. It works like a "normal" (decimal) addition, but the number can have only zeros and ones as digits, so if the sum exceeds 1, you must carry 1 to the next bit. For example, 101 + 101 = 1010.
+How to solve binary addition?
+To solve binary addition, perform long addition — place numbers vertically and add digits in columns going from right to left.
+If the sum in a column equals 2, carry 1 to the next column (to the left). If the sum is 1 or 0, write it down and go to the next column.
+Proceed this way until you sum all columns (including the carried numbers).
+How to detect an overflow in binary addition?
+Check if the sum of binary numbers makes sense. If the sum of two negative numbers is positive or the sum of two positive numbers is negative, something is wrong. This bug means that the sum overflowed — that is, the binary representation of the result can't fit in the allocated number of bits.
+Ideal egg boiling
+Long multiplication
+Sunbathing
+Width of a rectangle

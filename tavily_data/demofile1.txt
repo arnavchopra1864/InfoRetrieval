@@ -1,0 +1,34 @@
+Stack Exchange network consists of 183 Q&A communities including Stack Overflow, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
+current community
+your communities
+more stack exchange communities
+Mathematics Stack Exchange is a question and answer site for people studying math at any level and professionals in related fields. It only takes a minute to sign up.
+Teams
+Q&A for work
+Connect and share knowledge within a single location that is structured and easy to search.
+Prove that 1+1=2 [duplicate]
+Possible Duplicate:
+How do I convince someone that $1+1=2$ may not necessarily be true?
+I once read that some mathematicians provided a very length proof of $1+1=2$.
+Can you think of some way to extend mathematical rigor to present a long proof of that equation? I'm not asking for a proof, but rather for some outline what one would consider to make the derivation as long as possible.
+EDIT: It seems the proof I heard about is a standard reference given here multiple times :) I stated that the proof itself is less useful than an outline for me as I know only "physics level maths". Can someone provide a short outline what's going on in the proof? Some outline I can look up section by section in Wikipedia to at least get a feel of what could be needed to make such a proof?
+3 Answers
+3
+You are thinking of the Principia Mathematica, written by Alfred North Whitehead and Bertrand Russell. Here is a relevant excerpt:
+As you can see, it ends with "From this proposition it will follow, when arithmetical addition has been defined, that 1+1=2." The theorem above, $\ast54\cdot43$, is already a couple of hundred pages into the book (Wikipedia says 370 or so)
+I wrote a blog article a few years ago that discusses this in some detail. You may want to skip the stuff at the beginning about the historical context of Principia Mathematica. But the main point of the article is to explain the theorem above.
+The article explains the idiosyncratic and mostly obsolete notation that Principia Mathematica uses, and how the proof works.
+The theorem here
+is essentially that if $\alpha$ and $\beta$ are disjoint sets with exactly one element each, then their union has exactly two elements.
+This is
+established based on very slightly simpler theorems, for example that if $\alpha$ is the set that contains $x$ and nothing else, and $\beta$ is the set that contains $y$ and nothing else, then $\alpha \cup \beta$ contains two elements if and only if $x\ne y$.
+The main reason that it takes so long to get to $1+1=2$ is that Principia Mathematica starts from almost nothing, and works its way up in very tiny, incremental steps. The work of G. Peano shows that it's not hard to produce a useful set of axioms that can prove 1+1=2 much more easily than Whitehead and Russell do.
+The later theorem alluded to, that $1+1=2$, appears in section $\ast110$:
+I suspect you are referring
+to the Principia Mathematica. I direct you to a quotation from Wikipedia about how the proof doesn't appear until page 379.
+A proof is a finite sequence of formulas (see here), where each formula is either an axiom or follows from the previous ones by some inference rule. So, if you wish to make your proof very long, just repeat an appropriate axiom a very large number of times.
+Not the answer you're looking for? Browse other questions tagged abstract-algebra.
+Site design / logo © 2023 Stack Exchange Inc; user contributions licensed under CC BY-SA.
+rev 2023.12.15.2752
+Your privacy
+By clicking â€œAccept all cookiesâ€�, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.

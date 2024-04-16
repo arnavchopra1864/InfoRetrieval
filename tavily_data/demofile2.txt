@@ -1,0 +1,30 @@
+Proof that 1 + 1 = 1. Not 2!?!
+Here is a quick demonstration of what can go wrong when you violate the rules of mathematics.
+1. Let    and   .
+2. Now this means that   .
+3. If we multiply both sides by    we get   .
+4. If we then subtract    from both sides we would have   .
+5. We can then factorise both sides to get   .
+6. Dividing both sides by    would give us   .
+7. Substituting back the values of    and    would give us that   .
+8. So this "proves" that    not   .
+Except that in step 6, when we are dividing by   , we are in fact dividing by zero. This is a violation of the rules of mathematics and hence the reason why our conclusion is invalid.
+Why not try this demonstration with someone you know and see if they can spot the problem?
+CITE THIS AS:
+Ovens, Matthew. "Proof that 1 + 1 = 1. Not 2!?!" Retrieved from YourStatsGuru.
+First published Dec, 2011 | Last updated: 20 January 2018
+Share this:
+Like this:
+Related
+Post navigation
+Your email address will not be published. Required fields are marked *
+Comment *
+Name *
+Email *
+Website
+Notify me of follow-up comments by email.
+Notify me of new posts by email.
+Δ
+Matthew & Sanja Ovens EnterprisesA.B.N. 31 397 900 374E.I.N (US) 98-1035349
+StatsGuru® and the YourStatsGuru cloud logo design are registered trademarks of Matthew Ovens and may not be used without express written permission.
+All prices quoted on this website are in Australian Dollars ($AUD) and include GST
