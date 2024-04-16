@@ -16,9 +16,19 @@ const QueryPage = () => {
   };
 
   const handleSubmit = () => {
-    alert(`Submitting: ${inputValue}`);
+    // alert(inputValue);
     
     // send inputvalue to backend
+
+    var query_link = "http://localhost:5000/query?q=" + inputValue;
+    fetch(query_link)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('There was an error!', error);
+    });
 
   };
 
@@ -37,12 +47,11 @@ const QueryPage = () => {
         <button onClick={handleSubmit}>Submit</button>
       </div>
       <div className={`sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
-        {/* <button className="toggle-button" onClick={toggleSidebar}>
-          {isSidebarExpanded ? 'Collapse' : 'Expand'} style={buttonStyle}
-        </button> */}
-        {/* Sidebar content goes here */}
-        <p>Some sidebar content</p>
-      </div>
+    <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
+      {isSidebarExpanded ? 'Collapse' : 'Expand'}
+    </button>
+    <p>Some sidebar content</p>
+  </div>
     </div>
   );
 };
