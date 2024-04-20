@@ -8,24 +8,27 @@ import './App.css';
 
 function App() {
   return (
-    // <Router>
-    //   <div className="App">
-    //     <Header />
-    //     <main>
-    //       <Routes>
-    //         <Route path="/" exact>
-    //           {/* Your main page content */}
-    //         </Route>
-    //         <Route path="/login" exact component={LoginPage} />
-    //         {/* Define other routes here */}
-    //       </Routes>
-    //       <p>Welcome to Fact Flow! This is our landing page.</p>
-    //     </main>
-    //   </div>
-    // </Router>
-    <main>
-      <QueryPage />
-    </main>
+    <Router>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<p>Welcome to Fact Flow! This is our landing page.</p>}>
+              {/* Your main page content */}
+            </Route>
+            <Route path="/login" element={<LoginPage/>} />
+            <Route path="/query" element={<QueryPage/>} />
+          </Routes>
+          
+        </main>
+      </div>
+    </Router>
+    // <main>
+    //   <QueryPage />
+    // </main>
+    // <main>
+    //   <LoginPage />
+    // </main>
   );
 }
 

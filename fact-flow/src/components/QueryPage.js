@@ -1,6 +1,7 @@
 // QueryPage.js
 import React, {useState} from 'react';
-import './QueryPage.css'; // Make sure to create a CSS file with the same name
+import '../styles/QueryPage.css';
+import logo from "./logo.png";
 
 const QueryPage = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false); 
@@ -18,9 +19,16 @@ const QueryPage = () => {
 
   const handleSubmit = () => {
     // setIsSubmitted(true);
-    
-    var query_link = "http://localhost:5000/query?q=" + inputValue.replace(/['"]+/g, '');
-    alert(inputValue);
+    const hostname = "http://localhost:5000/query?q=";
+    var query_link = "";
+    if (inputValue.trim() === '') {
+      alert('Please enter a query');
+      query_link = hostname + "What is the meaning of life?";
+      // return;
+    } else {
+      query_link = hostname + inputValue.replace(/['"]+/g, '');
+      alert(inputValue);
+    }
     
     // send inputvalue to backend
     // send inputValue to backend without quotes
@@ -30,17 +38,23 @@ const QueryPage = () => {
       console.log(data);
       var result_doc = document.getElementById("result");
       var output = data.Response;
-
-      output += "\n\n References: \n";
+      var score = data["Reference 1: "
+    ].Score;
+      if (score >= 0.8) {
+        output += "\n\n References: \n";
       
-      Object.keys(data).forEach(key => {
-        if (key.startsWith('Reference')) { 
-          const nodeID = data[key]['Node ID']; 
-          output += "Node ID: " + nodeID + "\n";
-        }
-      });
+        Object.keys(data).forEach(key => {
+          if (key.startsWith('Reference')) {
+            console.log(key); 
+            const nodeID = data[key]['Node ID']; 
+            output += "Node ID: " + nodeID + "\n";
+          }
+        });
+        result_doc.innerText = output;
+      } else {
+        result_doc.innerText = "\n\n No relevant references found.";
+      }
 
-      result_doc.innerText = output;
     })
     .catch(error => {
       console.error('There was an error!', error);
@@ -51,23 +65,25 @@ const QueryPage = () => {
   return (
     <div className="container">
       <div className="content">
-        <img src='./logo.png' alt="Logo" className="logo"/>
+        <img src={logo} alt="Logo" className="logo"/>
 
         <input 
             type="text" 
             className="search-box" 
-            placeholder="Enter your query here"
+            placeholder="Ask FactFlow a question..."
             value={inputValue} // Set the input field value
             onChange={handleInputChange} // Update state on input change
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={handleSubmit}>--></button>
         <div className="result" id="result"></div>
       </div>
       <div className={`sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
-        <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
-          {isSidebarExpanded ? 'Collapse' : 'Expand'}
-        </button>
-      <p>Query Folders will display here</p>
+          <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
+            {isSidebarExpanded ? 'Collapse' : 'Expand'}
+          </button>
+          <div className="sidebar-content">
+            <p>Query Folders will display here</p>
+          </div>
       </div>
     </div>
   );

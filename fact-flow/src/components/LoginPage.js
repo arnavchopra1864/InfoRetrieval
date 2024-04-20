@@ -1,13 +1,19 @@
-// src/components/LoginPage.js
 import React from 'react';
 
-function LoginPage () {
+function LoginPage() {
   return (
     <div>
       <h1>Login Page</h1>
-        <p>Login with Google</p>
+      <form>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Log In</button>
+      </form>
+      <div>
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+      </div>
     </div>
   );
-};
+}
 
 export default LoginPage;
