@@ -1,34 +1,56 @@
-Stack Exchange network consists of 183 Q&A communities including Stack Overflow, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
-current community
-your communities
-more stack exchange communities
-Mathematics Stack Exchange is a question and answer site for people studying math at any level and professionals in related fields. It only takes a minute to sign up.
-Teams
-Q&A for work
-Connect and share knowledge within a single location that is structured and easy to search.
-Prove that 1+1=2 [duplicate]
-Possible Duplicate:
-How do I convince someone that $1+1=2$ may not necessarily be true?
-I once read that some mathematicians provided a very length proof of $1+1=2$.
-Can you think of some way to extend mathematical rigor to present a long proof of that equation? I'm not asking for a proof, but rather for some outline what one would consider to make the derivation as long as possible.
-EDIT: It seems the proof I heard about is a standard reference given here multiple times :) I stated that the proof itself is less useful than an outline for me as I know only "physics level maths". Can someone provide a short outline what's going on in the proof? Some outline I can look up section by section in Wikipedia to at least get a feel of what could be needed to make such a proof?
-3 Answers
-3
-You are thinking of the Principia Mathematica, written by Alfred North Whitehead and Bertrand Russell. Here is a relevant excerpt:
-As you can see, it ends with "From this proposition it will follow, when arithmetical addition has been defined, that 1+1=2." The theorem above, $\ast54\cdot43$, is already a couple of hundred pages into the book (Wikipedia says 370 or so)
-I wrote a blog article a few years ago that discusses this in some detail. You may want to skip the stuff at the beginning about the historical context of Principia Mathematica. But the main point of the article is to explain the theorem above.
-The article explains the idiosyncratic and mostly obsolete notation that Principia Mathematica uses, and how the proof works.
-The theorem here
-is essentially that if $\alpha$ and $\beta$ are disjoint sets with exactly one element each, then their union has exactly two elements.
-This is
-established based on very slightly simpler theorems, for example that if $\alpha$ is the set that contains $x$ and nothing else, and $\beta$ is the set that contains $y$ and nothing else, then $\alpha \cup \beta$ contains two elements if and only if $x\ne y$.
-The main reason that it takes so long to get to $1+1=2$ is that Principia Mathematica starts from almost nothing, and works its way up in very tiny, incremental steps. The work of G. Peano shows that it's not hard to produce a useful set of axioms that can prove 1+1=2 much more easily than Whitehead and Russell do.
-The later theorem alluded to, that $1+1=2$, appears in section $\ast110$:
-I suspect you are referring
-to the Principia Mathematica. I direct you to a quotation from Wikipedia about how the proof doesn't appear until page 379.
-A proof is a finite sequence of formulas (see here), where each formula is either an axiom or follows from the previous ones by some inference rule. So, if you wish to make your proof very long, just repeat an appropriate axiom a very large number of times.
-Not the answer you're looking for? Browse other questions tagged abstract-algebra.
-Site design / logo © 2023 Stack Exchange Inc; user contributions licensed under CC BY-SA.
-rev 2023.12.15.2752
-Your privacy
-By clicking â€œAccept all cookiesâ€�, you agree Stack Exchange can store cookies on your device and disclose information in accordance with our Cookie Policy.
+Search code, repositories, users, issues, pull requests...
+Provide feedback
+We read every piece of feedback, and take your input very seriously.
+Saved searches
+Use saved searches to filter your results more quickly
+To see all available qualifiers, see our documentation.
+Performance Issues
+Table of Contents
+Reporting a Performance Issue
+To report a performance issue please use the 'Report Issue' command available in the 'Help' menu. In the Issue Reporter window that shows up, set the issue type to 'Performance Issue'.
+The following sections describe how you can narrow down a performance issue.
+Visual Studio Code is consuming a lot of CPU
+High CPU consumption is often caused by an issue in an extension. VS Code is running multiple processes and extensions are executed by the Extension Host process.
+Find out whether an extension is causing the high CPU load. You can open the Process Explorer using Help>Open Process Explorer to open a new window with a continuously updating list of VS Code processes.
+Try to reproduce the issue with this window open, or take a snapshot of the processes by running code --status from the command line. For information on how to run code from the command line on OS X please see the setup documentation. When the process listing in the Process Explorer or the output of code --status shows that the extensionHost is consuming a high percentage of CPU (see below) then this is likely caused by an extension.
+Run with Extensions Disabled
+The first step is to try to reproduce the problem with all extensions disabled. You can disable the extensions either from the command line using the --disable-extensions command line argument, e.g., code --disable-extensions or from the ... menu in the Extensions Viewlet:
+If you cannot reproduce the issue when all extensions are disabled, then can you narrow down the extension by selectively disabling extensions? You can identify the extension which causes a performance issue by executing "F1 > Help: Start Extension Bisect". This will run binary search on your installed extensions by disabling some, reloading the window, and asking you whether the issue that you saw still occurs, until a single extension has been identified.
+Alternatively, you can manually disable extensions in the Extensions Viewlet and restart/reload.
+Once you found the extension, please file an issue against the extension. To file an issue against an extension open the Running Extensions editor by executing "F1 > Developer: Show Running Extensions" and use the Report Issue button or find the extension in the marketplace, and use the Issues link in the Resources section.
+Profile the Running Extensions
+You can create a CPU profile and share it in the issue with the extension author or us. To create a CPU profile:
+To analyze the performance yourself, you have two options:
+Collect Information about the running VS Code
+If you can reproduce the problem with extensions disabled, then use code --status from the command line.
+Notice: this command requires that VS Code is already running
+This command collects status about your running VS Code and the workspace you have opened. You can attach this information when reporting a performance issue.
+The output includes information about the environment, all running VS Code processes, and the counts of some typical files in the workspace.
+The Renderer/Window process consumes a lot of CPU
+Try to reproduce the problem on different folders; a folder with less files, a folder that is not under source control, or open a single file.
+Try to reproduce the issue in the VS Code Insider version. This will run our latest code and use a different setup (settings, extensions). You can install the insider version here https://code.visualstudio.com/insiders.
+Run VS Code when your settings are reset/empty. Open your settings, copy your customizations and then empty the JSON contents so that only {} is left.
+Run VS Code in verbose mode and check whether there is any suspicious output in the console or the developer tools. You start VS Code in verbose mode with code --verbose. Also, open the DevTools ("Help>Toggle Developer Tools") and open the console there.
+Very detailed information is captured in CPU profiles and that helps us best to narrow down on a slow-down. So, please create a CPU profile of the VS Code core (renderer process) and attach it to the issue. To create a profile:
+The Shared process consumes a lot of CPU
+Try to reproduce the problem on different folders; a folder with less files, or open a single file or open an empty window,
+Try to reproduce the issue in the VS Code Insider version. This will run our latest code and use a different setup (settings, extensions). You can install the insider version here https://code.visualstudio.com/insiders.
+Run VS Code when your settings are reset/empty. Open your settings, copy your customizations and then empty the JSON contents so that only {} is left.
+Run VS Code in verbose mode and check whether there is any suspicious output in the console or the developer tools. You start VS Code in verbose mode with code --verbose. Also, open the DevTools ("Help>Toggle Developer Tools") and open the console there.
+Very detailed information is captured in CPU profiles and that helps us best to narrow down on a slow-down. So, please create a CPU profile of the VS Code core (shared process) and attach it to the issue. To create a profile:
+Visual Studio Code is sluggish
+If VS Code is slugging when scrolling, moving mouse or typing, please create a performance profile. Do the following
+Visual Studio Code starts up slowly
+If VS Code is slow to start then please create a startup CPU profile. Do the following
+Read the Startup Timers
+When VS Code feels slow to start, you can check the startup timers. Hit F1 and select "Startup Performance." This will open an editor with all starting performance details
+Please share these numbers with us as they often allows us to understand what is slow.
+Want to contribute to this Wiki?
+Fork it and send a pull request.
+Toggle tagle of contents
+Pages 81
+Project Management
+Contributing
+Documentation
+Footer
+Footer navigation

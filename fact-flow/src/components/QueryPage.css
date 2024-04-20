@@ -37,15 +37,16 @@
   height: 100%;
   background-color: #f4f4f4;
   transition: width 0.5s;
-  width: 250px; /* Expanded width */
+  width: 1000px; /* Expanded width */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   padding: 10px;
 }
 
 .sidebar.collapsed {
-  width: 50px; /* Collapsed width */
+  width: 250px; /* Collapsed width */
 }
 
 .toggle-button {
