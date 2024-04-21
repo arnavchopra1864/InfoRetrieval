@@ -3,6 +3,8 @@ from tavily_main import FactFlow
 from firebase import firebase
 
 app = Flask(__name__)
+firebase = firebase.FirebaseApplication('https://fact-flow-ai-default-rtdb.firebaseio.com/', None)
+
 
 @app.route('/query')
 def print_query():
