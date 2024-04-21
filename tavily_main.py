@@ -56,7 +56,7 @@ class FactFlow:
         Settings.llm = gpt4
 
         Settings.embed_model = HuggingFaceEmbedding(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="BAAI/bge-base-en-v1.5"
         )
 
         documents = SimpleDirectoryReader("tavily_data").load_data()

@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from tavily_main import FactFlow
+from firebase import firebase
 
 app = Flask(__name__)
 
