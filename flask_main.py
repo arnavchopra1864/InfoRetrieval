@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
 from tavily_main import FactFlow
 from flask_cors import CORS
+from firebase import firebase
 
+
+
+firebase = firebase.FirebaseApplication('https://fact-flow-ai-default-rtdb.firebaseio.com/', None)
 app = Flask(__name__)
 CORS(app)
 
