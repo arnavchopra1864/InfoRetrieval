@@ -19,6 +19,7 @@ from llama_index.core import ( # type: ignore
 from llama_index.llms.openai import OpenAI # type: ignore
 from typing import List, Optional
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.core.chat_engine import CondenseQuestionChatEngine
 
 
 from llama_index.core.response.notebook_utils import display_source_node # type: ignore
@@ -56,7 +57,7 @@ class FactFlow:
         Settings.llm = gpt4
 
         Settings.embed_model = HuggingFaceEmbedding(
-        model_name="BAAI/bge-base-en-v1.5"
+        model_name="BAAI/bge-small-en-v1.5"
         )
 
         documents = SimpleDirectoryReader("tavily_data").load_data()
@@ -75,8 +76,10 @@ class FactFlow:
                                                        "Score":n.score}
             else:
                 print("REMOVED CHUNK: ", n)
-        query_engine_base = RetrieverQueryEngine.from_args(base_retriever)
-        response = query_engine_base.query(query)
+        query_engine = RetrieverQueryEngine.from_args(base_retriever, streaming=True) 
+        global chat_engine 
+        chat_engine = CondenseQuestionChatEngine.from_defaults(query_engine=query_engine)
+        response = chat_engine.chat(query)
 
         # print(str(response))
         ans['Response'] = str(response)
