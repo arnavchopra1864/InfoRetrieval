@@ -26,7 +26,7 @@ from llama_index.core.query_engine import RetrieverQueryEngine # type: ignore
 from llama_index.core import Settings # type: ignore
 
 query = "What are the effects of parental involvement on academic performance?"
-#query = "How can a father and mother influence a child's performance and grades in school?"
+query = "How can a father and mother influence a child's performance and grades in school?"
 
 class FactFlow:
     def __init__(self, query):
