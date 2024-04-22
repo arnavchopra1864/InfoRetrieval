@@ -1,330 +1,61 @@
-Contents
-Laplace transform
-In mathematics, the Laplace transform, named after its discoverer Pierre-Simon Laplace (/ləˈplɑːs/), is an integral transform that converts a function of a real variable (usually
-t
-{\displaystyle t}
-, in the time domain) to a function of a complex variable
-s
-{\displaystyle s}
-(in the complex-valued frequency domain, also known as s-domain, or s-plane).
-The transform is useful for converting differentiation and integration in the time domain into much easier multiplication and division in the Laplace domain (analogous to how logarithms are useful for simplifying multiplication and division into addition and subtraction). This gives the transform many applications in science and engineering, mostly as a tool for solving linear differential equations[1] and dynamical systems by simplifying ordinary differential equations and integral equations into algebraic polynomial equations, and by simplifying convolution into multiplication.[2][3] Once solved, the inverse Laplace transform reverts to the original domain.
-The Laplace transform is defined (for suitable functions f) by the integral:
-History[edit]
-The Laplace transform is named after mathematician and astronomer Pierre-Simon, Marquis de Laplace, who used a similar transform in his work on probability theory.[4] Laplace wrote extensively about the use of generating functions
-(1814), and the integral form of the Laplace transform evolved naturally as a result.[5]
-Laplace's use of generating functions was similar to what is now known as the z-transform, and he gave little attention to the continuous variable case which was discussed by Niels Henrik Abel.[6] The theory was further developed in the 19th and early 20th centuries by Mathias Lerch,[7] Oliver Heaviside,[8] and Thomas Bromwich.[9]
-The current widespread use of the transform (mainly in engineering) came about during and soon after World War II,[10] replacing the earlier Heaviside operational calculus. The advantages of the Laplace transform had been emphasized by Gustav Doetsch,[11] to whom the name Laplace transform is apparently due.
-From 1744, Leonhard Euler investigated integrals of the form
-These types of integrals seem first to have attracted Laplace's attention in 1782, where he was following in the spirit of Euler in using the integrals themselves as solutions of equations.[15] However, in 1785, Laplace took the critical step forward when, rather than simply looking for a solution in the form of an integral, he started to apply the transforms in the sense that was later to become popular. He used an integral of the form
-Laplace also recognised that Joseph Fourier's method of Fourier series for solving the diffusion equation could only apply to a limited region of space, because those solutions were periodic. In 1809, Laplace applied his transform to find solutions that diffused indefinitely in space.[17]
-Formal definition[edit]
-The Laplace transform of a function f(t), defined for all real numbers t ≥ 0, is the function F(s), which is a unilateral transform defined by
-(Eq.1)
-where s is a complex frequency domain parameter
-An alternate notation for the Laplace transform is
-L
-{
-f
-}
-{\displaystyle {\mathcal {L}}\{f\}}
-instead of F.[3]
-The meaning of the integral depends on types of functions of interest.
-A necessary condition for existence of the integral is that f must be locally integrable on [0, ∞). For locally integrable functions that decay at infinity or are of exponential type (
-|
-f
-(
-t
-)
-|
-≤
-A
-e
-B
-|
-t
-|
-{\displaystyle |f(t)|\leq Ae^{B|t|}}
-), the integral can be understood to be a (proper) Lebesgue integral. However, for many applications it is necessary to regard it as a conditionally convergent improper integral at ∞.
-Still more generally, the integral can be understood in a weak sense, and this is dealt with below.
-One can define the Laplace transform of a finite Borel measure μ by the Lebesgue integral[18]
-An important special case is where μ is a probability measure, for example, the Dirac delta function. In operational calculus, the Laplace transform of a measure is often treated as though the measure came from a probability density function f.
-In that case, to avoid potential confusion, one often writes
-This limit emphasizes that any point mass located at 0 is entirely captured by the Laplace transform. Although with the Lebesgue integral, it is not necessary to take such a limit, it does appear more naturally in connection with the Laplace–Stieltjes transform.
-Bilateral Laplace transform[edit]
-When one says "the Laplace transform" without qualification, the unilateral or one-sided transform is usually intended. The Laplace transform can be alternatively defined as the bilateral Laplace transform, or two-sided Laplace transform, by extending the limits of integration to be the entire real axis. If that is done, the common unilateral transform simply becomes a special case of the bilateral transform, where the definition of the function being transformed is multiplied by the Heaviside step function.
-The bilateral Laplace transform F(s) is defined as follows:
-(Eq.2)
-An alternate notation for the bilateral Laplace transform is
-B
-{
-f
-}
-{\displaystyle {\mathcal {B}}\{f\}}
-, instead of F.
-Inverse Laplace transform[edit]
-Two integrable functions have the same Laplace transform only if they differ on a set of Lebesgue measure zero. This means that, on the range of the transform, there is an inverse transform. In fact, besides integrable functions, the Laplace transform is a one-to-one mapping from one function space into another in many other function spaces as well, although there is usually no easy characterization of the range.
-Typical function spaces in which this is true include the spaces of bounded continuous functions, the space L∞(0, ∞), or more generally tempered distributions on (0, ∞). The Laplace transform is also defined and injective for suitable spaces of tempered distributions.
-In these cases, the image of the Laplace transform lives in a space of analytic functions in the region of convergence.
-The inverse Laplace transform is given by the following complex integral, which is known by various names (the Bromwich integral, the Fourier–Mellin integral, and Mellin's inverse formula):
-(Eq.3)
-where γ is a real number so that the contour path of integration is in the region of convergence of F(s). In most applications, the contour can be closed, allowing the use of the residue theorem. An alternative formula for the inverse Laplace transform is given by Post's inversion formula. The limit here is interpreted in the weak-* topology.
-In practice, it is typically more convenient to decompose a Laplace transform into known transforms of functions obtained from a table, and construct the inverse by inspection.
-Probability theory[edit]
-In pure and applied probability, the Laplace transform is defined as an expected value. If X is a random variable with probability density function f, then the Laplace transform of f is given by the expectation
-By convention, this is referred to as the Laplace transform of the random variable X itself. Here, replacing s by −t gives the moment generating function of X. The Laplace transform has applications throughout probability theory, including first passage times of stochastic processes such as Markov chains, and renewal theory.
-Of particular use is the ability to recover the cumulative distribution function of a continuous random variable X, by means of the Laplace transform as follows:[19]
-Algebraic construction[edit]
-The Laplace transform can be alternatively defined in a purely algebraic manner by applying a field of fractions construction to the convolution ring of functions on the positive half-line.
-The resulting space of abstract operators is exactly equivalent to Laplace space, but in this construction the forward and reverse transforms never need to be explicitly defined (avoiding the related difficulties with proving convergence).[20]
-Region of convergence[edit]
-If f is a locally integrable function (or more generally a Borel measure locally of bounded variation), then the Laplace transform F(s) of f converges provided that the limit
-The Laplace transform converges absolutely if the integral
-The set of values for which F(s) converges absolutely is either of the form Re(s) > a or Re(s) ≥ a, where a is an extended real constant with −∞ ≤ a ≤ ∞ (a consequence of the dominated convergence theorem). The constant a is known as the abscissa of absolute convergence, and depends on the growth behavior of f(t).[21] Analogously, the two-sided transform converges absolutely in a strip of the form
-a < Re(s) < b, and possibly including the lines Re(s) = a or Re(s) = b.[22] The subset of values of s for which the Laplace transform converges absolutely is called the region of absolute convergence, or the domain of absolute convergence.
-In the two-sided case, it is sometimes called the strip of absolute convergence. The Laplace transform is analytic in the region of absolute convergence: this is a consequence of Fubini's theorem and Morera's theorem.
-Similarly, the set of values for which F(s) converges (conditionally or absolutely) is known as the region of conditional convergence, or simply the region of convergence (ROC). If the Laplace transform converges (conditionally) at s = s0, then it automatically converges for all s with Re(s) > Re(s0). Therefore, the region of convergence is a half-plane of the form Re(s) > a, possibly including some points of the boundary line Re(s) = a.
-In the region of convergence Re(s) > Re(s0), the Laplace transform of f can be expressed by integrating by parts as the integral
-That is, F(s) can effectively be expressed, in the region of convergence, as the absolutely convergent Laplace transform of some other function.
-In particular, it is analytic.
-There are several Paley–Wiener theorems concerning the relationship between the decay properties of f, and the properties of the Laplace transform within the region of convergence.
-In engineering applications, a function corresponding to a linear time-invariant (LTI) system is stable if every bounded input produces a bounded output. This is equivalent to the absolute convergence of the Laplace transform of the impulse response function in the region Re(s) ≥ 0. As a result, LTI systems are stable, provided that the poles of the Laplace transform of the impulse response function have negative real part.
-This ROC is used in knowing about the causality and stability of a system.
-Properties and theorems[edit]
-The Laplace transform's key property is that it is converts differentiation and integration in the time domain into multiplication and division s in the Laplace domain. Thus, the Laplace variable s is also known as operator variable in the Laplace domain: either the derivative operator or (for s−1) the integration operator.
-Given the functions f(t) and g(t), and their respective Laplace transforms F(s) and G(s),
-the following table is a list of properties of unilateral Laplace transform:[23]
-f
-(
-t
-)
-u
-(
-t
-−
-a
-)
-{\displaystyle f(t)u(t-a)\ }
-e
-−
-a
-s
-L
-{
-f
-(
-t
-+
-a
-)
-}
-{\displaystyle e^{-as}{\mathcal {L}}\{f(t+a)\}}
-f
-P
-(
-t
-)
-=
-∑
-n
-=
-0
-∞
-(
-−
-1
-)
-n
-f
-(
-t
-−
-T
-n
-)
-{\displaystyle f_{P}(t)=\sum _{n=0}^{\infty }(-1)^{n}f(t-Tn)}
-F
-P
-(
-s
-)
-=
-1
-1
-+
-e
-−
-T
-s
-F
-(
-s
-)
-{\displaystyle F_{P}(s)={\frac {1}{1+e^{-Ts}}}F(s)}
-Relation to power series[edit]
-The Laplace transform can be viewed as a continuous analogue of a power series.[25] If
-a(n) is a discrete function of a positive integer n, then the power series associated to a(n) is the series
-Changing the base of the power from x to e gives
-For this to converge for, say, all bounded functions f, it is necessary to require that ln x < 0. Making the substitution −s = ln x gives just the Laplace transform:
-In other words, the Laplace transform is a continuous analog of a power series, in which the discrete parameter n is replaced by the continuous parameter t, and x is replaced by e−s.
-Relation to moments[edit]
-The quantities
-are the moments of the function f.
-If the first n moments of f converge absolutely, then by repeated differentiation under the integral,
-Computation of the Laplace transform of a function's derivative[edit]
-It is often convenient to use the differentiation property of the Laplace transform to find the transform of a function's derivative. This can be derived from the basic expression for a Laplace transform as follows:
-The general result
-Evaluating integrals over the positive real axis[edit]
-A useful property of the Laplace transform is the following:
-By plugging in
-(
-L
-f
-)
-(
-x
-)
-=
-∫
-0
-∞
-f
-(
-s
-)
-e
-−
-s
-x
-d
-s
-{\displaystyle ({\mathcal {L}}f)(x)=\int _{0}^{\infty }f(s)e^{-sx}\,ds}
-the left-hand side turns into:
-This method can be used to compute integrals that would otherwise be difficult to compute using elementary methods of real calculus. For example,
-Relationship to other transforms[edit]
-Laplace–Stieltjes transform[edit]
-The (unilateral) Laplace–Stieltjes transform of a function g : ℝ → ℝ is defined by the Lebesgue–Stieltjes integral
-The function g is assumed to be of bounded variation.
-If g is the antiderivative of f:
-then the Laplace–Stieltjes transform of g and the Laplace transform of f coincide. In general, the Laplace–Stieltjes transform is the Laplace transform of the Stieltjes measure associated to g. So in practice, the only distinction between the two transforms is that the Laplace transform is thought of as operating on the density function of the measure, whereas the Laplace–Stieltjes transform is thought of as operating on its cumulative distribution function.[26]
-Fourier transform[edit]
-The Fourier transform is a special case (under certain conditions) of the bilateral Laplace transform. While the Fourier transform of a function is a complex function of a real variable (frequency), the Laplace transform of a function is a complex function of a complex variable. The Laplace transform is usually restricted to transformation of functions of t with t ≥ 0. A consequence of this restriction is that the Laplace transform of a function is a holomorphic function of the variable s. Unlike the Fourier transform, the Laplace transform of a distribution is generally a well-behaved function. Techniques of complex variables can also be used to directly study Laplace transforms. As a holomorphic function, the Laplace transform has a power series representation. This power series expresses a function as a linear superposition of moments of the function. This perspective has applications in probability theory.
-The Fourier transform is equivalent to evaluating the bilateral Laplace transform with imaginary argument s = iω or s = 2πiξ[27] when the condition explained below is fulfilled,
-This convention of the Fourier transform (
-f
-^
-3
-(
-ω
-)
-{\displaystyle {\hat {f}}_{3}(\omega )}
-in Fourier transform § Other conventions) requires a factor of 1/2π on the inverse Fourier transform. This relationship between the Laplace and Fourier transforms is often used to determine the frequency spectrum of a signal or dynamical system.
-The above relation is valid as stated if and only if the region of convergence (ROC) of F(s) contains the imaginary axis, σ = 0.
-For example, the function f(t) = cos(ω0t) has a Laplace transform F(s) =
-s/(s2 + ω02) whose ROC is Re(s) > 0. As s = iω0 is a pole of
-F(s), substituting s = iω in F(s) does not yield the Fourier transform of f(t)u(t), which contains terms proportional to the Dirac delta functions δ(ω ± ω0).
-However, a relation of the form
-Mellin transform[edit]
-The Mellin transform and its inverse are related to the two-sided Laplace transform by a simple change of variables.
-If in the Mellin transform
-Z-transform[edit]
-The unilateral or one-sided Z-transform is simply the Laplace transform of an ideally sampled signal with the substitution of
-Let
-The Laplace transform of the sampled signal xq(t)
-is
-This is the precise definition of the unilateral Z-transform of the discrete function x[n]
-Comparing the last two equations, we find the relationship between the unilateral Z-transform and the Laplace transform of the sampled signal,
-The similarity between the Z- and Laplace transforms is expanded upon in the theory of time scale calculus.
-Borel transform[edit]
-The integral form of the Borel transform
-Fundamental relationships[edit]
-Since an ordinary Laplace transform can be written as a special case of a two-sided transform, and since the two-sided transform can be written as the sum of two one-sided transforms, the theory of the Laplace-, Fourier-, Mellin-, and Z-transforms are at bottom the same subject. However, a different point of view and different characteristic problems are associated with each of these four major integral transforms.
-Table of selected Laplace transforms[edit]
-The following table provides Laplace transforms for many common functions of a single variable.[28][29] For definitions and explanations, see the Explanatory Notes at the end of the table.
-Because the Laplace transform is a linear operator,
-Using this linearity, and various trigonometric, hyperbolic, and complex number (etc.) properties and/or identities, some Laplace transforms can be obtained from others more quickly than by using the definition directly.
-The unilateral Laplace transform takes as input a function whose time domain is the non-negative reals, which is why all of the time domain functions in the table below are multiples of the Heaviside step function, u(t).
-The entries of the table that involve a time delay τ are required to be causal (meaning that τ > 0).
-A causal system is a system where the impulse response h(t) is zero for all time t prior to t = 0. In general, the region of convergence for causal systems is not the same as that of anticausal systems.
-s-domain equivalent circuits and impedances[edit]
-The Laplace transform is often used in circuit analysis, and simple conversions to the s-domain of circuit elements can be made. Circuit elements can be transformed into impedances, very similar to phasor impedances.
-Here is a summary of equivalents:
-Note that the resistor is exactly the same in the time domain and the s-domain. The sources are put in if there are initial conditions on the circuit elements. For example, if a capacitor has an initial voltage across it, or if the inductor has an initial current through it, the sources inserted in the s-domain account for that.
-The equivalents for current and voltage sources are simply derived from the transformations in the table above.
-Examples and applications[edit]
-The Laplace transform is used frequently in engineering and physics; the output of a linear time-invariant system can be calculated by convolving its unit impulse response with the input signal. Performing this calculation in Laplace space turns the convolution into a multiplication; the latter being easier to solve because of its algebraic form. For more information, see control theory. The Laplace transform is invertible on a large class of functions.
-Given a simple mathematical or functional description of an input or output to a system, the Laplace transform provides an alternative functional description that often simplifies the process of analyzing the behavior of the system, or in synthesizing a new system based on a set of specifications.[35]
-The Laplace transform can also be used to solve differential equations and is used extensively in mechanical engineering and electrical engineering.
-The Laplace transform reduces a linear differential equation to an algebraic equation, which can then be solved by the formal rules of algebra.
-The original differential equation can then be solved by applying the inverse Laplace transform. English electrical engineer Oliver Heaviside first proposed a similar scheme, although without using the Laplace transform; and the resulting operational calculus is credited as the Heaviside calculus.
-Evaluating improper integrals[edit]
-Let
-L
-{
-f
-(
-t
-)
-}
-=
-F
-(
-s
-)
-{\displaystyle {\mathcal {L}}\left\{f(t)\right\}=F(s)}
-. Then (see the table above)
-From which one gets:
-In the limit
-s
-→
-0
-{\displaystyle s\rightarrow 0}
-, one gets
-The validity of this identity can be proved by other means. It is an example of a Frullani integral.
-Another example is Dirichlet integral.
-Complex impedance of a capacitor[edit]
-In the theory of electrical circuits, the current flow in a capacitor is proportional to the capacitance and rate of change in the electrical potential (with equations as for the SI unit system). Symbolically, this is expressed by the differential equation
-Taking the Laplace transform of this equation, we obtain
-Solving for V(s) we have
-The definition of the complex impedance Z (in ohms) is the ratio of the complex voltage V divided by the complex current I while holding the initial state V0 at zero:
-Using this definition and the previous equation, we find:
-Impulse response[edit]
-Consider a linear time-invariant system with transfer function
-The impulse response is simply the inverse Laplace transform of this transfer function:
-To evaluate this inverse transform, we begin by expanding H(s) using the method of partial fraction expansion,
-The unknown constants P and R are the residues located at the corresponding poles of the transfer function. Each residue represents the relative contribution of that singularity to the transfer function's overall shape.
-By the residue theorem, the inverse Laplace transform depends only upon the poles and their residues. To find the residue P, we multiply both sides of the equation by s + α to get
-Then by letting s = −α, the contribution from R vanishes and all that is left is
-Similarly, the residue R is given by
-Note that
-Finally, using the linearity property and the known transform for exponential decay (see Item #3 in the Table of Laplace Transforms, above), we can take the inverse Laplace transform of H(s) to obtain
-The same result can be achieved using the convolution property as if the system is a series of filters with transfer functions 1/(s + α) and 1/(s + β). That is, the inverse of
-Phase delay[edit]
-Starting with the Laplace transform,
-We are now able to take the inverse Laplace transform of our terms:
-This is just the sine of the sum of the arguments, yielding:
-We can apply similar logic to find that
-Statistical mechanics[edit]
-In statistical mechanics, the Laplace transform of the density of states
-g
-(
-E
-)
-{\displaystyle g(E)}
-defines the partition function.[36] That is, the canonical partition function
-Z
-(
-β
-)
-{\displaystyle Z(\beta )}
-is given by
-Spatial (not time) structure from astronomical spectrum[edit]
-The wide and general applicability of the Laplace transform and its inverse is illustrated by an application in astronomy which provides some information on the spatial distribution of matter of an astronomical source of radiofrequency thermal radiation too distant to resolve as more than a point, given its flux density spectrum, rather than relating the time domain with the spectrum (frequency domain).
-Assuming certain properties of the object, e.g. spherical shape and constant temperature, calculations based on carrying out an inverse Laplace transformation on the spectrum of the object can produce the only possible model of the distribution of matter in it (density as a function of distance from the center) consistent with the spectrum.[37] When independent information on the structure of an object is available, the inverse Laplace transform method has been found to be in good agreement.
-Gallery[edit]
-See also[edit]
-Notes[edit]
-References[edit]
-Modern[edit]
-Historical[edit]
-Further reading[edit]
-External links[edit]
+Search
+selected template will load here
+Error
+This action is not available.
+8.8: Strength of Covalent Bonds
+In proposing his theory that octets can be completed by two atoms sharing electron pairs, Lewis provided scientists with the first description of covalent bonding. In this section, we expand on this and describe some of the properties of covalent bonds. The stability of a molecule is a function of the strength of the covalent bonds holding the atoms together.
+The Relationship between Bond Order and Bond Energy
+Triple bonds between like atoms are shorter than double bonds, and because more energy is required to completely break all three bonds than to completely break two, a triple bond is also stronger than a double bond. Similarly, double bonds between like atoms are stronger and shorter than single bonds. Bonds of the same order between different atoms show a wide range of bond energies, however. Table \(\PageIndex{1}\) lists the average values for some commonly encountered bonds. Although the values shown vary widely, we can observe four trends:
+Bonds between hydrogen and atoms in a given column in the periodic table are weaker down the column; bonds between like atoms usually become weaker down a column.
+Bond strengths increase as bond order increases, while bond distances decrease.
+The Relationship between Molecular Structure and Bond Energy
+Bond energy is defined as the energy required to break a particular bond in a molecule in the gas phase. Its value depends on not only the identity of the bonded atoms but also their environment. Thus the bond energy of a C–H single bond is not the same in all organic compounds. For example, the energy required to break a C–H bond in methane varies by as much as 25% depending on how many other bonds in the molecule have already been broken (Table \(\PageIndex{2}\)); that is, the C–H bond energy depends on its molecular environment. Except for diatomic molecules, the bond energies listed in Table \(\PageIndex{1}\) are average values for all bonds of a given type in a range of molecules. Even so, they are not likely to differ from the actual value of a given bond by more than about 10%.
+We can estimate the enthalpy change for a chemical reaction by adding together the average energies of the bonds broken in the reactants and the average energies of the bonds formed in the products and then calculating the difference between the two. If the bonds formed in the products are stronger than those broken in the reactants, then energy will be released in the reaction (\(ΔH_{rxn} < 0\)):
+\[ ΔH_{rxn} \approx \sum{\text{(bond energies of bonds broken)}}−\sum{\text{(bond energies of bonds formed)}} \label{\(\PageIndex{1}\)} \]
+The ≈ sign is used because we are adding together average bond energies; hence this approach does not give exact values for ΔHrxn.
+Let’s consider the reaction of 1 mol of n-heptane (C7H16) with oxygen gas to give carbon dioxide and water. This is one reaction that occurs during the combustion of gasoline:
+\[\ce{CH3(CH2)5CH3(l) + 11 O2(g) \rightarrow 7 CO2(g) + 8 H2O(g)} \label{\(\PageIndex{2}\)} \]
+In this reaction, 6 C–C bonds, 16 C–H bonds, and 11 O=O bonds are broken per mole of n-heptane, while 14 C=O bonds (two for each CO2) and 16 O–H bonds (two for each H2O) are formed. The energy changes can be tabulated as follows:
+The bonds in the products are stronger than the bonds in the reactants by about 4444 kJ/mol. This means that \(ΔH_{rxn}\) is approximately −4444 kJ/mol, and the reaction is highly exothermic (which is not too surprising for a combustion reaction).
+If we compare this approximation with the value obtained from measured \(ΔH_f^o\) values (\(ΔH_{rxn} = −481\;7 kJ/mol\)), we find a discrepancy of only about 8%, less than the 10% typically encountered. Chemists find this method useful for calculating approximate enthalpies of reaction for molecules whose actual \(ΔH^ο_f\) values are unknown. These approximations can be important for predicting whether a reaction is exothermic or endothermic—and to what degree.
+The compound
+RDX (Research Development Explosive) is a more powerful explosive than dynamite and is used by the military. When detonated, it produces gaseous products and heat according to the following reaction. Use the approximate bond energies in Table \(\PageIndex{1}\) to estimate the \(ΔH_{rxn}\) per mole of RDX.
+Given: chemical reaction, structure of reactant, and Table \(\PageIndex{1}\).
+Asked for: \(ΔH_{rxn}\) per mole
+We must add together the energies of the bonds in the reactants and compare that quantity with the sum of the energies of the bonds in the products. A nitro group (–NO2) can be viewed as having one N–O single bond and one N=O double bond, as follows:
+In fact, however, both N–O distances are usually the same because of the presence of two equivalent resonance structures.
+A We can organize our data by constructing a table:
+B From Equation \(\PageIndex{1}\), we have
+\[ \begin{align*} ΔH_{rxn} &\approx \sum{\text{(bond energies of bonds broken)}}−\sum{\text{(bond energies of bonds formed)}} \\[4pt] &= 7962 \; kJ/mol − 10,374 \; kJ/mol \\[4pt] &=−2412 \;kJ/mol \end{align*} \nonumber \]
+Thus this reaction is also highly exothermic
+The molecule HCFC-142b is a hydrochlorofluorocarbon that is used in place of chlorofluorocarbons (CFCs) such as the Freons and can be prepared by adding HCl to 1,1-difluoroethylene:
+Use tabulated bond energies to calculate \(ΔH_{rxn}\).
+−54 kJ/mol
+Bond Dissociation Energy
+Bond Dissociation Energy (also referred to as Bond energy) is the enthalpy change (\(\Delta H\), heat input) required to break a bond (in 1 mole of a gaseous substance)
+What about when we have a compound which is not a diatomic molecule? Consider the dissociation of methane:
+There are four equivalent C-H bonds, thus we can that the dissociation energy for a single C-H bond would be:
+\[ \begin{align*} D(C-H) &= (1660/4)\, kJ/mol \\[4pt] &= 415 \,kJ/mol \end{align*} \nonumber \]
+The bond energy for a given bond is influenced by the rest of the molecule. However, this is a relatively small effect (suggesting that bonding electrons are localized between the bonding atoms). Thus, the bond energy for most bonds varies little from the average bonding energy for that type of bond
+Bond energy is always a positive value - it takes energy to break a covalent bond (conversely energy is released during bond formation)
+The more stable a molecule (i.e. the stronger the bonds) the less likely the molecule is to undergo a chemical reaction.
+Bond Energies and the Enthalpy of Reactions
+If we know which bonds are broken and which bonds are made during a chemical reaction, we can estimate the enthalpy change of the reaction (\(\Delta H_{rxn}\)) even if we do not know the enthalpies of formation ((\(\Delta H_{f}^o\))for the reactants and products:
+\[\Delta H = \sum \text{bond energies of broken bonds} - \sum \text{bond energies of formed bonds} \label{8.8.3} \]
+What is the enthalpy of reaction between 1 mol of chlorine and 1 mol methane?
+We use Equation \ref{8.8.3}, which requires tabulating bonds broken and formed.
+\[\begin{align*} \Delta H &= [D(Cl-Cl) + D(C-H)] - [D(H-Cl)+D(C-Cl)] \\[4pt] &= [242 kJ + 413 kJ] - [431 kJ + 328 kJ] \\[4pt] &= -104 \,kJ \end{align*} \nonumber \]
+Thus, the reaction is exothermic (because the bonds in the products are stronger than the bonds in the reactants)
+What is the enthalpy of reaction for the combustion of 1 mol of ethane?
+We use Equation \ref{8.8.3}, which requires tabulating bonds broken and formed.
+\[\begin{align*} \Delta {H} &= [(6 \times 413) + (348) + (\frac{7}{2} \times 495)] - [(4 \times 799) + (6 \times 463)] \\[4pt] &= 4558 - 5974 \\[4pt] &= -1416\; kJ \end{align*} \nonumber \]
+Therefor the reaction is exothermic.
+As the number of bonds between two atoms increases, the bond grows shorter and stronger
+Summary
+Bond order is the number of electron pairs that hold two atoms together. Single bonds have a bond order of one, and multiple bonds with bond orders of two (a double bond) and three (a triple bond) are quite common. In closely related compounds with bonds between the same kinds of atoms, the bond with the highest bond order is both the shortest and the strongest. In bonds with the same bond order between different atoms, trends are observed that, with few exceptions, result in the strongest single bonds being formed between the smallest atoms. Tabulated values of average bond energies can be used to calculate the enthalpy change of many chemical reactions. If the bonds in the products are stronger than those in the reactants, the reaction is exothermic and vice versa.
+The breakage and formation of bonds is similar to a relationship: you can either get married or divorced and it is more favorable to be married.
+8.8: Strength of Covalent Bonds is shared under a CC BY-NC-SA
+3.0
+license and was authored, remixed, and/or curated by LibreTexts.
+Recommended articles
+The LibreTexts libraries are Powered by NICE CXone Expert and are supported by the Department of Education Open Textbook Pilot Project, the UC Davis Office of the Provost, the UC Davis Library, the California State University Affordable Learning Solutions Program, and Merlot. We also acknowledge previous National Science Foundation support under grant numbers 1246120, 1525057, and 1413739. Legal. Accessibility Statement For more information contact us at info@libretexts.org.

@@ -63,6 +63,7 @@ class FactFlow:
 
         # HF_TOKEN: Optional[str] = os.getenv("HUGGING_FACE_TOKEN")
         gpt4 = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
+        print(os.getenv('OPENAI_API_KEY'))
         query = self.user_query
 
         base_retriever = index.as_retriever(similarity_top_k=5)

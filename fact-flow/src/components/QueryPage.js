@@ -5,41 +5,40 @@ import logo from "./logo.png";
 
 const QueryPage = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false); 
+  const [inputValue, setInputValue] = useState('');
 
   const toggleSidebar = () => {
     setIsSidebarExpanded(!isSidebarExpanded); // Toggle the sidebar state
   };
 
-  const [inputValue, setInputValue] = useState('');
-  // const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = () => {
-    // setIsSubmitted(true);
     const hostname = "http://localhost:5000/query?q=";
     var query_link = "";
+    var result_doc = document.getElementById("result");
+
     if (inputValue.trim() === '') {
-      alert('Please enter a query');
-      query_link = hostname + "What is the meaning of life?";
-      // return;
+      result_doc.innerText = "Please enter a query";
+      return;
     } else {
       query_link = hostname + inputValue.replace(/['"]+/g, '');
-      alert(inputValue);
     }
     
-    // send inputvalue to backend
-    // send inputValue to backend without quotes
+    result_doc.innerText = "Loading...";
+
     fetch(query_link)
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      var result_doc = document.getElementById("result");
       var output = data.Response;
+      // FIX THIS LINE AFTER BACKEND IS FIXED
       var score = data["Reference 1: "
     ].Score;
+
       if (score >= 0.8) {
         output += "\n\n References: \n";
       
@@ -57,6 +56,7 @@ const QueryPage = () => {
 
     })
     .catch(error => {
+      result_doc.innerText = "\n\n There was an error!";
       console.error('There was an error!', error);
     });
 
