@@ -1,85 +1,33 @@
-Laplace Transform
-Laplace transform is named in honour of the great French mathematician, Pierre Simon De Laplace (1749-1827). Like all transforms, the Laplace transform changes one signal into another according to some fixed set of rules or equations. The best way to convert differential equations into algebraic equations is the use of Laplace transformation.
-Laplace transformation plays a major role in control system engineering. To analyze the control system, Laplace transforms of different functions have to be carried out. Both the properties of the Laplace transform and the inverse Laplace transformation are used in analyzing the dynamic control system. In this article, we will discuss in detail the definition of Laplace transform, its formula, properties, Laplace transform table and its applications in a detailed way.
-Table of Contents:
-What is the Laplace Transform?
-A function is said to be a piecewise continuous function if it has a finite number of breaks and it does not blow up to infinity anywhere. Let us assume that the function f(t) is a piecewise continuous function, then f(t) is defined using the Laplace transform. The Laplace transform of a function is represented by L{f(t)} or F(s). Laplace transform helps to solve the differential equations, where it reduces the differential equation into an algebraic problem.
-Laplace Transform Formula
-The Laplace transform of f(t), that is denoted by L{f(t)} or F(s) is defined by the Laplace transform formula:
-whenever the improper integral converges.
-Standard notation: Where the notation is clear, we will use an uppercase letter to indicate the Laplace transform, e.g, L(f; s) = F(s).
-The Laplace transform we defined is sometimes called the one-sided Laplace transform. There is a two-sided version where the integral goes from −∞ to ∞.
-Properties of Laplace Transform
-Some of the Laplace transformation properties are:
-If f1 (t) ⟷ F1 (s) and [note: ⟷ implies Laplace Transform]
-f2 (t) ⟷ F2 (s), then
-Laplace Transform Table
-The following Laplace transform table helps to solve the differential equations for different functions:
-Laplace Transform of Differential Equation
-The Laplace transform is a well established mathematical technique for solving a differential equation. Many mathematical problems are solved using transformations. The idea is to transform the problem into another problem that is easier to solve. On the other side, the inverse transform is helpful to calculate the solution to the given problem.
-For better understanding, let us solve a first-order differential equation with the help of Laplace transformation,
-Consider y’- 2y = e3x and y(0) = -5. Find the value of L(y).
-First step of the equation can be solved with the help of the linearity equation:
-L(y’ – 2y] = L(e3x)
-L(y’) – L(2y) = 1/(s-3)
-(because L(eax) = 1/(s-a))
-L(y’) – 2s(y) = 1/(s-3)
-sL(y) – y(0) – 2L(y) = 1/(s-3)
-(Using Linearity property of the Laplace transform)
-L(y)(s-2) + 5 = 1/(s-3) (Use value of y(0) ie -5 (given))
-L(y)(s-2) = 1/(s-3) – 5
-L(y) = (-5s+16)/(s-2)(s-3) …..(1)
-here (-5s+16)/(s-2)(s-3) can be written as -6/s-2 + 1/(s-3) using partial fraction method
-(1) implies L(y) = -6/(s-2) + 1/(s-3)
-L(y) = -6e2x + e3x
-Step Functions
-The step function is often called the Heaviside function, and it is defined as follows:
-The step function can take the values of 0 or 1. It is like an on and off switch. The notations that represent the Heaviside functions are uc(t) or u(t-c) or H(t-c)
-Bilateral Laplace Transform
-The Laplace transform can also be defined as bilateral Laplace transform. This is also known as two-sided Laplace transform, which can be performed by extending the limits of integration to be the entire real axis. Hence, the common unilateral Laplace transform becomes a special case of Bilateral Laplace transform, where the function definition is transformed is multiplied by the Heaviside step function.
-The bilateral Laplace transform is defined as:
-The other way to represent the bilateral Laplace transform is B{F}, instead of F.
-Inverse Laplace Transform
-In the inverse Laplace transform, we are provided with the transform F(s) and asked to find what function we have initially. The inverse transform of the function F(s) is given by:
-f(t) = L-1{F(s)}
-For example, for the two Laplace transform, say F(s) and G(s), the inverse Laplace transform is defined by:
-L-1{aF(s)+bG(s)}= a L-1{F(s)}+bL-1 {G(s)}
-Where a and b are constants.
-In this case, we can take the inverse transform for the individual transforms, and add their constant values in their respective places, and perform the operation to get the result.
-Also, check:
-Convolution Integrals
-If the functions f(t) and g(t) are the piecewise continuous functions on the interval [0, ∞), then the convolution integral of f(t) and g(t) is given as:
-(f * g) (t) =0∫t f(t-T) g(T)dT
-As, the convolution integral obey the property, (f*g)(t) = (g*) (t)
-We can write, 0∫t f(t-T) g(T)dT =  0∫t f(T) g(t-T)dt
-Thus, the above fact will help us to take the inverse transform of the product of transforms.
-(i.e.) L(f*g) = F(s) G(s)
-L-1 {F(s)G(s)} = (f*g)(t).
-Laplace Transform in Probability Theory
-In pure and applied probability theory, the Laplace transform is defined as the expected value. If X is the random variable with probability density function, say f, then the Laplace transform of f is given as the expectation of:
-L{f}(S) = E[e-sX], which is referred to as the Laplace transform of random variable X itself.
-Applications of Laplace Transform
-Laplace Transform Examples
-Below examples are based on some important elementary functions of Laplace transform.
-Laplace Equation
-Laplace’s equation, a second-order partial differential equation, is widely helpful in physics and maths. The Laplace equation states that the sum of the second-order partial derivatives of f, the unknown function, equals zero for the Cartesian coordinates. The two-dimensional Laplace equation for the function f can be written as:
-The Laplace equation for three-dimensional coordinates can be represented as:
-Download BYJU’S-The Learning App and get personalised videos to understand the mathematical concepts.
-Frequently Asked Questions on Laplace Transform- FAQs
-What is the use of Laplace Transform?
-How do you calculate Laplace transform?
-What is the Laplace method?
-What are the properties of Laplace Transform?
-What is the Laplace transform of sin t?
-Leave a Comment Cancel reply
-Your Mobile number and Email id will not be published. Required fields are marked *
-Request OTP on
-Voice Call
-Website
-Post My Comment
-I would like to meet Divya Mam if I would get a chance
-FREE
-Signup
-Play
-&
-Win
+Search
+selected template will load here
+Error
+This action is not available.
+9.2: Types of Chemical Bonds
+Chemical bonds form when electrons can be simultaneously close to two or more nuclei, but beyond this, there is no simple, easily understood theory that would not only explain why atoms bind together to form molecules, but would also predict the three-dimensional structures of the resulting compounds as well as the energies and other properties of the bonds themselves. Unfortunately, no one theory exists that accomplishes these goals in a satisfactory way for all of the many categories of compounds that are known. Moreover, it seems likely that if such a theory does ever come into being, it will be far from simple.
+When we are faced with a scientific problem of this complexity, experience has shown that it is often more useful to concentrate instead on developing models. A scientific model is something like a theory in that it should be able to explain observed phenomena and to make useful predictions. But whereas a theory can be discredited by a single contradictory case, a model can be useful even if it does not encompass all instances of the phenomena it attempts to explain. We do not even require that a model be a credible representation of reality; all we ask is that be able to explain the behavior of those cases to which it is applicable in terms that are consistent with the model itself. An example of a model that you may already know about is the kinetic molecular theory of gases. Despite its name, this is really a model (at least at the level that beginning students use it) because it does not even try to explain the observed behavior of real gases. Nevertheless, it serves as a tool for developing our understanding of gases, and as a starting point for more elaborate treatments.Given the extraordinary variety of ways in which atoms combine into aggregates, it should come as no surprise that a number of useful bonding models have been developed. Most of them apply only to certain classes of compounds, or attempt to explain only a restricted range of phenomena. In this section we will provide brief descriptions of some of the bonding models; the more important of these will be treated in much more detail in later parts of this chapter.
+Ionic Bonding
+Ions are atoms or molecules which are electrically charged. Cations are positively charged and anions carry a negative charge. Ions form when atoms gain or lose electrons. Since electrons are negatively charged, an atom that loses one or more electrons will become positively charged; an atom that gains one or more electrons becomes negatively charged. Ionic bonding is the attraction between positively- and negatively-charged ions. These oppositely charged ions attract each other to form ionic networks (or lattices). Electrostatics explains why this happens: opposite charges attract and like charges repel. When many ions attract each other, they form large, ordered, crystal lattices in which each ion is surrounded by ions of the opposite charge. Generally, when metals react with non-metals, electrons are transferred from the metals to the non-metals. The metals form positively-charged ions and the non-metals form negatively-charged ions.
+Ionic bonds form when metals and non-metals chemically react. By definition, a metal is relatively stable if it loses electrons to form a complete valence shell and becomes positively charged. Likewise, a non-metal becomes stable by gaining electrons to complete its valence shell and become negatively charged. When metals and non-metals react, the metals lose electrons by transferring them to the non-metals, which gain them. Consequently, ions are formed, which instantly attract each other—ionic bonding.
+For example, in the reaction of Na (sodium) and Cl (chlorine), each Cl atom takes one electron from a Na atom. Therefore each Na becomes a Na+ cation and each Cl atom becomes a Cl- anion. Due to their opposite charges, they attract each other to form an ionic lattice. The formula (ratio of positive to negative ions) in the lattice is NaCl.
+\[2Na_{(s)} + Cl_{2(g)} \rightarrow 2NaCl_{(s)}\]
+These ions are arranged in solid NaCl in a regular three-dimensional arrangement (or lattice):
+NaCl lattice. (left) 3-D structure and (right) simple 2D slice through lattes. Images used with permission from Wikipedia and Mike Blaber.
+The chlorine has a high affinity for electrons, and the sodium has a low ionization potential. Thus the chlorine gains an electron from the sodium atom. This can be represented using electron-dot symbols (here we will consider one chlorine atom, rather than Cl2):
+The arrow indicates the transfer of the electron from sodium to chlorine to form the Na+ metal ion and the Cl- chloride ion. Each ion now has an octet of electrons in its valence shell:
+Covalent Bonding
+Formation of an ionic bond by complete transfer of an electron from one atom to another is possible only for a fairly restricted set of elements. Covalent bonding, in which neither atom loses complete control over its valence electrons, is much more common. In a covalent bond the electrons occupy a region of space between the two nuclei and are said to be shared by them. This model originated with the theory developed by G.N. Lewis in 1916, and it remains the most widely-used model of chemical bonding. The essential element s of this model can best be understood by examining the simplest possible molecule. This is the hydrogen molecule ion H2+, which consists of two nuclei and one electron. First, however, think what would happen if we tried to make the even simpler molecule H22+. Since this would consist only of two protons whose electrostatic charges would repel each other at all distances, it is clear that such a molecule cannot exist; something more than two nuclei are required for bonding to occur.
+In the hydrogen molecule ion H2+ we have a third particle, an electron. The effect of this electron will depend on its location with respect to the two nuclei. If the electron is in the space between the two nuclei, it will attract both protons toward itself, and thus toward each other. If the total attraction energy exceeds the internuclear repulsion, there will be a net bonding effect and the molecule will be stable. If, on the other hand, the electron is off to one side, it will attract both nuclei, but it will attract the closer one much more strongly, owing to the inverse-square nature of Coulomb's law. As a consequence, the electron will now help the electrostatic repulsion to push the two nuclei apart.
+We see, then, that the electron is an essential component of a chemical bond, but that it must be in the right place: between the two nuclei. Coulomb's law can be used to calculate the forces experienced by the two nuclei for various positions of the electron. This allows us to define two regions of space about the nuclei, as shown in the figure. One region, the binding region, depicts locations at which the electron exerts a net binding effect on the new nuclei. Outside of this, in the antibinding region, the electron will actually work against binding.Summary
+The amount of energy needed to separate a gaseous ion pair is its bond energy. The formation of ionic compounds are usually extremely exothermic. The strength of the electrostatic attraction between ions with opposite charges is directly proportional to the magnitude of the charges on the ions and inversely proportional to the internuclear distance. The total energy of the system is a balance between the repulsive interactions between electrons on adjacent ions and the attractive interactions between ions with opposite charges.
+Metallic Bonding
+Metals have several qualities that are unique, such as the ability to conduct electricity, a low ionization energy, and a low electronegativity (so they will give up electrons easily, i.e., they are cations). Metallic bonding is sort of like covalent bonding, because it involves sharing electrons. The simplest model of metallic bonding is the "sea of electrons" model, which imagines that the atoms sit in a sea of valence electrons that are delocalized over all the atoms. Because there are not specific bonds between individual atoms, metals are more flexible. The atoms can move around and the electron sea will keep holding them together. Some metals are very hard and have very high melting points, while others are soft and have low melting points. This depends roughly on the number of valence electrons that form the sea.
+The covalent-ionic continuum described above is certainly an improvement over the old covalent -versus - ionic dichotomy that existed only in the textbook and classroom, but it is still only a one-dimensional view of a multidimensional world, and thus a view that hides more than it reveals. The main thing missing is any allowance for the type of bonding that occurs between more pairs of elements than any other: metallic bonding. Intermetallic compounds are rarely even mentioned in introductory courses, but since most of the elements are metals, there are a lot of them, and many play an important role in metallurgy. In metallic bonding, the valence electrons lose their association with individual atoms; they form what amounts to a mobile "electron fluid" that fills the space between the crystal lattice positions occupied by the atoms, (now essentially positive ions.) The more readily this electron delocalization occurs, the more "metallic" the element.
+Thus instead of the one-dimension chart shown above, we can construct a triangular diagram whose corners represent the three extremes of "pure" covalent, ionic, and metallic bonding.
+Contributors
+Mike Blaber (Florida State University)
+Modified by Joshua Halpern (Howard University)
+9.2: Types of Chemical Bonds is shared under a CC BY-NC-SA
+4.0
+license and was authored, remixed, and/or curated by LibreTexts.
+Recommended articles
+The LibreTexts libraries are Powered by NICE CXone Expert and are supported by the Department of Education Open Textbook Pilot Project, the UC Davis Office of the Provost, the UC Davis Library, the California State University Affordable Learning Solutions Program, and Merlot. We also acknowledge previous National Science Foundation support under grant numbers 1246120, 1525057, and 1413739. Legal. Accessibility Statement For more information contact us at info@libretexts.org.

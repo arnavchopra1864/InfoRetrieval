@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import LoginPage from './components/LoginPage';
 import QueryPage from './components/QueryPage';
+import QueryChatPage from './components/QueryChatPage';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             </Route>
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/query" element={<QueryPage/>} />
+            <Route path="/chat" element={<QueryChatPage/>} />
           </Routes>
           
         </main>
