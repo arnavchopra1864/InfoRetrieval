@@ -7,6 +7,20 @@ function QueryChatPage() {
     setInputValue(event.target.value);
   };
 
+  const handleDocSel = (docNum) => {
+    const hostname = "http://localhost:5000/search?d=file0&u=139801c9-88f7-4cbf-829e-135feba4df6e";
+    fetch(hostname)
+    .then(response => response.json())
+    .then(data => {
+      var doc_text = document.getElementsByName("doctext");
+      doc_text.innerText = data;
+    })
+    .catch(error => {
+      console.error('There was an error!', error);
+    });
+  };
+
+
   const handleSubmit = () => {
     const hostname = "http://localhost:5000/query?q=";
     var query_link = "";
@@ -52,9 +66,14 @@ function QueryChatPage() {
     <div>
       <h1>Chat with a document</h1>
       <div>
-        <p>
-          document text goes here
-        </p>
+          <div className='doctext'>doc  goes here</div>
+        <div>
+          <div>
+            {Array.from({ length: 5 }, (_, index) => (
+              <button onClick={handleDocSel(index + 1)} key={index + 1}>{index + 1}</button>
+            ))}
+          </div>
+        </div>
       </div>
       <div>
         <input 
