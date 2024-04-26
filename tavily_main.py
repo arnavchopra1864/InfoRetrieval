@@ -8,7 +8,7 @@ from llama_index.core import ( # type: ignore
 )
 from llama_index.llms.openai import OpenAI # type: ignore
 from typing import List, Optional
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+# from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.chat_engine import CondenseQuestionChatEngine
 
 
