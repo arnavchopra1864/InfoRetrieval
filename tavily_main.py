@@ -160,6 +160,7 @@ class FactFlow:
 
 if __name__ == '__main__':
     pass
+    # user_query = "what are llms"
     # main = FactFlow()
     # print(main.get_reprompt_response('query', '0', '4e4bc471-eba8-43b6-9bd1-0a45c23a10d0'))
     # print(main.download_doc('0', '4e4bc471-eba8-43b6-9bd1-0a45c23a10d0'))
