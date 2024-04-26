@@ -10,7 +10,7 @@ app = Flask(__name__)
 fact_flow = FactFlow()
 
 CORS(app)
-
+#comment
 
 # first route, gets document nodes + summary response
 @app.route('/query')
