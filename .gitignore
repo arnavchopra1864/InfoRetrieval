@@ -1,5 +1,7 @@
 .env
 venv/
+.venv
 gpt-researcher
 tavily_data
 creds.json
+__pycache__

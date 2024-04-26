@@ -12,7 +12,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.chat_engine import CondenseQuestionChatEngine
 
 
-from llama_index.core.response.notebook_utils import display_source_node # type: ignore
+# from llama_index.core.response.notebook_utils import display_source_node # type: ignore
 from llama_index.core.query_engine import RetrieverQueryEngine # type: ignore
 from llama_index.core import Settings # type: ignore
 from llama_index.core.ingestion import IngestionPipeline
