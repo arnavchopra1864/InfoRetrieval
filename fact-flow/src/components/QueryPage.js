@@ -17,7 +17,7 @@ const QueryPage = () => {
   };
 
   const handleSubmit = () => {
-    const hostname = "http://localhost:5000/query?q=";
+    const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com//query?q=";
     var query_link = "";
     var result_doc = document.getElementById("result");
 
@@ -25,7 +25,7 @@ const QueryPage = () => {
       result_doc.innerText = "Please enter a query";
       return;
     } else {
-      query_link = hostname + inputValue.replace(/['"]+/g, '');
+      query_link = hostname + inputValue.replace(/['"]+/g, '') + '&u=' + Date.now();
     }
     
     result_doc.innerText = "Loading...";
@@ -36,23 +36,26 @@ const QueryPage = () => {
       console.log(data);
       var output = data.Response;
       // FIX THIS LINE AFTER BACKEND IS FIXED
-      var score = data["Reference 1: "
-    ].Score;
+    //   var score = data["Reference1: "
+    // ].Score;
 
-      if (score >= 0.8) {
-        output += "\n\n References: \n";
-      
-        Object.keys(data).forEach(key => {
-          if (key.startsWith('Reference')) {
-            console.log(key); 
-            const nodeID = data[key]['Node ID']; 
-            output += "Node ID: " + nodeID + "\n";
-          }
-        });
-        result_doc.innerText = output;
-      } else {
-        result_doc.innerText = "\n\n No relevant references found.";
-      }
+      // if (score >= 0) {
+      output += "\n\n References: \n";
+    
+      Object.keys(data).forEach(key => {
+        if (key.startsWith('Reference')) {
+          console.log(key)
+          var text = data[key]['chunk']
+          output += key + text + '\n'
+        }
+        else {
+          output += 'Response: ' + data[key]
+        }
+      });
+      result_doc.innerText = output;
+      // } else {
+      //   result_doc.innerText = "\n\n No relevant references found.";
+      // }
 
     })
     .catch(error => {

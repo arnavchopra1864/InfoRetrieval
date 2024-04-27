@@ -5,3 +5,4 @@ gpt-researcher
 tavily_data
 creds.json
 __pycache__
+.vscode
