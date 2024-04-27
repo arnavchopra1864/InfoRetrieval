@@ -1,130 +1,655 @@
-Fourier Transform
-The Fourier transform is a generalization of the complex Fourier series in the limit as . Replace the discrete
-with the continuous
-while letting . Then change the sum to an integral,
-and the equations become
-Here,
-is called the forward () Fourier transform, and
-is called the inverse () Fourier transform. The notation
-is introduced in Trott (2004, p. xxxiv), and
-and
-are sometimes also used to denote the Fourier transform and inverse Fourier transform,
-respectively (Krantz 1999, p. 202).
-Note that some authors (especially physicists) prefer to write the transform in terms of angular frequency
-instead of the oscillation frequency . However, this destroys the symmetry, resulting in the transform
-pair
-To restore the symmetry of the transforms, the convention
-is sometimes used (Mathews and Walker 1970, p. 102).
-In general, the Fourier transform pair may be defined using two arbitrary constants
-and
-as
-The Fourier transform
-of a function
-is implemented the Wolfram
-Language as FourierTransform[f,
-x, k], and different choices of
-and
-can be used by passing the optional FourierParameters->
-a,
-b
-option. By default, the Wolfram Language
-takes FourierParameters as . Unfortunately, a number of other conventions are in widespread
-use. For example,
-is used in modern physics,
-is used in pure mathematics and systems engineering,
-is used in probability theory for the computation of the characteristic
-function,
-is used in classical physics, and
-is used in signal processing. In this work, following
-Bracewell (1999, pp. 6-7), it is always assumed that
-and
-unless otherwise stated. This choice often results
-in greatly simplified transforms of common functions such as 1, , etc.
-Since any function can be split up into even and odd portions
-and ,
-a Fourier transform can always be expressed in terms of the Fourier cosine transform and Fourier sine transform
-as
-A function
-has a forward and inverse Fourier transform such that
-provided that
-1.
-exists.
-2. There are a finite number of discontinuities.
-3. The function has bounded variation. A sufficient weaker condition is fulfillment of the Lipschitz
-condition
-(Ramirez 1985, p. 29). The smoother a function (i.e., the larger the number of continuous derivatives), the more compact its Fourier
-transform.
-The Fourier transform is linear, since if
-and
-have Fourier transforms
-and , then
-Therefore,
-The Fourier transform is also symmetric since
-implies .
-Let
-denote the convolution, then the transforms of convolutions
-of functions have particularly nice transforms,
-The first of these is derived as follows:
-where .
-There is also a somewhat surprising and extremely important relationship between the autocorrelation and the Fourier transform
-known as the Wiener-Khinchin theorem.
-Let ,
-and
-denote the complex conjugate of , then the Fourier transform of the absolute
-square of
-is given by
-The Fourier transform of a derivative
-of a function
-is simply related to the transform of the function
-itself. Consider
-Now use integration by parts
-with
-and
-then
-The first term consists of an oscillating function times . But if the function is bounded so that
-(as any physically significant signal must be), then the term vanishes, leaving
-This process can be iterated for the th derivative to yield
-The important modulation theorem of Fourier transforms allows
-to be expressed in terms of
-as follows,
-Since the derivative of the Fourier transform is given
-by
-it follows that
-Iterating gives the general formula
-The variance of a Fourier transform is
-and it is true that
-If
-has the Fourier transform , then the Fourier transform has the shift
-property
-so
-has the Fourier transform
-If
-has a Fourier transform , then the Fourier transform obeys a similarity
-theorem.
-so
-has the Fourier transform
-The "equivalent width" of a Fourier transform is
-The "autocorrelation width" is
-where
-denotes the cross-correlation of
-and
-and
-is the complex conjugate.
-Any operation on
-which leaves its area unchanged leaves
-unchanged, since
-The following table summarized some common Fourier transform pairs.
-In two dimensions, the Fourier transform becomes
-Similarly, the -dimensional
-Fourier transform can be defined for ,
-by
-See also
-Explore with Wolfram|Alpha
-More things to try:
+An official website of the United States government
+The .gov means it’s official.
+Federal government websites often end in .gov or .mil. Before
+sharing sensitive information, make sure you’re on a federal
+government site.
+The site is secure.
+The https:// ensures that you are connecting to the
+official website and that any information you provide is encrypted
+and transmitted securely.
+Parenting and Child Development: A Relational Health
+Perspective
+Abstract
+A child’s development is embedded within a complex system of relationships. Among
+the many relationships that influence children’s growth and development, perhaps
+the most influential is the one that exists between parent and child.
+Recognition of the critical importance of early parent-child relationship
+quality for children’s socioemotional, cognitive, neurobiological, and health
+outcomes has contributed to a shift in efforts to identify relational
+determinants of child outcomes. Recent efforts to extend models of relational
+health to the field of child development highlight the role that parent, child,
+and contextual factors play in supporting the development and maintenance of
+healthy parent-child relationships. This review presents a parent-child
+relational health perspective on development, with an emphasis on socioemotional
+outcomes in early childhood, along with brief attention to obesity and eating
+behavior as a relationally informed health outcome. Also emphasized here is the
+parent–health care provider relationship as a context for supporting healthy
+outcomes within families as well as screening and intervention efforts to
+support optimal relational health within families, with the goal of improving
+mental and physical health within our communities.
+‘Viewing development through the lens of relational health reflects recognition
+of the critical role that relationships play in children’s social, emotional,
+health, and cognitive outcomes.’
+“In order to develop normally, a child requires progressively more
+complex joint activity with one or more adults who have an irrational
+emotional relationship with the child. Somebody’s got to be crazy about that
+kid. That’s number one. First, last and always.”—Urie
+Bronfenbrenner
+Introduction
+Bronfenbrenner recognized the critical importance of the emotional relationship
+between a child and an adult, whereas Bowlby’s observation underscores the
+responsibility of communities and practitioners in supporting healthy child
+development by supporting parents. The belief that we can support children directly,
+without supporting their parents, overlooks the complex system of relationships
+within which children develop.1 Together, Bronfenbrenner and Bowlby remind us that to support healthy
+development, we must focus on the emotional quality of the relationships within
+which the child participates—as well as consider how the larger community supports
+those relationships.
+Yet parenting is a broad topic and an exhaustive review is beyond the scope of any
+one article. Informed by the field of infant mental health with its explicit
+relational focus2 and in an effort to contribute to our understanding of parenting as multiply determined,3 we focus our discussion here on the construct of relational health as a tool
+for promoting socioemotional and physical health among young children. Relational
+health reflects a sense of “connectedness” with attuned others, including
+caregivers, family members, and other individuals within the community.4 Such a focus is consistent with the field of lifestyle medicine—which
+considers the environment as a social determinant of health and well-being5—and research on health and social behavior, which highlights parents as
+significant influences on children’s health.6 Viewing development through the lens of relational health reflects
+recognition of the critical role that relationships play in children’s social,
+emotional, health, and cognitive outcomes.3 Accordingly, the revised Diagnostic Classification of Mental Health and
+Developmental Disorders of Infancy and Early Childhood (DC-05)7 considers how characteristics of the broader caregiving environment, such as
+coparenting quality and other close relationships, relate to developmental and
+mental health diagnoses.2
+Relational Health Within Primary Care: The Parent-Provider Relationship
+We suggest that the parent-provider relationship provides a potentially valuable,
+although far less emphasized, context for promoting relational health. We present a
+review of the literature surrounding relational health science and encourage the
+health care provider to view their patients through the relational health lens. When
+considered from this angle, for children and their caregivers, the
+relationship is the patient. As health care providers endeavor
+to encourage healthy lifestyle choices in the families they serve, each decision a
+family makes—whether to the benefit or detriment—will occur in the context of their
+relationships. The health care provider must learn to consider and then acknowledge
+the family support relationships present in the exam room, the waiting room, and at
+home to best engage a family’s healthy choices. When caring for patients through
+this approach, the provider will consider the patient’s treatment choices in their
+realistic and relational context, rather than as compliant versus noncompliant.
+Moreover, by acknowledging the provider’s own relationship to the family, the
+provider can become a supportive member of the treatment decision team rather than
+an information broker, motivational interviewer, or reticent supplier of
+difficult-to-follow advice.
+The relational health perspective considers the practitioner as a supportive (or
+unsupportive) “other” in navigating the sometimes difficult, uncertain, or
+fear-provoking experience of parenting a child from preconception through adulthood.
+An awareness of relational health in pediatric and adult medicine settings may
+increase positive outcomes in both parents and children through increased empathy.
+Specifically, during challenging situations, the practitioner should assess and
+address relationship quality rather than judging parenting or assigning sole credit
+or blame to either the parent or child. The focus lies in identifying strengths and
+opportunities in service to the relationship.4
+Relational Health Within Families: The Parent-Child Relationship
+A relational health perspective on development embodies a family systems perspective
+as well, which recognizes the interconnectedness of individuals and relationships
+within families8 and the bidirectional, transactional nature of relationships9; parents affect children and children affect parents.10 A relational health approach to understanding parent-child relationships
+emphasizes the dyadic connection between parent and child. Although a multitude of
+factors have been explored as correlates and predictors of parenting and child
+outcomes, we focus here on a subset of the factors that may influence relational
+health, with the goal of increasing practitioners’ understanding of
+relationship-focused approaches to health promotion within families.
+Parent-Child Attachment Relationships: Parental Sensitivity and Reflective
+Functioning
+One of the most influential relationship-focused frameworks for understanding
+development is attachment theory. An extensive literature describes the early
+parent-child attachment relationship as an enduring, emotional bond that enables
+children to explore the environment,11 yet maintain the proximity and contact necessary for healthy development.
+Parent-infant attachment relationships, therefore, provide the earliest contexts
+for children’s relational health. Secure attachment balances developmentally
+appropriate exploration of the world with seeking closeness and comfort from the
+caregiver when distressed. Secure parent-child attachment relationships are
+associated with a range of positive social and emotional outcomes in
+children.12,13 Conversely, disorganized attachment, a form of insecure
+attachment, is a risk factor for poorer developmental outcomes14 and has been linked to disturbed caregiving behavior.15-17 Efforts aimed at
+increasing security within these critical early relationships remain of interest
+to researchers and clinicians.18 Interventions including Attachment and Biobehavioral Catch-up
+(ABC),19,20 Circle of Security,21 and Video Intervention for Positive Parenting and Sensitive Discipline (VIPP-SD)22 have been effective in promoting secure attachment and positive child
+outcomes (including fewer behavior problems) via creation of measurable,
+positive changes in parents’ sensitive and responsive behavior, a key factor in
+secure attachment.23,24 Yet these interventions are not widely available to the
+public, thus limiting the ability of clinicians to offer them to their patients
+and families.
+Perhaps the most effective mediator toward creating change in parental
+sensitivity and responsiveness is fostering growth in a parent’s reflective
+functioning (RF). RF reflects the extent to which a parent can consider the
+mental states (ie, thoughts, feelings, intentions) that may motivate the
+behavior of self and other.25 This capacity can be described in terms of both self-focused RF and
+child-focused RF.26,27 Interventions such as Minding the Baby28,29 and
+Mothering from the Inside Out30,31 appear effective in
+supporting healthy relational outcomes via a focus on growing RF. The concept of
+RF is also relevant for understanding how adults’ own early relational
+experiences may affect their parenting.32
+These 2 elements of parenting—sensitive, responsive caregiving and RF—support
+the formation of secure parent-child relationships.24 We suggest that health care providers use thoughtful questioning that
+may support parental RF, as recently suggested and detailed by Ordway et al.33 Health care providers can also demonstrate and model RF and help
+build this capacity in families via routine care and also in medically
+intensive environments. In environments such as the neonatal intensive care
+unit (NICU), for example, barriers to parent-neonate relational health
+development are prominent because of parents coping with fears of infant
+death and infants experiencing frequent stressors.34-39 Although NICU staff
+recognize the critical role they play in supporting early parent-child
+relational health and promoting positive socioemotional outcomes among
+infants born prematurely,40 this role may come secondary to the provision of direct medical
+support to neonates. Professionals’ engagement in reflective practice, with
+its focus on awareness of the mental and feeling states of self and others,41 may be one pathway toward promoting positive infant outcomes via the
+provision of greater psychological support to parents of premature and
+medically fragile newborns. Building reflective capacity among a range of
+health care providers may further strengthen the foundation of early
+relational health within families.33
+Mothering, Fathering, and Grandparenting
+Although attachment perspectives historically have emphasized the mother-child
+relationship, attachment theory and research has been extended to a variety of
+other caregiver-child relationships, including father-child
+relationships.42-44 A family
+systems perspective8 on relational health suggests that to understand development, we must
+consider how mother-child and father-child relationships may independently or
+interactively contribute to developmental outcomes.
+Rigorous recent research indicates that children benefit socially and emotionally
+when fathers are more involved in their lives.45 Moreover, the benefits of father involvement hold for nonresident as well
+as resident fathers.46 Yet fathers’ engagement in parenting is multiply determined,47 and individual, family, and institutional-level factors may all play
+important roles in predicting paternal involvement. At an individual level, a
+father’s identity as a parent,48,49 as well as a father’s
+attitudes and beliefs about his role in his child’s life,50,51 matter for
+his engagement. At the family level, evidence highlights the quality of the
+father’s relationship with a child’s mother. For example, mothers are more
+likely to be gatekeepers within families, controlling fathers’ access to
+children as well as the quantity and quality of fathers’ interactions with their
+children.52,53 At a policy level, compared with countries such as Sweden
+where paternal leave is supported, the lack of paid paternal leave within the
+United States may also present barriers to fathers’ involvement with their young
+children as well as erode fathers’ sense of efficacy in the parental role.54
+Above and beyond these individual, family, and policy variables, mothers’ and
+fathers’ parenting may differ and uniquely predict developmental outcomes. For
+example, mothers may be the primary providers of emotional security for children
+via the establishment of early parent-child attachment relationships, whereas
+for fathers, exploration of the world may be a primary emphasis in parenting.55 Fathers’ more stimulating play style—often involving rough-and-tumble
+play—may promote positive outcomes in children, including developmentally
+appropriate risk taking and establishment of autonomy.56,57 Mothers, by contrast, are
+more likely to engage in object-mediated teaching interactions as well as
+providing structure for their children.58 However, though mothers and fathers may have interaction styles that
+differ, the fact remains that many children in the United States are raised in
+households headed by mothers and may experience wide variability in contact with
+their biological fathers.59 This fact, coupled with increasing acceptance and prevalence of families
+headed by same-sex parents, cautions against a return to the belief that to
+develop optimally, children require both fathers and mothers (known as the
+“essential father” hypothesis).60
+We must also recognize that nonparental primary caregivers may play a central
+role in the care and raising of young children. For example, the increasing
+number of grandparent-headed households means that more grandparents—with their
+own sets of strengths and challenges—are making health and wellness decisions
+for children and may require a unique set of supports from health care providers.61 Even when not primary caregivers, many grandparents—especially maternal
+grandmothers—report being involved and influential in their grandchildren’s lives.62 In fact, involvement of maternal grandmothers with grandchildren may
+buffer young children from the risks to their development posed by difficult
+temperament and harsh parenting by mothers.63 A wider relational health perspective suggests that grandparents (both
+custodial and noncustodial) be considered as potential sources of support in
+children’s health and well-being.
+Shifting demographics suggest that fathers, nonparental caregivers, and
+grandparents play an active and involved role in the lives of children. As
+providers, recognition of the range of relationships in which the child is
+embedded is critical. Examining potential biases around who is most
+knowledgeable or best equipped to care for children may help providers
+approach each adult who is involved in the child’s life as a potential
+partner in health promotion.64
+Coparenting Relationships
+The recognition that children develop within relationships between multiple
+caregivers, including mothers, fathers, grandparents, and others, makes it
+critical to also consider the health of the relationships among these adults
+(ie, coparents) who share responsibility for raising particular
+children.65,66 Whereas constructs such as marital quality or marital
+satisfaction focus on the intimate partner relationship, the coparenting
+relationship, although related, is separate and distinct. Coparenting reflects a
+wider range of relationship structures and processes specific to
+parenting.67,68 For example, coparenting relationships occur among a
+variety of individuals who share responsibility for parenting, whether
+romantically involved or not,65,69 such as same-sex parents,
+adoptive parents, divorced or never married parents, and mothers and maternal grandmothers.70
+Consistent with a family systems perspective,8 better coparenting relationship quality is associated with children’s
+positive social and emotional development over and above the effects of both
+romantic relationship quality between parents (if present) and mothers’ and
+fathers’ parenting.71 Notably, coparenting relationship quality among same-sex parents shows
+similar associations with children’s socioemotional development.72 If supportive, coparenting relationships may help caregivers, especially
+fathers, promote children’s positive socioemotional development,73 but undermining or conflictual coparenting relationships may have a
+detrimental effect on child development. For instance, although grandmother
+involvement may benefit children, conflict between mothers and grandmothers can
+be detrimental to children’s socioemotional development.63,74 Thus,
+prevention and intervention programs have been developed to support effective
+relationships between coparents.75,76 For example, Feinberg’s
+Family Foundations program targets couples expecting their first child and
+focuses on building strong coparenting relationships across the transition to
+parenthood77,78—a critical foundation for parent-child relational
+health.
+Coparenting research highlights the role of supportive versus undermining
+coparenting for children’s development. Often, the extent to which coparents
+support or undermine one another stems from whether they share the same
+views on parenting goals and practices and have a similar perspective on the
+child’s development. Thus, when interacting with patients, we suggest
+inquiring about the extent of agreement versus disagreement among the adults
+who make decisions regarding the child’s health and development. For
+example, the primary custodial parent may emphasize healthy food choices and
+regular physical activity, whereas the nonresidential coparent may provide
+markedly different choices during visitation periods. Alternatively, one
+parent may have concerns about a child’s language or motor development,
+whereas a grandparent may continually emphasize that the child is “just
+fine.” These discrepancies in perceptions of typical versus atypical
+development may delay or interfere with prevention efforts, medical
+diagnosis, and treatment. Disagreements among multiple caregivers may create
+stress and tension within families, and challenges with coparenting can be
+addressed through prevention and intervention programs.
+Parental Characteristics That Contribute to Parenting and Relational
+Health
+Psychosocial Resources and Mental Health
+Belsky’s early model of parenting competence suggests that multiple factors
+affect parenting and child outcomes, with parents’ psychosocial resources
+playing a prominent role.3 Individual differences between parents in their personality
+characteristics affect the quality of their parenting.79 In particular, higher openness, conscientiousness, extraversion, and
+agreeableness, and lower neuroticism has been related to more optimal parenting
+cognitions, practices, and behaviors, including parental warmth and support for
+autonomy.79-81
+For parents with common mental health issues such as anxiety and depression, the
+experience of parenting may be especially challenging. Maternal depression has
+been linked consistently with more negative and disengaged parenting behavior
+and lower engagement in healthy feeding and sleep practices.82 Less research has considered fathers’ mental health in relation to their parenting,83 although there has been a recent increase in attention to fathers’
+antenatal and postnatal depression,84 and fathers who experience postpartum depression demonstrate lower levels
+of developmentally appropriate positive engagement with their infant children.83 Anxiety disorders in fathers as well as mothers have been linked with
+more overinvolved parenting behavior that does not foster age-appropriate
+independence in children.85
+Although prevalence rates suggest the importance of considering parental anxiety
+and depression, other mental health disorders should be considered as well. For
+example, for mothers diagnosed with borderline personality disorder, higher
+levels of negative affectivity as well as lower rates of effortful control86 and sensitivity, and support for child autonomy87 have been reported. Less maternal sensitivity has also been reported
+among mothers with obsessive compulsive disorder.88
+Screening for parental mental health concerns from pregnancy (or from
+pregnancy planning) throughout the child’s development is consistent with a
+relational health approach. Beyond screening, health care providers can
+become aware of evidence-based treatments that may support healthy outcomes
+in children by supporting maternal mental health and parenting skills.89 For example, the attachment-based, group intervention Mom Power,
+which emphasizes parenting, self-care, and engagement in treatment, holds
+promise for supporting positive outcomes for children by supporting maternal
+mental health and parenting competence.90 With increased knowledge of evidence-based treatments for fathers’
+mental health and parenting, we may be able to move beyond a focus on
+mothers to provide all parents with a stronger support system and resource
+base for effective parenting.
+Parental Developmental History and Adverse Experiences in Childhood
+According to Belsky’s model of the determinants of parenting, a parent’s
+psychosocial resources stem from their developmental history.3 The experience of adversity and toxic stress during development may
+affect brain architecture,91 a term used to convey how early experiences help build the structural
+foundation for healthy brain development. Under conditions of sustained,
+persistent stress such as maltreatment or neglect, the hypothalamic pituitary
+adrenal axis may be affected, contributing to atypical diurnal patterns of
+cortisol and increased risk over the course of development.92 As our understanding of the impact of toxic stress on children has grown,
+the focus on understanding patterns of intergenerational transmission of
+impaired parenting has grown as well. Experiences of adversity and toxic stress
+in one generation are linked to poorer parenting and developmental outcomes in
+the next generation.93 Thus, improving the quality of the caregiving environment as early as
+possible may help improve stress responding in young children.92
+Foundational work on adverse childhood experiences (ACEs) as predictors of
+physical, relational, and behavioral health has contributed to a growing
+understanding of the dose-response relation between experiences of adversity in
+early childhood (conceptualized as exposure to abuse and household dysfunction)
+and well-being in adulthood94 as well as the experience of parenting.95 Pregnant women reporting higher levels of ACEs in early childhood, for
+example, exhibit more hostile parenting toward their own infants; this pattern
+of hostile parenting then increases the child’s risk for poorer developmental outcomes.96
+In response to growing recognition of the impact of adversity and toxic stress
+within families, in 2012, the American Academy of Pediatrics (AAP) released a
+policy statement recommending education for health professionals on ACEs along
+with 2-generational screening for ACEs within families.97,98 By
+screening for parental and child ACEs, health providers may be able to provide
+referrals to trauma-informed therapeutic supports within the community that can
+help build or rebuild relational health.
+Yet, in the face of adversity, the presence of individuals who are connected to
+the child, such as family members, can help mitigate its negative effects.4 In addition to exploring multiple factors related to the experience of
+adversity, a relational health perspective suggests the importance of
+identifying and growing supportive connections. For example, the neurosequential
+model of therapeutics focuses on relational health and connectedness with others.99 Results from recent work with this model highlight the importance of
+promoting the health, safety, and positivity of the parent-child
+relationship.
+Although pediatric health care providers are aware of the impact of ACEs on
+parenting and developmental outcomes, additional research, education, and
+resources are necessary to support practitioners in identifying and
+addressing these impacts within families.100 The limitations and potential cost-benefit analysis of screening for
+ACEs must also be considered because screening without provision of adequate
+referrals to evidence-based treatments may undermine the possible value of
+the screen.101 Moreover, identification of appropriate screening tools for ACEs
+remains an important consideration. Focusing on the experiences of adversity
+as an ACE score that relates to poorer health outcomes may confuse
+correlation with causation; thus, to best inform policy and practice,
+factors such as timing of adversity, the overall pattern of stress, and the
+absence or availability of protective factors must be considered.4 Yet through increased awareness of ACEs (both the parent’s and the
+child’s) as well as other psychosocial risk factors for impaired relational
+health, professionals can widen their lens of assessment when interacting
+with parents and children during medical visits.
+Child Characteristics That Contribute to Parenting and Parent-Child Relational
+Health
+Another set of key factors in the quality of parenting and parent-child relationships
+involves characteristics of the child. Recognizing the bidirectional nature of
+relationships between parents and children, Bornstein noted that “caregiving is a
+two-way street.”102 Although early literature emphasized the parents’ impact on the child, a
+relational health approach to development suggests that we consider child
+contributions to parenting as well as to the overall parent-child relationship.
+Among a number of child characteristics that may affect parent-child relational
+health, research has focused on child temperament and age as well as children with
+special health care needs.
+Temperament
+Although early research on temperament emphasized the child’s inborn
+characteristics (eg, rhythmicity, mood) and temperament types such as easy,
+difficult, and slow to warm up,103 our current understanding of temperament reflects the interplay between
+biological and environmental factors over the course of an individual’s development.104 Definitions of temperament typically include individual differences in
+activity, emotionality, attention, and self-regulation.104 However, particularly relevant to the experience of parenting is the
+temperamental characteristic of reactivity, defined as the extent to which the
+child is predisposed to experiencing strong negative and/or positive emotions,
+which may reflect the sensitivity of the nervous system to environmental stimuli.105
+Although difficult child temperament has long been viewed as a risk factor for
+poorer parent-child relational health,106 more recent theory and research on the concept of differential
+susceptibility suggest that children with difficult or highly reactive
+temperaments may be more susceptible to both the negative and positive effects
+of the parenting environment.105,107 For example, children
+with more difficult temperaments, reflecting higher levels of reactivity, may be
+particularly susceptible to the detrimental effects of negative parenting.108 In contrast, for highly reactive children, the experience of more
+positive parenting is associated with fewer child behavior problems109 and greater social competence.110 Parenting intervention studies have further shown that more reactive
+children appear to benefit more from experimentally induced positive changes in parenting.111 Thus, it is important for practitioners to shift their perspectives on
+“difficult” children from vulnerability to opportunity and support parents in
+adopting a similar view. Indeed, to the extent that the biological parents of a
+highly reactive child may share similar underlying genetic sensitivities,112 these parents may be especially responsive to practitioners’ efforts,
+just as their children are particularly responsive to their parenting.
+Age
+Because the demands and challenges of parenting change as a function of
+children’s age, parents must have opportunities to gain research-informed
+recommendations for supporting relational health with their children from birth
+throughout the life span. For example, within early childhood, toddlers’ and
+preschoolers’ growing autonomy and self-awareness creates new demands and
+opportunities for both parent and child. Thus, supporting parents in reflecting
+on the thoughts, feelings, and beliefs regarding their child’s increasing
+autonomy could be one strategy for supporting relational health as children move
+through the early childhood years. Moreover, the roles of various parenting
+practices for supporting children’s self-regulatory capabilities may differ
+across early childhood, with responsiveness most critical in infancy and other
+forms of support becoming more critical during the preschool years.113 Research must, therefore, identify which practices are most relevant, at
+which age,113 and for which outcome of interest. Doing so will help practitioners
+provide targeted support to families, based on parents’ concerns regarding their
+child’s particular social and emotional strengths and challenges.
+Special Health Care Needs
+Children with special health care needs represent a growing demographic,114 and expert recommendations continue to promote early detection in primary
+care.115,116 Just as providers should consider the parent factors
+contributing to relational health, the child’s contribution to parent-child
+relationships is paramount. Within the family context, a child with a
+developmental disability and/or special health care needs may require
+disproportionate resources and time compared with neurotypical siblings.117 The child’s condition may translate into added health care costs and
+increased stress for parents along with decreased access to social support and
+leisure activities within the community.118,119 For example, a
+systematic review of parenting stress in the face of chronic child illness
+indicated that among parents who were parenting a child with chronic illness,
+significantly higher levels of parenting stress were found; in turn, this stress
+was related to lower levels of psychological adjustment among parents and children.120 Among parents of children with autism specture disorder (ASD), higher
+levels of parenting stress and psychological distress have also been
+reported.121,122 These higher levels of parental stress and distress
+may, in turn, affect parental availability and sensitivity, thus affecting
+relational health.
+In light of the evidence on child contributions to parenting and
+developmental outcomes, it seems important to consider the “what” and “how”
+of child contributions to relational health. Identifying the ways in which
+child characteristics influence and interact with parenting behaviors and
+relational health may provide practitioners with the tools and questions
+necessary to shift from a focus on the effects of parenting on children to
+also consider how parenting has been influenced by the child and how the
+overall health of the relationship has been shaped by both relational
+partners.
+Contextual and Process Variables That May Affect Relational Health
+Although the bidirectional nature of parent-child relationships underscores the
+importance of considering parent and child contributions to relational health, a
+family systems approach, coupled with a bioecological approach, suggests that the
+social and contextual contexts in which parent-child relationships are embedded
+should be considered as well.
+Parent-Child Feeding Practices
+The promising protective role of healthy parent-child relationships in the
+development of obesity123 in early childhood is also evident, perhaps via links with more optimal
+self-regulation in young children.124,125 For example, theoretical models125 and research126 on the development of appetite self-regulation and positive physical
+activity habits,127,128 which are critical to weight-related health throughout
+the life span, highlight the important role of parenting. Parental behaviors
+such as permissiveness or indulgence have been associated with weight status and
+obesity in childhood. More specifically, allowing children too much freedom
+regarding food choices in society’s obesogenic food environment can increase
+children’s risk for obesity.123 Similarly, unrestricted, unmonitored screen time has also been associated
+with unhealthy weight status.129 Yet the question remains to what extent these cycles occur within
+families, whereby parents’ lack of control over their own food choices and
+screen time contribute to unhealthy weight status for their children and the
+unhealthy weight status of children contributes to parents’ continued struggles
+with their own food choices and activity levels. Thus, a family-level relational
+approach to understanding risks for obesity may be particularly
+advantageous.
+Given that parents’ attitudes and beliefs can shape a range of parenting
+behaviors related to health and wellness, including feeding practices, exploring
+relational correlates and predictors of feeding practices beginning in infancy
+seems prudent. Parents’ feeding practices provide a unique window into
+parent-child relationship health, because from birth, feeding makes up a
+critical part of parents’ daily interactions with young children. Decisions
+regarding breastfeeding and/or bottle-feeding can cause considerable stress for parents.130 And although children’s eating behavior emerges early and is relatively
+stable over time, eating is influenced more by external factors across development.131
+Mothers who use food to soothe their distressed infants or toddlers have reported
+lower parenting self-efficacy and higher child negativity.132 Using food to soothe was also linked with higher weight status among
+children, particularly for children who were perceived as having more negative temperaments.132 Among preschoolers, parents’ use of food for the purpose of emotion
+regulation was associated with children’s increased intake of sweets when not
+hungry, a pattern that may reflect the early origins of children’s emotional eating.133
+Eating behaviors and nutrition are important components of lifestyle
+medicine. In promoting healthy eating behavior and weight outcomes for
+children, health care professionals can consider how parents’ attitudes may
+shape their feeding practices—above and beyond a child’s weight status—and
+how dyadic and family-level interactions around food may support or
+undermine relational health. From birth, providers can recognize that
+decisions regarding feeding (eg, breast and/or formula; homemade meals
+versus fast food) may be multiply determined and best understood through a
+relational health lens, where parent and child factors are viewed as
+contributing to parenting practices, practices that may differ from
+recommended best practices for promoting child health outcomes.
+The Household Environment: Family Chaos, Technology, and Social Media
+Use
+The home environment represents an important context for parent-child relational
+health, including the quality of parenting as well as children’s well-being and
+health.134-138 Recent research, focused
+on household chaos, has highlighted the role of disorder/disorganization139 and instability/turbulence140 for understanding parenting quality and family well-being. Lower levels
+of household chaos (evidenced by greater organization, stability, and
+predictability) are associated with higher-quality parenting behavior than home
+environments characterized as noisy, crowded, unpredictable, and disorganized.138 Among preschoolers, recent evidence suggests that higher rates of
+household chaos are also associated with higher screen use.141
+In fact, parents’ and children’s increasing engagement with, and reliance on,
+technology and social media suggest the need for providers to consider
+technology and social media as interactive partners. For example, Facebook may
+provide new parents with an important source of social capital,142 and parents report using the internet to gain information about pediatric
+health.143,144 Yet parents (and grandparents) do not report
+universally positive effects of their technology use. For example, parents may
+experience a range of internal tensions surrounding their use of mobile
+technology, such as cognitive, emotional, and relationship tension.145 Researchers are documenting how technology may interrupt the flow of
+interaction patterns between children and their parents—a concept known as technoference.146 For example, higher levels of child internalizing and externalizing
+behavior problems have been reported by mothers who also reported higher levels
+of technoference in their interactions with their children.146
+Supporting parents in identifying, reducing, or coping with household chaos,
+as well as technoference, may be promising avenues for supporting relational
+health. Because the experience of chaos in the home environment often
+co-occurs with poverty139 as well as parental mental health symptoms,147 screening and intervention approaches aimed at identifying and
+addressing the multiple co-occurring factors that relate to family chaos may
+be warranted. Moreover, gauging the perceived impact of technology and
+social media use on parent-child relational health may be an important area
+of inquiry for health practitioners.
+Cultural Context and Relational Health
+Understanding relational health requires us to also consider the impact of race,
+ethnicity, and culture on parent-child relationships; accordingly, consideration
+of diversity has moved to the forefront of our current research and practice
+efforts. Although broad parenting goals are remarkably similar across diverse cultures,102 the processes by which parents in varying cultural contexts seek to
+achieve these goals may differ. For example, some scholars have suggested that
+the concept of sensitivity, the primary determinant of secure attachment
+according to attachment theorists, may be biased toward more individualistic
+cultures because it is focused on meeting the child’s individual needs.148 Moreover, the meaning of parenting constructs such as controlling
+behavior may vary across cultures. For example, Asian American parents may
+emphasize strict control of children as part of culturally embedded approaches
+to parenting, which are not equivalent to western notions of harsh/controlling
+parenting and do not appear to have negative effects on their children’s
+development.149,150
+These debates can support practitioners in reflecting on how their own beliefs
+about what is the “best” kind of parenting to promote relational health and
+positive child outcomes may be shaping their messaging for parents. For example,
+among immigrant families, attention to acculturation—the process of adapting to
+a new culture—rather than parenting behavior, per se, may provide a window into
+relational health. For example, acculturation may happen at different rates for
+children and parents, and greater discrepancies in the level of acculturation
+may contribute to increased parent-child conflict.151
+The roles of culture, race, and ethnicity in parenting practices are particularly
+apparent with respect to discipline practices. For example, higher rates of
+corporal punishment, including spanking, are generally reported by African
+American parents, in comparison to Hispanic or white parents,152 although recent evidence suggests similar endorsement of spanking by
+African American and Hispanic mothers, along with longitudinal associations
+between endorsement of spanking and children’s later internalizing and
+externalizing behaviors.153 Evidence continues to highlight the negative impact of corporal
+punishment on children154 and the AAP’s 2018 statement on effective discipline emphasizes the need
+for positive alternatives to corporal punishment and spanking.155 And, although many parents report spanking their young children, these
+same parents may also be looking for nonphysical, effective alternatives for
+guiding their children’s behavior.156
+Understanding how cultural beliefs and practices shape parents’ expectations
+and socialization goals may help us better define what relational health is,
+both within and across diverse families. Health care professionals can be a
+source of guidance and support for parents to choose discipline strategies
+that align with research and support parent-child relational health. When
+practitioners recognize the larger context in which parents’ discipline
+decisions are embedded, they may more readily identify the beliefs,
+histories, and socialization goals that underlie families’ discipline
+practices. Health providers can recognize parents’ concerns regarding
+children’s behavior and provide culturally responsive, research-informed,
+preventive recommendations for helping parents identify alternative
+strategies to the use of corporal punishment and physical discipline.
+Reducing Risks to Relational Health: Screening and Referral
+Given that the parent-child relationship is critical for healthy development, health
+providers must adopt a dyadic-level, family systemic, and culturally informed
+approach to screening, referring, and treating parent-child dyads to integrate
+research with practice. Equipping health professionals with knowledge of relational
+health may provide a solid foundation for supporting parent-child relational health
+from birth. For example, evidence from research with pediatric residents suggests
+that training in a parent-child relational framework was effective in supporting
+residents’ observational skills and knowledge of child development.157
+An emphasis on transactional associations within families further underscores the
+importance of screening and early intervention to support child and parental
+well-being and use of positive parenting practices.10 Commonly used assessments in parent-child attachment research, such as the
+Strange Situation Procedure158 Attachment Q-Set,159 are labor-intensive and were not developed as clinically relevant screening
+tools. Moreover, even when insecurity in the parent-child relationship is suspected,
+access to attachment-based interventions (ie, VIPP-SD, ABC) may be extremely
+limited.
+Whereas much of the research literature on early parent-child relationships
+(typically mother-child relationships) has focused on attachment, recent work
+highlights the dyadic-level construct of emotional connection for
+understanding early parent-child relational health. The development of the Welch
+Emotional Connection Screen (WECS)160 reflects an effort to provide practitioners with a rapid and valid screening
+tool for parent-child relational health from birth to 5 years. The WECS considers
+the presence or absence of 4 mutual behaviors that may serve to promote and maintain
+emotional connection within a parent-child dyad: attraction, facial responsiveness,
+vocal responsiveness, and sensitivity/reciprocity. Based on the overall interaction,
+a score of EC+ (connected) or EC− (not connected) is assigned to the dyad.
+The WECS developed out of work with the Family Nurture Intervention, which seeks to
+support the development of emotional connection and coregulation via the provision
+of calming sessions that focus on the sensory experiences of touch, vocal soothing,
+and skin-to-skin contact.161-163 Results from
+an RCT study indicated that mothers and infants participating in the Family Nurture
+Intervention showed improvements in face-to-face dyadic interaction, including
+increased frequency and quality of mothers’ touch and for boys, infant’s vocal
+affect and gaze.164
+Emotional connection, as assessed by the WECS in infancy, has been associated with
+healthier autonomic responding among infants born prematurely165 as well as with fewer internalizing and externalizing behavior problems in a
+full-term, longitudinal sample.166 Thus, emerging evidence suggests that the WECS holds promise for screening,
+anticipatory guidance, and referral of early parent-child relationships that may
+benefit from support and intervention to promote healthy regulatory functioning and
+decrease risk for later child behavior problems. Efforts are under way to train a
+range of professionals—from pediatric residents to infant mental health
+practitioners and home visitors—to be reliable raters of parent-child relational
+health using the WECS.
+In families with elevated risk for maltreatment, the automated self-report survey,
+the CARTS (Computerized Childhood Attachment and Relational Trauma Screen), reflects
+a relational approach to the assessment of trauma in childhood.167,168 The CARTS
+considers what trauma occurred and assesses caregivers’ emotional availability,
+along with responses to the reported maltreatment. In contrast, the SEEK program
+(Safe Environment for Every Kid) focuses on risk factors related to child
+maltreatment, including parental depression, stress, and substance abuse.168,169 Thus, the
+SEEK program may benefit pediatric primary care professionals through its focus on
+psychosocial stress within families, which if addressed early, may prevent child
+maltreatment.
+Notably, SEEK embodies a relational health perspective by acknowledging the parent’s
+love for the child as a pathway to healthy outcomes for both parent and child as
+well as by acknowledging the relationships between health professionals and parents
+as protective factors for parents and children.169,170 For example, part of the
+SEEK program is the SEEK Parent Questionnaire, which begins by empathetically
+validating the sometimes challenging everyday experience of being a parent while
+simultaneously offering support to parents dealing with concerning circumstances.
+SEEK also aims to support relational health through the REAP approach, which
+encourages health care providers to Reflect-Empathize-Assess-and Plan with
+parents.
+Intervention approaches that incorporate mindfulness practices, such as the 9-week
+Mindful Parenting course tested in the Netherlands, also hold promise for supporting
+relational health within families. Mindful Parenting aims to increase awareness,
+decrease parental stress, and improve coparenting.171 Both parents participating in the program and their children report
+reductions in internalizing/externalizing symptomology. The interpersonal focus of
+mindfulness-based interventions supports healthy parent-child relationships through
+increased awareness of parent-child interactions as well as positive changes in both
+child and parent functioning.172
+Summary and Conclusions
+Beyond attachment theory, which emphasizes parental sensitivity and responsivity as a
+primary determinant of attachment security, a relational health science approach
+offers a wider lens for understanding how parent-child relationships may affect
+children’s development. A relational health approach recognizes both partners’
+contributions to the establishment and maintenance of relational processes and
+highlights the potential value of the health care provider as a relational partner
+for parents and children. Our focus here was on socioemotional development; future
+work will consider how a relational health framework can be applied to a range of
+parent-child health decisions from vaccinations and sleep behaviors, to physical
+activity, and medication use.
+Although we view primary care as a valuable context for supporting relational health,
+continued development and validation of screening tools for relational health that
+are suitable for clinical and applied contexts remain an important goal along with
+more widespread availability of effective interventions. Moreover, given the
+existing demands on health care providers, we recognize that a relational health
+perspective on development may create additional demands on providers. Perhaps a
+necessary first step is a shift in perspective, more than a shift in practice. By
+viewing the parent-child relationship as part of the “patient” and, therefore, part
+of health promotion, the long-term gains may be worth the initial investment.
+By networking with community resources, health care providers can build a pipeline of
+referrals for parents as a component of pediatric and primary care. Offering
+parent-friendly pamphlets, information sheets, and face-to-face communication that
+reflects a relational health view on development may help parents see themselves as
+partners in relational health, rather than as the cause of their child’s mental
+health, behavioral, or developmental problems. Such negative attributions may
+contribute to feelings of shame and guilt—feelings that may undermine parenting
+self-efficacy and parents’ engagement in children’s wellness and treatment. The
+AAP’s recent call for pediatricians to partner with parents in supporting healthy
+outcomes through the sharing of information regarding child development and parenting155 reflects the promise of a relational health approach.
+Returning to the opening quote from Bowlby, we suggest that health care providers are
+in a strong position to serve children by valuing their parents and viewing child
+development through the lens of relational health. Perhaps by uncovering who
+that person is—the one who is “irrationally crazy” about the
+child, as Bronfenbrenner advised—professionals can help cultivate and reinforce that
+connection. And in its absence, we can seek to identify ways to build a web of
+relational health for the child and for the parent, a web that can support each
+partner in service to the relationship.
+Acknowledgments
+We are grateful to Ariana Shahinfar, Robert Ludwig, and Mark Lopez for feedback on an
+earlier version of this article.
+Footnotes
+Declaration of Conflicting Interests: The authors declared no potential conflicts of interest with respect to the
+research, authorship, and/or publication of this article.
+Funding: The authors received no financial support for the research, authorship, and/or
+publication of this article.
+Ethical Approval: Not applicable, because this article does not contain any studies with human or
+animal subjects.
+Informed Consent: Not applicable, because this article does not contain any studies with human or
+animal subjects.
+Trial Registration: Not applicable, because this article does not contain any clinical trials.
 References
-Referenced
-on Wolfram|Alpha
-Cite this as:
-Weisstein, Eric W. "Fourier Transform."
-From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/FourierTransform.html
-Subject classifications
+Connect with NLM
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers

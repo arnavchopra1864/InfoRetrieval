@@ -14,17 +14,19 @@ def print_query():
     
     try:
         new_query = FactFlow(query)
+
         def generate_response():
             try:
+                # generates the llm response itself first
                 response = new_query.get_response()
-                # yield response
                 for text in response:
-                    #print(f"text: {text}")
                     yield text
+
+                # prints out the nodes used for the response next
                 nodes = new_query.get_nodes()
                 for text in nodes:
                     yield f'{text} {nodes[text]}'
-                    #print(output[text])
+                    
             except Exception  as error:
                 yield str(error)
         

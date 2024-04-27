@@ -1,109 +1,69 @@
-An Interactive Guide To The Fourier Transform
-The Fourier Transform is one of deepest insights ever made. Unfortunately, the meaning is buried within dense equations:
-Yikes. Rather than jumping into the symbols, let's experience the key idea firsthand. Here's a plain-English metaphor:
-Here's the "math English" version of the above:
-Time for the equations? No! Let's get our hands dirty and experience how any pattern can be built with cycles, with live simulations.
-If all goes well, we'll have an aha! moment and intuitively realize why the Fourier Transform is possible. We'll save the detailed math analysis for the follow-up.
-This isn't a force-march through the equations, it's the casual stroll I wish I had. Onward!
-From Smoothie to Recipe
-A math transformation is a change of perspective. We change our notion of quantity from "single items" (lines in the sand, tally system) to "groups of 10" (decimal) depending on what we're counting. Scoring a game? Tally it up. Multiplying? Decimals, please.
-The Fourier Transform changes our perspective from consumer to producer, turning What do I have? into How was it made?
-In other words: given a smoothie, let's find the recipe.
-Why? Well, recipes are great descriptions of drinks. You wouldn't share a drop-by-drop analysis, you'd say "I had an orange/banana smoothie". A recipe is more easily categorized, compared, and modified than the object itself.
-So... given a smoothie, how do we find the recipe?
-Well, imagine you had a few filters lying around:
-We can reverse-engineer the recipe by filtering each ingredient. The catch?
-Filters must be independent. The banana filter needs to capture bananas, and nothing else. Adding more oranges should never affect the banana reading.
-Filters must be complete. We won't get the real recipe if we leave out a filter ("There were mangoes too!"). Our collection of filters must catch every possible ingredient.
-Ingredients must be combine-able. Smoothies can be separated and re-combined without issue (A cookie? Not so much. Who wants crumbs?). The ingredients, when separated and combined in any order, must make the same result.
-See The World As Cycles
-The Fourier Transform takes a specific viewpoint: What if any signal could be filtered into a bunch of circular paths?
-Whoa. This concept is mind-blowing, and poor Joseph Fourier had his idea rejected at first. (Really Joe, even a staircase pattern can be made from circles?)
-And despite decades of debate in the math community, we expect students to internalize the idea without issue. Ugh. Let's walk through the intuition.
-The Fourier Transform finds the recipe for a signal, like our smoothie process:
-Stop. Here's where most tutorials excitedly throw engineering applications at your face. Don't get scared; think of the examples as "Wow, we're finally seeing the source code (DNA) behind previously confusing ideas".
-If earthquake vibrations can be separated into "ingredients" (vibrations of different speeds & amplitudes), buildings can be designed to avoid interacting with the strongest ones.
-If sound waves can be separated into ingredients (bass and treble frequencies), we can boost the parts we care about, and hide the ones we don't. The crackle of random noise can be removed. Maybe similar "sound recipes" can be compared (music recognition services compare recipes, not the raw audio clips).
-If computer data can be represented with oscillating patterns, perhaps the least-important ones can be ignored. This "lossy compression" can drastically shrink file sizes (and why JPEG and MP3 files are much smaller than raw .bmp or .wav files).
-If a radio wave is our signal, we can use filters to listen to a particular channel. In the smoothie world, imagine each person paid attention to a different ingredient: Adam looks for apples, Bob looks for bananas, and Charlie gets cauliflower (sorry bud).
-The Fourier Transform is useful in engineering, sure, but it's a metaphor about finding the root causes behind an observed effect.
-Think With Circles, Not Just Sinusoids
-One of my giant confusions was separating the definitions of "sinusoid" and "circle".
-Labeling a circular path as a "complex sinusoid" is like describing a word as a "multi-letter". You zoomed into the wrong level of detail. Words are about concepts, not the letters they can be split into!
-The Fourier Transform is about circular paths (not 1-d sinusoids) and Euler's formula is a clever way to generate one:
-Must we use imaginary exponents to move in a circle? Nope. But it's convenient and compact. And sure, we can describe our path as coordinated motion in two dimensions (real and imaginary), but don't forget the big picture: we're just moving in a circle.
-Following Circular Paths
-Let's say we're chatting on the phone and, like usual, I want us to draw the same circle simultaneously. (You promised!) What should I say?
-I could say "2-inch radius, start at 45 degrees, 1 circle per second, go!". After half a second, we should each be pointing to: starting point + amount traveled = 45 + 180 = 225 degrees (on a 2-inch circle).
-Every circular path needs a size, speed, and starting angle (amplitude/frequency/phase). We can even combine paths: imagine tiny motorcars, driving in circles at different speeds.
-The combined position of all the cycles is our signal, just like the combined flavor of all the ingredients is our smoothie.
-Here's a simulation of a basic circular path:
-(Based on this animation, here's the source code. Modern browser required. Click the graph to pause/unpause.)
-The magnitude of each cycle is listed in order, starting at 0Hz. Cycles [0 1] means
-Now the tricky part:
-With me? [0 1] is a pure 1Hz cycle.
-Now let's add a 2Hz cycle to the mix. [0 1 1] means "Nothing at 0Hz, 1Hz of amplitude 1, 2Hz of amplitude 1":
-Whoa. The little motorcars are getting wild: the green lines are the 1Hz and 2Hz cycles, and the blue line is the combined result. Try toggling the green checkbox to see the final result clearly. The combined "flavor" is a sway that starts at the max and dips low for the rest of the interval.
-The yellow dots are when we actually measure the signal. With 3 cycles defined (0Hz, 1Hz, 2Hz), each dot is 1/3 of the way through the signal. In this case, cycles [0 1 1] generate the time values [2 -1 -1], which starts at the max (2) and dips low (-1).
-Oh! We can't forget phase, the starting angle! Use magnitude:angle to set the phase. So [0 1:45] is a 1Hz cycle that starts at 45 degrees:
-This is a shifted version of [0 1]. On the time side we get [.7 -.7] instead of [1 -1], because our cycle isn't exactly lined up with our measuring intervals, which are still at the halfway point (this could be desired!).
-The Fourier Transform finds the set of cycle speeds, amplitudes and phases to match any time signal.
-Our signal becomes an abstract notion that we consider as "observations in the time domain" or "ingredients in the frequency domain".
-Enough talk: try it out! In the simulator, type any time or cycle pattern you'd like to see. If it's time points, you'll get a collection of cycles (that combine into a "wave") that matches your desired points.
-But… doesn't the combined wave have strange values between the yellow time intervals? Sure. But who's to say whether a signal travels in straight lines, or curves, or zips into other dimensions when we aren't measuring it? It behaves exactly as we need at the equally-spaced moments we asked for.
-Making A Spike In Time
-Can we make a spike in time, like (4 0 0 0), using cycles? I'll use parentheses () for a sequence of time points, and brackets [] for a sequence of cycles.
-Although the spike seems boring to us time-dwellers (one data point, that's it?), think about the complexity in the cycle world. Our cycle ingredients must start aligned (at the max value, 4) and then "explode outwards", each cycle with partners that cancel it in the future. Every remaining point is zero, which is a tricky balance with multiple cycles running around (we can't just "turn them off").
-Let's walk through each time point:
-At time 0, the first instant, every cycle ingredient is at its max. Ignoring the other time points, (4 ? ? ?) can be made from 4 cycles (0Hz 1Hz 2Hz 3Hz), each with a magnitude of 1 and phase of 0 (i.e., 1 + 1 + 1 + 1 = 4).
-At every future point (t = 1, 2, 3), the sum of all cycles must cancel.
-Here's the trick: when two cycles are on opposites sides of the circle (North & South, East & West, etc.) their combined position is zero (3 cycles can cancel if they're spread evenly at 0, 120, and 240 degrees).
-Imagine a constellation of points moving around the circle. Here's the position of each cycle at every instant:
-Notice how the the 3Hz cycle starts at 0, gets to position 3, then position "6" (with only 4 positions, 6 modulo 4 = 2), then position "9" (9 modulo 4 = 1).
-When our cycle is 4 units long, cycle speeds a half-cycle apart (2 units) will either be lined up (difference of 0, 4, 8…) or on opposite sides (difference of 2, 6, 10…).
-OK. Let's drill into each time point:
-The trick is having individual speeds cancel (0Hz vs 2Hz, 1Hz vs 3Hz), or having the lined-up pairs cancel (0Hz + 2Hz vs 1Hz + 3Hz).
-When every cycle has equal power and 0 phase, we start aligned and cancel afterwards. (I don't have a nice proof yet -- any takers? -- but you can see it yourself. Try [1 1], [1 1 1], [1 1 1 1] and notice the signals we generate: (2 0), (3 0 0), (4 0 0 0)).
-In my head, I label these signals as "time spikes": they have a value for a single instant, and are zero otherwise (the fancy name is a delta function.)
-Here's how I visualize the initial alignment, followed by a net cancellation:
-Moving The Time Spike
-Not everything happens at t=0. Can we change our spike to (0 4 0 0)?
-It seems the cycle ingredients should be similar to (4 0 0 0), but the cycles must align at t=1 (one second in the future). Here's where phase comes in.
-Imagine a race with 4 runners. Normal races have everyone lined up at the starting line, the (4 0 0 0) time pattern. Boring.
-What if we want everyone to finish at the same time? Easy. Just move people forward or backwards by the appropriate distance. Maybe granny can start 2 feet in front of the finish line, Usain Bolt can start 100m back, and they can cross the tape holding hands.
-Phase shifts, the starting angle, are delays in the cycle universe. Here's how we adjust the starting position to delay every cycle 1 second:
-If time points (4 0 0 0) are made from cycles [1 1 1 1], then time points (0 4 0 0) are made from [1 1:-90 1:180 1:90]. (Note: I'm using "1Hz", but I mean "1 cycle over the entire time period").
-Whoa -- we're working out the cycles in our head!
-The interference visualization is similar, except the alignment is at t=1.
-Test your intuition: Can you make (0 0 4 0), i.e. a 2-second delay? 0Hz has no phase. 1Hz has 180 degrees, 2Hz has 360 (aka 0), and 3Hz has 540 (aka 180), so it's [1 1:180 1 1:180].
-Discovering The Full Transform
-The big insight: our signal is just a bunch of time spikes! If we merge the recipes for each time spike, we should get the recipe for the full signal.
-The Fourier Transform builds the recipe frequency-by-frequency:
-We can then loop through every frequency to get the full transform.
-Here's the conversion from "math English" to full math:
-A few notes:
-Onward
-This was my most challenging article yet. The Fourier Transform has several flavors (discrete/continuous/finite/infinite), covers deep math (Dirac delta functions), and it's easy to get lost in details. I was constantly bumping into the edge of my knowledge.
-But there's always simple analogies out there -- I refuse to think otherwise. Whether it's a smoothie or Usain Bolt & Granny crossing the finish line, take a simple understanding and refine it. The analogy is flawed, and that's ok: it's a raft to use, and leave behind once we cross the river.
-I realized how feeble my own understanding was when I couldn't work out the transform of (1 0 0 0) in my head. For me, it was like saying I knew addition but, gee whiz, I'm not sure what "1 + 1 + 1 + 1" would be. Why not? Shouldn't we have an intuition for the simplest of operations?
-That discomfort led me around the web to build my intuition. In addition to the references in the article, I'd like to thank:
-Today's goal was to experience the Fourier Transform. We'll save the advanced analysis for next time.
-Happy math.
-Appendix: Projecting Onto Cycles
-Stuart Riffle has a great interpretation of the Fourier Transform:
-Imagine spinning your signal in a centrifuge and checking for a bias. I have a correction: we must spin backwards (the exponent in the equation above should be $e^{-i 2 \pi...}$). You already know why: we need a phase delay so spikes appear in the future.
-Appendix: Another Awesome Visualization
-Lucas Vieira, author of excellent Wikipedia animations, was inspired to make this interactive animation:
-Fourier Toy - Click to download, requires flash
-(Detailed list of control options)
-The Fourier Transform is about cycles added to cycles added to cycles. Try making a "time spike" by setting a amplitude of 1 for every component (press Enter after inputting each number). Fun fact: with enough terms, you can draw any shape, even Homer Simpson.
-Check out http://www.jezzamon.com/fourier/ for a great tool to draw any shape using epicycles.
-Appendix: Article with R code samples
-João Neto made a great writeup, with technical (R) code samples here:
-http://www.di.fc.ul.pt/~jpn/r/fourier/fourier.html
-Appendix: Using the code
-All the code and examples are open source (MIT licensed, do what you like).
-Other Posts In This Series
-Topic Reference
-Fourier Transform
-Join 450k Monthly Readers
+Parental Age and Child Development
+mixetto / Getty Images
+Popular wisdom suggests that younger parents may have more energy to keep up with young children while older parents have more resources and experience to care for kids. Could your age as a parent have an impact on how your kids develop and are there really an ideal age to have kids in order to have the best conditions for child development?
+Research suggests that there are potential benefits as well as drawbacks to having kids at different age periods in your life.
+Parenting Ages Are Increasing
+Throughout the industrialized world, there has been a decrease in family size and delay in childbearing age. Where the average maternal age of first birth was 21.4 in 1970, it has gone up to 26.9 in 2018.
+While it may seem like only a small delay, an increase in parental age might have consequences for the health and well-being of both parents and their offspring. For this reason, the potential implications of delayed childbearing have come under scrutiny by both doctors and social researchers. While it seems like a relatively small number, some research has suggested that this delay in having kids might have an impact on development and health outcomes.
+Impact of Advanced Paternal Age
+While the focus is often on the link between advanced maternal age and birth defects, some worrying research has suggested declines in neurocognitive outcomes among U.S. children associated with older paternal age. A 2009 study suggested that having an older father was associated with subtle impairments in neurocognitive outcomes during both infancy and childhood.
+The researchers reanalyzed data on nearly 56,000 children who were given a variety of tests of cognitive abilities at age 8 months, 4 years, and 7 years. These tests looked at thinking abilities including reasoning, memory, learning, concentration, understanding, speaking, and reading. Some tests of motors skills were also conducted.
+Children with older fathers had lower scores on all tests except for those of motor skills. The older the father was, the stronger the link between paternal age and low cognitive test scores. By contrast, children with older mothers were more likely to have higher scores on tests of cognitive ability.
+While it has long been believed that men could continue fathering children well into old age with no real consequences on their children's health, more recent research suggests that this simply may not be true. Another study published in the journal Molecular Psychiatry suggested that a certain percentage of the increase in autism is linked to older fathers.﻿﻿
+However, while higher paternal age is linked to health effects in children and paternal age has increased in recent decades, researchers do not believe that it represents a major public health concern.
+Impact of Advanced Paternal Age
+What about the impact of maternal age on child health outcomes? The most obvious biological concern is that increased maternal age is associated with birth defects, an increased risk of premature birth, and low infant birth weight.
+However, studies also suggest that there may be other health concerns associated with young motherhood as well. One large-scale study found that it was young mothers under the age of 25 that had children with worse health outcomes in terms of height, obesity, self-rated health, and diagnosed health conditions.
+Impact on Psychological Health
+There are clear biological concerns associated with parental age and the impact on child health, but what about the mental impact of parenting at different ages? There have been a few studies that have looked at the psychological impact of delayed childbearing on parents and their children. One study, for example, found that later parenthood achieved via assisted reproductive technology was not associated with negative impacts on child well-being.
+While there were differences between younger and older mothers on various factors, the researchers found that there were no clear psychosocial advantages for any maternal age group in terms of the effects on child well-being. The study also found that older mothers tended to have a higher educational status, higher income, and were less likely to engage in risky behaviors during pregnancy.
+Impact on Parental Health
+But what about the potential impact of age on parental health?
+Mental Health Consequences
+Research increasingly suggests that the age at which people first become parents may actually have long-term health consequences. For example, women who become mothers during their late teens and early 20s have a higher rate of mortality than those who become parents later.
+Other studies have suggested that having a first child around age 22 or 23 has a detrimental effect on health during later life. This early parenthood has also been linked to higher rates of depression. One study suggested that between 16% and 44% of adolescent mothers suffered from depression.
+Findings related to the effects of later parenting on mental health tend to be mixed. Some show a link between increased maternal age and detrimental effects on health later in life. Some research also indicates a link between first births after age 35 and increases in depression.
+However, becoming a parent later in life tends to allow women to attain higher levels of education, establish a long-term relationship, and achieve greater financial security. Adding to this complicated mix is the fact that later motherhood is associated with increased medical complications such as pre-eclampsia, hypertension, and gestational diabetes, some of which may have long-lasting health consequences.
+What Do Parents Have to Say?
+Beyond the potential biological ramifications of having kids at an older age, what effect might age have on parenting styles?
+One small study found that among parents who had their first child after the age of 40 most believed that the best time to become a parent was five to 10 years earlier.﻿﻿ Interestingly, most of the over-40 parents still maintained that being an older parent had more advantages than disadvantages. Still, 80% of the mothers and 70% of the fathers said that the optimal age to have children was in the 30s.
+Most older parents suggested that their greatest advantage was being more emotionally prepared to be a parent. Some said that being older made them more self-aware, confident, resilient, self-actualized, better able to offer support, and more capable of communicating with a child.
+“I know that I'm way more self-aware than I was 20 years ago. I feel like I'm in a better position to communicate better with my child and help them more in life and I understand how to be a supportive, encouraging parent,” explained one of the fathers who took part in the study.
+A few other advantages cited by the parents who took part in the study included having greater career success, financial security, stronger social relationships, more workplace flexibility, and more time.
+One caveat—the study was small (including just 107 participants) and lacked much diversity (most were married and white with above average incomes). The researchers suggest that additional research with a larger and more diverse sample might be more reflective of what exists in the larger population.
+This is not to say that being an older parent is all sunshine and roses. Being an older parent had its advantages, some of these participants suggested, but there were also notable pitfalls. Some parents suggested that if they could have, they would have had their children sometime in their 30s for the following reasons:
+More Energy
+The most commonly cited reason was that they felt they would have more physical energy to be a parent. Older parents may feel that they do not have the energy to keep up with their always-on-the-go kids.
+Fertility and Lifespan Concerns
+Some parents also cited difficulties with conceiving, worries about living long enough to raise their children, and concerns over having fewer children than they wanted as major downsides to becoming an older parent.
+The 30s Seem Like the Best Compromise
+For many respondents, the 30s represented a sort of middle-ground between the potential pitfalls and benefits of early versus later parenting.
+"Parenting in their 30s was imagined to reflect a compromise that maximized the financial and emotional advantages of later parenting while minimizing the risks of age-related infertility, smaller-than-desired family sizes, lack of energy, less lifetime spent with their children, and the potential for age-related stigma," the study's authors wrote.
+Impact on Child Behavior
+In a 2017 study published in the Journal of the American Academy of Child and Adolescent Psychiatry, researchers assessed data collected on more than 15,000 sets of twins.﻿﻿ Developmental patterns related to social skills including conduct, peer problems, and social skills were examined. The researchers also compared the impact of parental age against genetic and environmental factors.
+What the researchers discovered was that fathers on either end of the age spectrum, either very young or very old, at the time of conception were linked to differing patterns of social development in their children. Analysis of the data further revealed that most of these differences could be linked to genetic factors rather than environmental ones.
+Children born to fathers under 25 or over 51 tended to show more prosocial behaviors early in development, but lagged behind their peers born to middle-aged fathers by the time they reached their teens.
+"Our results reveal several important aspects of how paternal age at conception may affect offspring," explained Dr. Magdalena Janecka, the study's lead author. "We observed those effects in the general population, which suggests children born to very young or older fathers may find social situations more challenging, even if they do not meet the diagnostic criteria for autism.
+"Further, the increased importance of genetic factors observed in the offspring of older, but not very young fathers, suggests that there could be different mechanisms behind the effects at these two extremes of paternal age. Although the resulting behavioral profiles in their offspring were similar, the causes could be vastly different."
+A Word From Verywell
+So, what's the consensus on the best age to be a parent? Clearly, many factors go into shaping how children develop over the course of birth to adulthood, but parenting is one of the most primary and prevalent influences. Parenting at any age has its own set of benefits and challenges, and factors that are unique to each parent's situation and background also play critical roles.
+Becoming a parent at either end of the childbearing years—in the early 20s or well into the 40s—may present the greatest number of downsides in terms of both biological and psychosocial risk.
+There are trends suggesting that young parents may have more energy to keep up with busy children, but their offspring may experience delayed social development and young parents may be more prone to depression. Older parents may have the benefit of experience and knowledge, but they may also face some increased risks including potential subtle neurocognitive delays in their kids.
+No matter what age you choose to become a parent, being aware of the potential challenges you might face might help you be better prepared to tackle the many trials and rewards that come with having children. Such knowledge can also help you maximize the benefits of your age, such as having more experience as an older parent or more energy as a young parent, while taking steps to overcome any weaknesses that might influence your parenting style and the healthy development of your children.
+Centers for Disease Control and Prevention. Births and Natality.
+Saha S, Barnett AG, Foldi C, et al. Advanced Paternal Age Is Associated With Impaired Neurocognitive Outcomes During Infancy and Childhood. PLoS Med. 2009;6(3):e40. doi:10.1371/journal.pmed.1000040
+Hultman CM, Sandin S, Levine SZ, Lichtenstein P, Reichenberg A. Advancing paternal age and risk of autism: new evidence from a population-based study and a meta-analysis of epidemiological studies. Mol Psychiatry. 2011;16(12):1203-1212. doi:10.1038/mp.2010.121
+Myrskylä M, Fenelon A. Maternal Age and Offspring Adult Health: Evidence From the Health and Retirement Study. Demography. 2012;49(4):1231-1257. doi:10.1007/s13524-012-0132-x
+Boivin J, Rice F, Hay D, et al. Associations between maternal older age, family environment and parent and child wellbeing in families using assisted reproductive techniques to conceive. Soc Sci Med. 2009;68(11):1948-1955. doi:10.1016/j.socscimed.2009.02.036
+Spence NJ. The Long-Term Consequences of Childbearing: Physical and Psychological Well-Being of Mothers in Later Life. Res Aging. 2008;30(6):722-751. doi:10.1177/0164027508322575
+Lanzi RG, Bert SC, Jacobs BK; Centers for the Prevention of Child Neglect. Depression Among a Sample of First-Time Adolescent and Adult Mothers. J Child Adolesc Psychiatr Nurs. 2009;22(4):194-202. doi:10.1111/j.1744-6171.2009.00199.x
+Hodgkinson S, Beers L, Southammakosane C, Lewin A. Addressing the Mental Health Needs of Pregnant and Parenting Adolescents. Pediatrics. 2014;133(1):114-122. doi:10.1542/peds.2013-0927
+Muraca GM, Joseph KS. The Association Between Maternal Age and Depression. J Obstet Gynaecol Can. 2014;36(9):803-810. doi:10.1016/S1701-2163(15)30482-5
+Grotegut CA, Chisholm CA, Johnson LN, Brown HL, Heine RP, James AH. Medical and Obstetric Complications Among Pregnant Women Aged 45 and Older. PLoS One. 2014;9(4):e96237. doi:10.1371/journal.pone.0096237
+Mac Dougall K, Beyene Y, Nachtigall RD. 'Inconvenient biology:' Advantages and disadvantages of first-time parenting after age 40 using in vitro fertilization. Hum Reprod. 2012;27(4):1058-1065. doi:10.1093/humrep/des007
+Janecka M, Haworth CMA, Ronald A, et al. Paternal Age Alters Social Development in Offspring. J Am Acad Child Adolesc Psychiatry. 2017;56(5):383-390. doi:10.1016/j.jaac.2017.02.006
+Nybo Andersen AM, Urhoj SK. Is advanced paternal age a health risk for the offspring?. Fertil Steril. 2017;107(2):312-318. doi:10.1016/j.fertnstert.2016.12.019
+By Kendra Cherry
+Kendra Cherry, MS, is an author, educational consultant, and speaker focused on helping students learn about psychology.
+Thank you, {{form.email}}, for signing up.
+There was an error. Please try again.
