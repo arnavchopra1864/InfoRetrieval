@@ -16,16 +16,16 @@ def print_query():
         new_query = FactFlow(query)
         def generate_response():
             try:
-                output = new_query.get_nodes()
-                for text in output:
-                    yield f'{text} {output[text]}'
-                    #print(output[text])
                 response = new_query.get_response()
                 # yield response
                 for text in response:
                     #print(f"text: {text}")
                     yield text
-            except Exception as error:
+                nodes = new_query.get_nodes()
+                for text in nodes:
+                    yield f'{text} {nodes[text]}'
+                    #print(output[text])
+            except Exception  as error:
                 yield str(error)
         
         #print(f'generate_response: {generate_response()}')

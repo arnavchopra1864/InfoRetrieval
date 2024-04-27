@@ -27,6 +27,7 @@ from typing import List, Optional
 from llama_index.core.response.notebook_utils import display_source_node # type: ignore
 from llama_index.core.query_engine import RetrieverQueryEngine # type: ignore
 from llama_index.core import Settings # type: ignore
+from llama_index.core import get_response_synthesizer
 
 user_query = "What are the effects of parental involvement on academic performance?"
 user_query = "How can a father and mother influence a child's performance and grades in school?"
@@ -36,6 +37,7 @@ documents = ""
 index = ""
 base_retriever = ""
 retrievals = ""
+query_engine_base = ""
 
 class FactFlow:
     def __init__(self, query):
@@ -69,13 +71,13 @@ class FactFlow:
         # HF_TOKEN: Optional[str] = os.getenv("HUGGING_FACE_TOKEN")
 
         self.base_retriever = self.index.as_retriever(similarity_top_k=5)
-        self.retrievals = self.base_retriever.retrieve(self.user_query)
-        #print("sucessfully initialized")
+        synth = get_response_synthesizer(streaming=True)
+        self.query_engine_base = RetrieverQueryEngine.from_args(self.base_retriever, response_synthesizer=synth)
 
     def get_nodes(self):
         #print(len(self.retrievals))
         ans = {}
-        for index, n in enumerate(self.retrievals):
+        for index, n in enumerate(self.query_engine_base.nodes):
             if 'https:/' not in n.text:
                 #display_source_node(n, source_length=1500)
                 ans['Reference {}: '.format(index+1)] = {"Node ID": n.node_id, 
@@ -87,19 +89,8 @@ class FactFlow:
         return ans
 
     def get_response(self):
-        query_engine_base = RetrieverQueryEngine.from_args(self.base_retriever, streaming=True)
-        #response = query_engine_base.query(query)
-        print("started llm call")
-        streaming_response = query_engine_base.query(self.user_query)
-        print("started streaming")
-        streaming_response.print_response_stream()
-        for text in streaming_response.response_gen:
-            print(text)
-            yield text
-
-        # print(str(response))
-        # ans['Response'] = str(response)
-        # return ans
+        streaming_response = self.query_engine_base.query(self.user_query)
+        return streaming_response.response_gen
 
 
 if __name__ == '__main__':
