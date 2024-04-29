@@ -20,11 +20,17 @@
   font-size: 16px;
 } */
 
-
+/* .loading-container{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+} */
 
 .reference-container {  
   display: grid;
   grid-template-columns: auto auto auto;
+  max-width: 100vw;
 }
 /* 
 .content {
@@ -49,3 +55,18 @@ hr {
   justify-content: center;
 }
 
+strong {
+  position: relative;
+}
+
+strong::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 4px);
+  height: 30%;
+  left: 0px;
+  bottom: 5px;
+  z-index: -1;
+  transform: rotate(0deg);
+  background-color: #7CC0E9;
+}

@@ -2,6 +2,7 @@
   text-align: center;
   width: 100%;
   height: 100%;
+  /* background-color: #cfcfcf; */
 }
 
 body {
@@ -121,11 +122,6 @@ body {
 .folders-container,
 .queries-container {
   margin-bottom: 20px; /* Add margin between sections */
-}
-
-.folders,
-.queries {
-  /* Remove flex and flex-wrap properties */
 }
 
 .folder-item,

@@ -1,0 +1,15 @@
+strong {
+	position: relative;
+}
+  
+strong::before {
+	content: "";
+	position: absolute;
+	width: calc(100% + 4px);
+	height: 30%;
+	left: 0px;
+	bottom: 5px;
+	z-index: -1;
+	transform: rotate(0deg);
+	background-color: #7CC0E9;
+}

@@ -1,11 +1,12 @@
 import './responseCard.scss'
+import './highlight.css'
 
 function ResponseCard(props) {
     return (
         <div className="cards">
 
             <article className="information [ card ] resp">
-                <h2 className="title-response">{props.query}</h2>
+                <h2 className="title-response"><span className='low-highlight'>{props.query}</span></h2>
                 <p className="info-response">{props.text}</p>
                 {/* <button class="button">
                     <span>Learn more</span>
