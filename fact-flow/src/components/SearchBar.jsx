@@ -2,20 +2,10 @@ import { useRef } from "react";
 import { Input, InputGroup, InputLeftElement, Box } from "@chakra-ui/react";
 import { IoSearchOutline } from "react-icons/io5";
 
-const SearchBar = ({ onSearch, placeholder }) => {
-  // TODO: use react-hook-form
-  const ref = useRef(null);
-
+const SearchBar = ({ query, setQuery, onSearch, placeholder }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (ref.current) {
-      try {
-        await onSearch(ref.current.value);
-      } catch (error) {
-        console.error("Error during search:", error);
-      }
-    }
+    onSearch();
   };
 
   return (
@@ -26,7 +16,8 @@ const SearchBar = ({ onSearch, placeholder }) => {
             <IoSearchOutline color="gray.300" />
           </InputLeftElement>
           <Input
-            ref={ref}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
             placeholder={placeholder}
             background={"white"}
             width="full"

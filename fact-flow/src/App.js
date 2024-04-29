@@ -13,16 +13,15 @@ import SignUpPage from "./components/SignUpPage";
 import LandingPage from "./components/LandingPage";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+import theme from "./theme";
 // import "./App.css";
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Router>
-        {/* <div className="App"> */}
-        <Box background={"gray.100"} width={"100%"} height={"100%"}>
+        <Box background={"gray.100"} minH={"100vh"}>
           <Header />
-          <main>
             <Routes>
               <Route path="/" element={<Navigate to="/query" />} />
               {/* <Route path="/" element={<LandingPage />} /> */}
@@ -31,8 +30,6 @@ function App() {
               <Route path="/chat" element={<QueryChatPage />} />
               <Route path="/signup" element={<SignUpPage />} />
             </Routes>
-          </main>
-          {/* </div> */}
         </Box>
       </Router>
     </ChakraProvider>
