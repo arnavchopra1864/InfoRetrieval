@@ -6,6 +6,7 @@ const Header = () => {
     const location = useLocation();
 
     const headerStyle = {
+        // position: 'absolute',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
