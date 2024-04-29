@@ -1,110 +1,127 @@
-// QueryPage.js
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
+import animationData from './loading-animation.json'; // Replace 'your_animation.json' with the path to your Lottie animation file
 import '../styles/QueryPage.css';
-import logo from "./logo.png";
-import FileView  from './FileView.js';
+import FileView from './FileView.js';
+import RefCard from './query_Page/refCard.js';
+import ResponseCard from './query_Page/responseCard.js';
+import './query_Page/search.scss';
+import logoMain from './logo_main.png'
+import logo from './logoblack.png';
 
 const QueryPage = () => {
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true); 
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [inputValue, setInputValue] = useState('');
+  const [response, setResponse] = useState();
+  const [references, setReferences] = useState([]);
+  const [initialQuery, setInitialQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSearch, setIsSearch] = useState(true)
 
   const toggleSidebar = () => {
-    setIsSidebarExpanded(!isSidebarExpanded); // Toggle the sidebar state
+    setIsSidebarExpanded(!isSidebarExpanded);
   };
-
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = () => {
-    const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com//query?q=";
-    var query_link = "";
-    var result_doc = document.getElementById("result");
+    setIsLoading(true);
+    setIsSearch(false);
+    const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q=";
+    let query_link = "http://127.0.0.1:5000/query?q=";
 
     if (inputValue.trim() === '') {
-      result_doc.innerText = "Please enter a query";
+      console.log("Please enter a query");
+      setIsLoading(false);
       return;
     } else {
       query_link = hostname + inputValue.replace(/['"]+/g, '') + '&u=' + Date.now();
     }
-    
-    result_doc.innerText = "Loading...";
 
     fetch(query_link)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      var output = data.Response;
-      // FIX THIS LINE AFTER BACKEND IS FIXED
-    //   var score = data["Reference1: "
-    // ].Score;
+      .then(response => response.json())
+      .then(data => {
+        setInitialQuery(inputValue);
+        setResponse(data.response);
 
-      // if (score >= 0) {
-      output += "\n\n References: \n";
-    
-      Object.keys(data).forEach(key => {
-        if (key.startsWith('Reference')) {
-          console.log(key)
-          var text = data[key]['chunk']
-          output += key + text + '\n'
-        }
-        else {
-          output += 'Response: ' + data[key]
-        }
+        const refs = [];
+        Object.keys(data).forEach((key) => {
+          if (key.startsWith('Reference')) {
+            const text = data[key]['chunk'];
+            const url = data[key]['url'];
+            const title = data[key]['title'];
+            refs.push({ key, text, url, title });
+          }
+        });
+        setReferences(refs);
+        setInputValue('');
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+        setIsLoading(false);
       });
-      result_doc.innerText = output;
-      // } else {
-      //   result_doc.innerText = "\n\n No relevant references found.";
-      // }
+  };
 
-    })
-    .catch(error => {
-      result_doc.innerText = "\n\n There was an error!";
-      console.error('There was an error!', error);
-    });
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSubmit();
+    }
+  };
 
+  const renderRefCards = () => {
+    return references.map((ref, index) => (
+      <RefCard key={index} text={ref.text} title={ref.title} link={ref.url} />
+    ));
+  };
+
+  const renderResponseCard = () => {
+    return response && references.length > 0 ? (
+      <ResponseCard query={initialQuery} text={response} className='resp-card' />
+    ) : null;
   };
 
   return (
     <div className="container">
       <div className="content">
-        <img src={logo} alt="Logo" className="logo" />
-
-        <input
-          type="text"
-          className="search-box"
-          placeholder="Ask FactFlow a question..."
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <button onClick={handleSubmit}>--></button>
-        <div className="result" id="result"></div>
-      </div>
-      <div className={`sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
-        {/* <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
-          {isSidebarExpanded ? 'Hide Stored Files' : 'View Stored Files'}
-        </button> */}
-        <div className="sidebar-content">
-          <div className="file-view">
-            <FileView />
-          </div>
+        {isSearch && (
+          <img className='logo-main' src={logo} style={{height:'40vh'}}></img>
+        )}
+        <div className='search-bar'>
+          <input
+            type="search"
+            placeholder="Search..."
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+          />
+          <button onClick={handleSubmit}>Go</button>
         </div>
+        {isLoading && (
+          <div className="loading-container">
+            <Lottie animationData={animationData} style={{height: '75vh'}}/>
+          </div>
+        )}
+        {!isLoading && (
+          <>
+            <div className='result'>
+              {renderResponseCard()}
+            </div>
+            {references.length > 0 && (
+              <div className='cards-container'>
+                <h1><strong>References:</strong></h1>
+                <div className='reference-container'>
+                  {renderRefCards()}
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
 };
-
-
-
-const buttonStyle = {
-    backgroundColor: '#444', // Button background color
-    color: 'white', // Button text color
-    border: 'none',
-    padding: '10px 20px',
-    margin: '0 10px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  };
 
 export default QueryPage;

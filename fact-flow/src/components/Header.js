@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from './logoblack.png';
+import logoMain from './logo_main.png'
 
 const Header = () => {
     const location = useLocation();
 
     const headerStyle = {
+        // position: 'absolute',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -26,6 +28,7 @@ const Header = () => {
         cursor: 'pointer',
         textDecoration: 'none', // Add this to mimic button appearance
         transition: 'opacity 0.3s', // Add transition effect for opacity change
+        fontSize: '1.75rem'
     };
 
     const isActive = (path) => {
@@ -42,7 +45,7 @@ const Header = () => {
 
     return (
         <header style={headerStyle}>
-            <img src={logo} alt="Logo" style={{ height: '70px' }} />
+            <img src={logoMain} alt="Logo" style={{ height: '3.5em', margin: '1em'}} />
             <nav>
                 {/* <Link to="/" style={{ ...linkStyle, ...(isActive("/") ? activeLinkStyle : {}) }} className="nav-link">Home</Link> */}
                 <Link to="/query" style={{ ...linkStyle, ...(isActive("/query") ? activeLinkStyle : {}) }} className="nav-link">Query</Link>
