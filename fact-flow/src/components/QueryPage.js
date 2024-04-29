@@ -16,6 +16,7 @@ const QueryPage = () => {
   const [initialQuery, setInitialQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [abortController, setAbortController] = useState(null);
+  const [isSearch, setIsSearch] = useState(true);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -32,6 +33,7 @@ const QueryPage = () => {
     setAbortController(newAbortController);
 
     setIsLoading(true);
+    setIsSearch(false);
     setInitialQuery(inputValue);
 
     const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q=";
@@ -90,10 +92,12 @@ const QueryPage = () => {
       <ResponseCard query={initialQuery} text={response} className='resp-card' />
     ) : null;
   };
-
   return (
     <div className="container">
       <div className="content">
+        {isSearch && (
+          <img className='logo-main' src={logo} style={{height:'40vh'}}></img>
+        )}
         <div className='search-bar'>
           <input
             type="search"
