@@ -1,10 +1,11 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import LoginPage from './components/LoginPage';
 import QueryPage from './components/QueryPage';
 import QueryChatPage from './components/QueryChatPage';
+import SignUpPage from "./components/SignUpPage";
+import LandingPage from "./components/LandingPage";
 import './App.css';
 
 function App() {
@@ -14,25 +15,17 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<p>Welcome to Fact Flow! This is our landing page.</p>}>
-              {/* Your main page content */}
-            </Route>
-            <Route path="/login" element={<LoginPage/>} />
-            <Route path="/query" element={<QueryPage/>} />
-            <Route path="/chat" element={<QueryChatPage/>} />
+            <Route path="/" element={<Navigate to="/query" />} />
+            {/* <Route path="/" element={<LandingPage />} /> */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/query" element={<QueryPage />} />
+            <Route path="/chat" element={<QueryChatPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
           </Routes>
-          
         </main>
       </div>
     </Router>
-    // <main>
-    //   <QueryPage />
-    // </main>
-    // <main>
-    //   <LoginPage />
-    // </main>
   );
 }
 
 export default App;
-

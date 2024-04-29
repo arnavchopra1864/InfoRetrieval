@@ -2,9 +2,10 @@
 import React, {useState} from 'react';
 import '../styles/QueryPage.css';
 import logo from "./logo.png";
+import FileView  from './FileView.js';
 
 const QueryPage = () => {
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false); 
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true); 
   const [inputValue, setInputValue] = useState('');
 
   const toggleSidebar = () => {
@@ -67,29 +68,33 @@ const QueryPage = () => {
   return (
     <div className="container">
       <div className="content">
-        <img src={logo} alt="Logo" className="logo"/>
+        <img src={logo} alt="Logo" className="logo" />
 
-        <input 
-            type="text" 
-            className="search-box" 
-            placeholder="Ask FactFlow a question..."
-            value={inputValue} // Set the input field value
-            onChange={handleInputChange} // Update state on input change
+        <input
+          type="text"
+          className="search-box"
+          placeholder="Ask FactFlow a question..."
+          value={inputValue}
+          onChange={handleInputChange}
         />
         <button onClick={handleSubmit}>--></button>
         <div className="result" id="result"></div>
       </div>
       <div className={`sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
-          <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
-            {isSidebarExpanded ? 'Collapse' : 'Expand'}
-          </button>
-          <div className="sidebar-content">
-            <p>Query Folders will display here</p>
+        {/* <button className="toggle-button" onClick={toggleSidebar} style={buttonStyle}>
+          {isSidebarExpanded ? 'Hide Stored Files' : 'View Stored Files'}
+        </button> */}
+        <div className="sidebar-content">
+          <div className="file-view">
+            <FileView />
           </div>
+        </div>
       </div>
     </div>
   );
 };
+
+
 
 const buttonStyle = {
     backgroundColor: '#444', // Button background color

@@ -29,8 +29,7 @@ import json
 load_dotenv()
 
 # Fetch the service account key JSON file contents
-# cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_CREDS')))
-cred = credentials.Certificate('creds.json')
+cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_CREDS')))
 
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
@@ -158,6 +157,7 @@ class FactFlow:
 
 
         ## run through chat engine and return AI response in json file
+        # comment
 
 
 
