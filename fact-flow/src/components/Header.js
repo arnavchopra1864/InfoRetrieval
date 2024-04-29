@@ -32,7 +32,7 @@ const headerStyle = {
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '1rem',
-    backgroundColor: '#333',
+    backgroundColor: '#282c34',
     color: 'white',
     zIndex: '1000',
     height: '7vh'

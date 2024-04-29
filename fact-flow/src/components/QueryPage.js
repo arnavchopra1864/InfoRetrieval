@@ -17,8 +17,9 @@ const QueryPage = () => {
   };
 
   const handleSubmit = () => {
-    const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com//query?q=";
-    var query_link = "";
+    // const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q=";
+    const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q="
+    var query_link = "http://127.0.0.1:5000/query?q=";
     var result_doc = document.getElementById("result");
 
     if (inputValue.trim() === '') {
@@ -34,12 +35,13 @@ const QueryPage = () => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      var output = data.Response;
+      var output = data.response;
       // FIX THIS LINE AFTER BACKEND IS FIXED
     //   var score = data["Reference1: "
     // ].Score;
 
       // if (score >= 0) {
+      // output += data['response']
       output += "\n\n References: \n";
     
       Object.keys(data).forEach(key => {
@@ -47,9 +49,6 @@ const QueryPage = () => {
           console.log(key)
           var text = data[key]['chunk']
           output += key + text + '\n'
-        }
-        else {
-          output += 'Response: ' + data[key]
         }
       });
       result_doc.innerText = output;
