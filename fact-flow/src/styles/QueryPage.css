@@ -1,25 +1,12 @@
 /* QueryPage.css */
-.query-page {
+/* .query-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   position: relative;
-  padding-right: 250px; /* Adjust based on sidebar size to prevent content from being hidden */
-}
-
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  display: flex;
-  width: 75%;
-  transform: translateY(35vh);
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-align: center;
-  transition: margin-right 0.5s; 
-}
+  padding-right: 250px; 
+} */
 
 .logo {
   width: 10vw;
@@ -28,44 +15,37 @@
 }
 
 
-.search-box {
+/* .search-box {
   padding: 10px;
   font-size: 16px;
+} */
+
+
+
+.reference-container {  
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+/* 
+.content {
+  width: 100vw;
+} */
+
+h1 {
+  font-size: 3rem;
+  text-align: left;
+  margin-left: 3vw;
+  margin-bottom: 0px;
 }
 
-.sidebar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  height: 100vh; /* Full height of the viewport */
-  background-color: #f4f4f4;
-  transition: width 0.5s;
-  width: 50vw; /* Expanded width, set to 50% of the viewport width */
+hr {
+  border: 0.5px solid;
+  margin-top: -10px;
+}
+
+.search-bar {
+  margin: 30px auto; /* Center the search container horizontally */
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  top: 11vh;  
 }
 
-.sidebar.collapsed {
-  width: 15vw; /* Collapsed width, set to 15% of the viewport width */
-}
-
-.toggle-button {
-  cursor: pointer;
-  /* Adjust the button style as needed */
-}
-
-.sidebar-content {
-  opacity: 1;
-  transition: opacity 0.5s ease, width 0s 0.5s, height 0s 0.5s;
-}
-
-.sidebar.collapsed .sidebar-content {
-  opacity: 0;
-  width: 0.5;
-  height: 0.5;
-  transition: opacity 0.5s, width 0s, height 0s; 
-}
