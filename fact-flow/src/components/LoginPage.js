@@ -1,8 +1,7 @@
-import {
-  signInWithEmailAndPassword,
-  getAuth
-} from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+import React from "react";
+import NavBar from "./NavBar";
 
 import { useState } from "react";
 var signedIn = false;
@@ -10,14 +9,14 @@ var user;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: "fact-flow-ai.firebaseapp.com",
-    databaseURL: "https://fact-flow-ai-default-rtdb.firebaseio.com",
-    projectId: "fact-flow-ai",
-    storageBucket: "fact-flow-ai.appspot.com",
-    messagingSenderId: "655133873468",
-    appId: "1:655133873468:web:b311929d5c340137243a39"
-  };
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: "fact-flow-ai.firebaseapp.com",
+  databaseURL: "https://fact-flow-ai-default-rtdb.firebaseio.com",
+  projectId: "fact-flow-ai",
+  storageBucket: "fact-flow-ai.appspot.com",
+  messagingSenderId: "655133873468",
+  appId: "1:655133873468:web:b311929d5c340137243a39",
+};
 const app = initializeApp(firebaseConfig);
 
 const LoginPage = () => {
@@ -25,7 +24,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   // Instantiate the auth service SDK
   const auth = getAuth(app);
 
@@ -50,12 +49,12 @@ const LoginPage = () => {
       // The signed-in user info
       user = userCredential.user;
     } catch (err) {
-     // Handle Errors here.
+      // Handle Errors here.
       const errorMessage = err.message;
       const errorCode = err.code;
 
       setError(true);
-      console.log(errorCode)
+      console.log(errorCode);
 
       switch (errorCode) {
         case "auth/invalid-email":
@@ -70,7 +69,9 @@ const LoginPage = () => {
           setErrorMessage("This email address is not registered.");
           break;
         case "auth/wrong-password":
-          setErrorMessage("The password is invalid or the user does not have a password.")
+          setErrorMessage(
+            "The password is invalid or the user does not have a password."
+          );
           break;
         default:
           setErrorMessage(errorMessage);
@@ -80,33 +81,41 @@ const LoginPage = () => {
   };
 
   return (
-    <div className='signinContainer'>
-      <div className='signinContainer__box'>
-        <div className='signinContainer__box__inner'>
-          <h1>Sign In</h1>
-          <form className='signinContainer__box__form' onSubmit={handleSubmit}>
-            <input
-              type='email'
-              placeholder='Email'
-              name='email'
-              onChange={handleChange}
-            />
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              onChange={handleChange}
-            />
-            <button type='submit'>Sign In</button>
-            {error && <p>{errorMessage}</p>}
-          </form>
+    <>
+      <NavBar activeName={"Account"} />
+      <div className="signinContainer">
+        <div className="signinContainer__box">
+          <div className="signinContainer__box__inner">
+            <h1>Sign In</h1>
+            <form
+              className="signinContainer__box__form"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+              />
+              <button type="submit">Sign In</button>
+              {error && <p>{errorMessage}</p>}
+            </form>
 
-          <div className='signinContainer__box__signup'>
-          <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            <div className="signinContainer__box__signup">
+              <p>
+                Don't have an account? <a href="/signup">Sign Up</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

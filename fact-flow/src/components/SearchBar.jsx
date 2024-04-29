@@ -2,14 +2,14 @@ import { useRef } from "react";
 import { Input, InputGroup, InputLeftElement, Box } from "@chakra-ui/react";
 import { IoSearchOutline } from "react-icons/io5";
 
-const SearchBar = ({ query, setQuery, onSearch, placeholder }) => {
+const SearchBar = ({ query, setQuery, onSearch, placeholder, width }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     onSearch();
   };
 
   return (
-    <Box>
+    <Box width={width}>
       <form onSubmit={handleSubmit}>
         <InputGroup size="lg">
           <InputLeftElement pointerEvents="none">
@@ -21,6 +21,7 @@ const SearchBar = ({ query, setQuery, onSearch, placeholder }) => {
             placeholder={placeholder}
             background={"white"}
             width="full"
+            focusBorderColor="brand.500"
           />
         </InputGroup>
       </form>
