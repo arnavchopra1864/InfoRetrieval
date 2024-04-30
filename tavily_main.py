@@ -71,6 +71,10 @@ class FactFlow:
         # set up llama index settings
         Settings.chunk_size = 512
         # Settings.llm = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
+
+
+        # OPENAI IS A PLACEHOLDER, huggingFace model goes here, could not use for demo due
+        # to deployement restrictions
         Settings.llm = OpenAI(model="gpt-3.5-turbo")
 
         text_splitter = SentenceSplitter(chunk_size=256, chunk_overlap=10)
@@ -90,6 +94,8 @@ class FactFlow:
         nodes = pipeline.run(documents=documents)
         index = VectorStoreIndex(nodes)
 
+        # OPENAI IS A PLACEHOLDER, huggingFace model goes here, could not use for demo due
+        # to deployement restrictions
         gpt4 = OpenAI(model="gpt-3.5-turbo", api_key=os.getenv('OPENAI_API_KEY'))
 
         # retrieve nodes, and generate json response

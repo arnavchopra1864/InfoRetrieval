@@ -51,6 +51,7 @@ const QueryPage = () => {
       .then(response => response.json())
       .then(data => {
         setResponse(data.response);
+        // console.log(data)
 
         const refs = [];
         Object.keys(data).forEach((key) => {
