@@ -32,6 +32,17 @@
   grid-template-columns: auto auto auto;
   max-width: 100vw;
 }
+
+@media only screen and (max-width: 600px) {
+  .reference-container {  
+    display: grid;
+    grid-template-columns: auto;
+    max-width: 100vw;
+  }
+  .logo-main {
+    display: none;
+  }
+}
 /* 
 .content {
   width: 100vw;

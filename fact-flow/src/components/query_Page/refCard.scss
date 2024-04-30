@@ -50,6 +50,15 @@ body {
 	// margin: 5vh auto;
 }
 
+@media only screen and (max-width: 600px) {
+	.cards-ref {
+		width: 100%;
+	}
+	.card-ref {
+		max-width: 90vw;
+	}
+  }
+
 .card-ref {
 	border-radius: 16px;
 	box-shadow: 35px 30px 30px -25px rgba(#7CC0E9, .25);

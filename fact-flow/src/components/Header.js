@@ -49,8 +49,8 @@ const Header = () => {
             <nav>
                 {/* <Link to="/" style={{ ...linkStyle, ...(isActive("/") ? activeLinkStyle : {}) }} className="nav-link">Home</Link> */}
                 <Link to="/query" style={{ ...linkStyle, ...(isActive("/query") ? activeLinkStyle : {}) }} className="nav-link">Query</Link>
-                <Link to="/chat" style={{ ...linkStyle, ...(isActive("/chat") ? activeLinkStyle : {}) }} className="nav-link">Chat</Link>
-                <Link to="/login" style={{ ...linkStyle, ...(isActive("/login") ? activeLinkStyle : {}) }} className="nav-link">Account</Link>
+                <Link style={{ ...linkStyle, ...(isActive("/chat") ? activeLinkStyle : {}) }} className="nav-link">Chat</Link>
+                <Link style={{ ...linkStyle, ...(isActive("/login") ? activeLinkStyle : {}) }} className="nav-link">Account</Link>
             </nav>
         </header>
     );

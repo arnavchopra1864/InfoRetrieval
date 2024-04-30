@@ -39,6 +39,15 @@ body {
 	// background-color: var(--c-ash);
 }
 
+@media only screen and (max-width: 600px) {
+	.cards-ref {
+		width: 100%;
+	}
+	.card-ref {
+		max-width: 90vw;
+	}
+  }
+
 .cards {
 	display: flex;
 	flex-wrap: wrap;
