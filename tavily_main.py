@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 
 from tavily import TavilyClient
 import os
+import sys
 
 from llama_index.core import ( # type: ignore
     VectorStoreIndex
@@ -45,15 +46,27 @@ class FactFlow:
         # get Tavily response
         tavily = TavilyClient(api_key=os.getenv('TAVILY_API_KEY'))
         response = tavily.search(query=query, 
-                                search_depth="advanced", 
+                                search_depth="advanced",
                                 include_raw_content=True,
+                                # include_answer=True,
                                 max_results=5,
                                 exclude_domains = ['https://en.wikipedia.org/'])
+        # ret = {'response': response['answer']}
+        # for i, ref in enumerate(response['results']):
+        #     ret[f'Reference {i}: '] = {
+        #         'chunk': ref['content'], 
+        #         'title': ref['title'],
+        #         'url': ref['url']
+        #     }
+        # return ret
 
         # create maps from docIDs -> title & url
         meta_map = {}
         user_files = {}
         for count, result in enumerate(response['results']):
+            # print(f"Size: {sys.getsizeof(result['raw_content']) / (1024 * 1024)} MB\n")
+            if sys.getsizeof(result['raw_content']) / (1024 * 1024) > 0.5:
+                continue
             user_files['file{}'.format(count)] = result['raw_content']
             meta_map[count] = {'title':result['title'], 'url':result['url']}
 
