@@ -37,8 +37,6 @@ const QueryPage = () => {
     setError(false);
     setIsLoading(true);
     setIsSearch(false);
-    setResponse("");
-    setReferences([]);
 
     const hostname =
       "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q=";
@@ -81,6 +79,8 @@ const QueryPage = () => {
           console.error("There was an error!", error);
           setIsLoading(false);
           setError(true);
+          setResponse("");
+          setReferences([]);
         }
       });
   };
