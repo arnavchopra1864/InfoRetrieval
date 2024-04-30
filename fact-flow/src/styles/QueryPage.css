@@ -81,3 +81,14 @@ strong::before {
   transform: rotate(0deg);
   background-color: #7CC0E9;
 }
+
+.error {
+  font-size: 2.25rem;
+	color: black;
+}
+
+.icon-error {
+  margin-top: 7rem;
+  font-size: 7rem;
+  color: #5592C6;
+}
