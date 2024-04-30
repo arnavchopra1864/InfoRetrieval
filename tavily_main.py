@@ -29,14 +29,12 @@ import json
 load_dotenv()
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_CREDS')))
+# cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_CREDS')))
 
 # Initialize the app with a service account, granting admin privileges
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://fact-flow-ai-default-rtdb.firebaseio.com'
-})
-
-# user_query = "What are the effects of parental involvement on academic performance?"
+# firebase_admin.initialize_app(cred, {
+#     'databaseURL': 'https://fact-flow-ai-default-rtdb.firebaseio.com'
+# })
 
 class FactFlow:
     def __init__(self):
@@ -61,11 +59,11 @@ class FactFlow:
 
 
         # create and update firebase db
-        ref = db.reference('DB%20Object%20name')
-        users_ref = ref.child('users')
-        users_ref.update({
-            uid: user_files
-        })
+        # ref = db.reference('DB%20Object%20name')
+        # users_ref = ref.child('users')
+        # users_ref.update({
+        #     uid: user_files
+        # })
 
 
         # set up llama index settings
@@ -88,8 +86,10 @@ class FactFlow:
             ]
         )
         documents = []
-        for file in ref.get()['users'][uid]:
-            documents.append(Document(text=ref.get()['users'][uid][file], id_=file, metadata={'id':file}))
+        # for file in ref.get()['users'][uid]:
+        #     documents.append(Document(text=ref.get()['users'][uid][file], id_=file, metadata={'id':file}))
+        for file, content in user_files.items():
+            documents.append(Document(text=content, id_=file, metadata={'id':file}))
 
         nodes = pipeline.run(documents=documents)
         index = VectorStoreIndex(nodes)

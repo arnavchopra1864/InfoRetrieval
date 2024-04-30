@@ -37,6 +37,7 @@ const QueryPage = () => {
     setInitialQuery(inputValue);
 
     const hostname = "https://factflow-backend-39dce4f4a0a2.herokuapp.com/query?q=";
+    // const hostname = "http://127.0.0.1:8000/query?q=";
     let query_link = "http://127.0.0.1:5000/query?q=";
 
     if (inputValue.trim() === '') {
