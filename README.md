@@ -4,7 +4,7 @@ This web app allows users to input a research related query, which will be answe
 To reduce hallucination, this response is based on filtered and retrieved internet sources, and the text chunks from these sources that are found to be relevant to the query are included in the output. Users can also further explore on their own as the links to the supporting documents are provided.
 
 ## Front End
-The frontend of the application is developed using React, and it is hosted on Vercell. The main related files are QueryPage.js, App.js, Header.js and their corresponding CSS files. Some invdividual components in the query page have their own files as well. 
+The frontend of the application is developed using React, and it is hosted on Vercel. The main related files are QueryPage.js, App.js, Header.js and their corresponding CSS files. Some individual components in the query page have their own files as well. 
 ## Back End
 Our backend is in Python, and we use Flask API to communicate between the backend and the frontend. The flask code can be found in flask_main.py. The backend is hosted on Heroku. We also use firebase interaction which is done in our flask_main files and tavily_main files, which is commented out for live demonstration purposes.
 ## Query Pipeline
