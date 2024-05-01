@@ -1,4 +1,4 @@
-# FactFlow [link](https://fact-flow-three.vercel.app/query)
+# FactFlow [Click here!](https://fact-flow-three.vercel.app/query)
 ## Convergent AI Build team project Spring 2024  
 This web app allows users to input a research related query, which will be answered with an AI generated response.
 To reduce hallucination, this response is based on filtered and retrieved internet sources, and the text chunks from these sources that are found to be relevant to the query are included in the output. Users can also further explore on their own as the links to the supporting documents are provided.
