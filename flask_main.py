@@ -1,13 +1,17 @@
 from flask import Flask, request, jsonify
 from tavily_main import FactFlow
+from flask_cors import CORS
+# from firebase import firebase
 
+# firebase = firebase.FirebaseApplication('https://fact-flow-ai-default-rtdb.firebaseio.com/', None)
 app = Flask(__name__)
-fact_flow = FactFlow()
 
+CORS(app)
 
 # first route, gets document nodes + summary response
 @app.route('/query')
 def print_query():
+    fact_flow = FactFlow()
     query = request.args.get('q')
     uid = request.args.get('u')
 
@@ -17,6 +21,7 @@ def print_query():
 # gets document content
 @app.route('/search')
 def print_content():
+    fact_flow = FactFlow()
     docID = request.args.get('d')
     uid = request.args.get('u')
     content = fact_flow.get_document(docID, uid)
@@ -26,6 +31,7 @@ def print_content():
 # gets AI response for specific document
 @app.route('/search/query')
 def print_new_response():
+    fact_flow = FactFlow()
     query = request.args.get('q')
     docID = request.args.get('d')
     uid = request.args.get('u')
@@ -34,4 +40,4 @@ def print_new_response():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)

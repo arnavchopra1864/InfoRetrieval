@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	// Basic
+	--c-white: #fff;
+	--c-black: #000;
+
+	// Greys
+	--c-ash: #eaeef6;
+	--c-charcoal: #a0a0a0;
+	--c-void: #141b22;
+
+	// Beige/Browns
+	--c-fair-pink: #FFEDEC;
+	--c-apricot: #FBC8BE;
+	--c-coffee: #754D42;
+	--c-del-rio: #917072;
+
+	// Greens
+	--c-java: #1FCAC5;
+
+	// Purples
+	--c-titan-white: #f1eeff;
+	--c-cold-purple: #a69fd6;
+	--c-indigo: #6558d3;
+	--c-governor: #4133B7;
+}
+
+body {
+	font-family: "Spline Sans", sans-serif;
+	line-height: 1.5;
+	min-height: 100vh;
+	background-color: var(--c-ash);
+}
+
+.cards-ref {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 100rem;
+	width: 33vw;
+	// margin: 5vh auto;
+}
+
+@media only screen and (max-width: 600px) {
+	.cards-ref {
+		width: 100%;
+	}
+	.card-ref {
+		max-width: 90vw;
+	}
+  }
+
+.card-ref {
+	border-radius: 16px;
+	box-shadow: 35px 30px 30px -25px rgba(#7CC0E9, .25);
+	max-width: 30vw;
+    margin: 2vw;
+}
+
+.link-ref {
+	display: inline-block; /* Ensure the link takes only the necessary space */
+	max-width: 100%; /* Limit the width to 100% of its container */
+	overflow: hidden; /* Hide any content that overflows */
+	text-overflow: ellipsis; /* Display an ellipsis (...) to indicate truncated text */
+	white-space: nowrap; /* Prevent wrapping of the text */
+  }
+
+.information {
+	background-color: var(--c-white);
+	padding: 1.5rem;
+
+	.tag {
+		display: inline-block;
+		background-color: #c2d9e7;
+		color: #27a1ec;
+		font-weight: 600;
+		font-size: 1.125rem;
+		padding: 0.5em 0.75em;
+		line-height: 2;
+		border-radius: 6px;
+		& + * {
+			margin-top: 1rem;
+		}
+		max-width: 100%;
+	}
+
+	.title-ref {
+		font-size: 2rem;
+		// color: var(--c-void);
+		line-height: 1.25;
+		& + * {
+			margin-top: 1rem;
+		}
+	}
+
+	.info-ref {
+        font-size: 1.5rem;
+		color: var(--c-charcoal);
+		& + * {
+			margin-top: 1.25rem;
+		}
+	}
+
+	.button {
+		font: inherit;
+		line-height: 1;
+		background-color: var(--c-white);
+		border: 2px solid var(--c-indigo);
+		color: var(--c-indigo);
+		padding: 0.5em 1em;
+		border-radius: 6px;
+		font-weight: 500;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		&:hover,
+		&:focus {
+			background-color: var(--c-indigo);
+			color: var(--c-white);
+		}
+	}
+}

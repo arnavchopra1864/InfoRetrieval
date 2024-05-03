@@ -2,11 +2,18 @@ from dotenv import load_dotenv
 
 from tavily import TavilyClient
 import os
+import sys
 
 from llama_index.core import ( # type: ignore
     VectorStoreIndex
 )
 from llama_index.llms.openai import OpenAI # type: ignore
+from typing import List, Optional
+# from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.core.chat_engine import CondenseQuestionChatEngine
+
+
+# from llama_index.core.response.notebook_utils import display_source_node # type: ignore
 from llama_index.core.query_engine import RetrieverQueryEngine # type: ignore
 from llama_index.core import Settings # type: ignore
 from llama_index.core.ingestion import IngestionPipeline
@@ -18,17 +25,17 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+import json
+
 load_dotenv()
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('creds.json')
+# cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_CREDS')))
 
 # Initialize the app with a service account, granting admin privileges
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://fact-flow-ai-default-rtdb.firebaseio.com'
-})
-
-# user_query = "What are the effects of parental involvement on academic performance?"
+# firebase_admin.initialize_app(cred, {
+#     'databaseURL': 'https://fact-flow-ai-default-rtdb.firebaseio.com'
+# })
 
 class FactFlow:
     def __init__(self):
@@ -39,30 +46,46 @@ class FactFlow:
         # get Tavily response
         tavily = TavilyClient(api_key=os.getenv('TAVILY_API_KEY'))
         response = tavily.search(query=query, 
-                                search_depth="advanced", 
+                                search_depth="advanced",
                                 include_raw_content=True,
+                                # include_answer=True,
                                 max_results=5,
                                 exclude_domains = ['https://en.wikipedia.org/'])
+        # ret = {'response': response['answer']}
+        # for i, ref in enumerate(response['results']):
+        #     ret[f'Reference {i}: '] = {
+        #         'chunk': ref['content'], 
+        #         'title': ref['title'],
+        #         'url': ref['url']
+        #     }
+        # return ret
 
         # create maps from docIDs -> title & url
         meta_map = {}
         user_files = {}
         for count, result in enumerate(response['results']):
+            # print(f"Size: {sys.getsizeof(result['raw_content']) / (1024 * 1024)} MB\n")
+            if sys.getsizeof(result['raw_content']) / (1024 * 1024) > 0.5:
+                continue
             user_files['file{}'.format(count)] = result['raw_content']
             meta_map[count] = {'title':result['title'], 'url':result['url']}
 
 
         # create and update firebase db
-        ref = db.reference('DB%20Object%20name')
-        users_ref = ref.child('users')
-        users_ref.update({
-            uid: user_files
-        })
+        # ref = db.reference('DB%20Object%20name')
+        # users_ref = ref.child('users')
+        # users_ref.update({
+        #     uid: user_files
+        # })
 
 
         # set up llama index settings
         Settings.chunk_size = 512
         # Settings.llm = OpenAI(model="gpt-4", api_key=os.getenv('OPENAI_API_KEY'))
+
+
+        # OPENAI IS A PLACEHOLDER, huggingFace model goes here, could not use for demo due
+        # to deployement restrictions
         Settings.llm = OpenAI(model="gpt-3.5-turbo")
 
         text_splitter = SentenceSplitter(chunk_size=256, chunk_overlap=10)
@@ -76,12 +99,16 @@ class FactFlow:
             ]
         )
         documents = []
-        for file in ref.get()['users'][uid]:
-            documents.append(Document(text=ref.get()['users'][uid][file], id_=file, metadata={'id':file}))
+        # for file in ref.get()['users'][uid]:
+        #     documents.append(Document(text=ref.get()['users'][uid][file], id_=file, metadata={'id':file}))
+        for file, content in user_files.items():
+            documents.append(Document(text=content, id_=file, metadata={'id':file}))
 
         nodes = pipeline.run(documents=documents)
         index = VectorStoreIndex(nodes)
 
+        # OPENAI IS A PLACEHOLDER, huggingFace model goes here, could not use for demo due
+        # to deployement restrictions
         gpt4 = OpenAI(model="gpt-3.5-turbo", api_key=os.getenv('OPENAI_API_KEY'))
 
         # retrieve nodes, and generate json response
@@ -149,11 +176,13 @@ class FactFlow:
 
 
         ## run through chat engine and return AI response in json file
+        # comment
 
 
 
 if __name__ == '__main__':
     pass
+    # user_query = "what are llms"
     # main = FactFlow()
     # print(main.get_reprompt_response('query', '0', '4e4bc471-eba8-43b6-9bd1-0a45c23a10d0'))
     # print(main.download_doc('0', '4e4bc471-eba8-43b6-9bd1-0a45c23a10d0'))
